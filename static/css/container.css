@@ -1,0 +1,29 @@
+/* Контейнер 90% ширины, центрирование */
+.container {
+    width: 90%; /* занимает 90% ширины экрана */
+    max-width: 100%; /* ограничение не больше экрана */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
+
+/* Можно добавить минимальные ширины для адаптива (необязательно) */
+@media (min-width: 576px) {
+    .container {
+        width: 90%;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 85%; /* чуть уже на больших экранах */
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 80%; /* на больших экранах */
+    }
+}

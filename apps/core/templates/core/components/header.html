@@ -1,0 +1,64 @@
+{% load static %}
+{% load i18n %}
+
+{% block extracss %}
+<link rel="stylesheet" href="{% static 'core/css/header.css' %}">
+{% endblock extracss %}
+
+<header class="header">
+	<div class="container">
+		<div class="header__wrapper">
+			<div class="logo"><a href={% url "core:index" %}><img class="lazy-image" data-src='{% static 'img/logo.png' %}'  alt="IFT2026" ></a></div>
+			<ul class="menu">
+				<li class="menu__item"><a class='link' href="#">About us</a></li>
+				<li class="menu__item"><a class='link' href="#">Agenda</a></li>
+				<li class="menu__item"><a class='link' href="#">Contacts</a></li>
+			</ul>
+			<div class="header__buttons">
+				{% if user.is_authenticated %}
+				<div class="header__user" id="userMenu">
+					<button class="header__avatar-btn" type="button" id="userMenuBtn">
+						{% if user.profile.photo %}
+							<img src="{{ user.profile.photo.url }}" class="header__avatar-img">
+						{% else %}
+							<span class="header__avatar-fallback">
+								{{ user.first_name|default:user.username|slice:":1"|upper }}
+							</span>
+						{% endif %}
+					</button>
+
+					<div class="header__dropdown" id="userDropdown">
+						<div class="header__dropdown-user">
+							<strong>
+								{% if user.profile.first_name or user.profile.last_name %}
+									{{ user.profile.first_name }} {{ user.profile.last_name }}
+								{% else %}
+									{{ user.username }}
+								{% endif %}
+							</strong>
+							<small>{{ user.email }}</small>
+						</div>
+
+						<a href="{% url 'accounts:profile' %}">Profile</a>
+						<a href="{% url 'account_reset_password' %}">Reset password</a>
+
+						<form method="post" action="{% url 'account_logout' %}">
+							{% csrf_token %}
+							<button type="submit">Log out</button>
+						</form>
+					</div>
+				</div>
+
+
+				{% else %}
+				<a href="{% url 'account_login' %}" class="button">{% trans "Log in" %}</a>
+				<a href="{% url 'account_signup' %}" class="button">{% trans "Sign up" %}</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</header>
+
+{% block extra_js %}
+<script type="module" src="{% static 'core/js/header.js' %}"></script>
+{% endblock extra_js %}

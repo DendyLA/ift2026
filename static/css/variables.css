@@ -1,0 +1,47 @@
+/* --- Переменные сайта --- */
+:root {
+    /* Базовый размер шрифта */
+    font-size: 10px; /* 1rem = 10px */
+
+    /* Шрифты */
+    --font-primary: 'FixelVariable', sans-serif;
+    --font-heading: 'FixelVariable', sans-serif;
+
+    /* Цвета */
+	--color-primary-rgb: 0, 153, 51;
+    --color-primary: #009933;
+    --color-secondary: #bdc3c8;
+    --color-success: #1aa438;
+    --color-danger: #dc3545;
+    --color-warning: #ffc107;
+    --color-info: #0dcaf0;
+    --color-light: #f8f9fa;
+    --color-dark: #212529;
+    --color-body: #333333;
+    --color-background: #ffffff;
+
+    /* Заголовки */
+    --h1-size: 3.2rem;  /* 32px */
+    --h2-size: 2.8rem;  /* 28px */
+    --h3-size: 2.4rem;  /* 24px */
+    --h4-size: 2rem;    /* 20px */
+    --h5-size: 1.6rem;  /* 16px */
+    --h6-size: 1.4rem;  /* 14px */
+
+    /* Основной текст */
+    --text-size: 1.6rem;  /* 16px */
+    --text-small: 1.4rem; /* 14px */
+    --text-large: 2rem;   /* 20px */
+
+    /* Отступы и размеры */
+    --spacing-xs: 0.4rem;  /* 4px */
+    --spacing-sm: 0.8rem;  /* 8px */
+    --spacing-md: 1.6rem;  /* 16px */
+    --spacing-lg: 3.2rem;  /* 32px */
+    --spacing-xl: 6.4rem;  /* 64px */
+
+    /* Глобальные border-radius */
+    --radius-sm: 0.4rem; /* 4px */
+    --radius-md: 0.8rem; /* 8px */
+    --radius-lg: 1.6rem; /* 16px */
+}

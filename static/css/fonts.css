@@ -1,0 +1,21 @@
+/* Подключение Fixel Variable шрифта */
+
+/* Обычный стиль */
+@font-face {
+    font-family: 'FixelVariable';
+    src: url('../fonts/FixelVariable.ttf') format('truetype');
+    font-weight: 100 900; /* variable font, диапазон веса */
+    font-style: normal;
+    font-display: swap; /* чтобы текст показывался сразу, пока шрифт загружается */
+}
+
+/* Курсив */
+@font-face {
+    font-family: 'FixelVariable';
+    src: url('../fonts/FixelVariableItalic.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+

@@ -1,0 +1,150 @@
+.profile{
+	padding: 6rem 0;
+}
+
+.profile__form{
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+}
+
+.profile__top{
+	display: flex;
+	gap: 5rem;
+}
+
+.profile__img{
+	position: relative;
+	border: 1px solid var(--color-body);
+	border-radius: 100%;
+	width: 20rem;
+	height: 18rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+.profile__img-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile__img-overlay {
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.3s;
+}
+
+/* текст появляется только при hover */
+.profile__img-text {
+    color: #fff;
+    font-size: var(--text-small);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.profile__img:hover .profile__img-overlay {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.profile__img:hover .profile__img-text {
+    opacity: 1;
+}
+
+/* скрываем input */
+.profile__img-overlay input[type="file"] {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.profile__basic{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 2rem;
+}
+
+.profile__row {
+	display: flex;
+	gap: 2rem;
+}
+
+.profile__field-top {
+	width: 100%;
+}
+
+.profile__bottom{
+	display: grid;
+    grid-template-columns: repeat(2, 1fr);
+	gap: 3rem;
+}
+
+.profile__field select{
+	padding-top: 0 !important;
+}
+
+
+
+.country-select-flag{
+	display: none;
+}
+
+.profile__field:has(.profile__check) {
+  	display: flex;
+	gap: 1rem;
+	align-items: center;
+}
+
+.profile__field:has(.profile__check) label {
+  	position: static;
+	font-size: var(--text-small) !important;
+	
+}
+.profile__field:has(.profile__check) input {
+  	width: 2rem;
+	height: 2rem;
+}
+
+.profile__file-saved {
+    font-size: 1rem;
+    color: green;
+    margin-top: 0.25rem;
+}
+
+#id_country ~ label, #id_education_degree ~ label {
+	top: -0.65rem;
+	left: 1rem;
+	font-size: 1rem;
+	color: var(--color-primary);
+}
+
+.profile__btns{
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	margin-top: 2rem;
+}
+
+.profile__btns > *{
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.profile__logout-btn, .profile__reset-btn{
+	background: none;
+	color: var(--color-primary);
+	width: 100%;
+}

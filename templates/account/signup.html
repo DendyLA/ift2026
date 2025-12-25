@@ -1,0 +1,60 @@
+{% extends "core/base.html" %}
+{% load i18n static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/auth.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<div class="auth">
+    <div class="container">
+        <div class="auth__wrapper">
+            <h1 class="title auth__title">{% trans "Join Us" %}</h1>
+
+            <form method="post" action="{% url 'account_signup' %}" class="auth__form">
+				{% csrf_token %}
+
+				{# обычные поля #}
+				{% for field in form %}
+					{% if field.name != "agree_terms" %}
+						<div class="auth__field fl-label">
+							{{ field }}
+							<label for="{{ field.id_for_label }}" class="auth__label">
+								{{ field.label }}
+							</label>
+
+							{% if field.errors %}
+								<div class="auth__error">{{ field.errors }}</div>
+							{% endif %}
+						</div>
+					{% endif %}
+				{% endfor %}
+
+				{# чекбокс В КОНЦЕ #}
+				<div class="auth__field auth__check-field">
+					{{ form.agree_terms }}
+					<label for="{{ form.agree_terms.id_for_label }}" class="auth__check-label">
+						{% trans "I have read and agree to the" %}
+						<a href="{% url "core:privacy_policy" %}" target="_blank" class="link-green">
+							{% trans "Privacy Policy" %}
+						</a>
+						{% trans "and" %}
+						<a href="{% url "core:terms_of_service" %}" target="_blank" class="link-green">
+							{% trans "Terms of Service" %}
+						</a>
+					</label>
+
+					{% if form.agree_terms.errors %}
+						<div class="auth__error">{{ form.agree_terms.errors }}</div>
+					{% endif %}
+				</div>
+
+				<button type="submit" class="auth__btn button">
+					{% trans "Sign Up" %}
+				</button>
+			</form>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

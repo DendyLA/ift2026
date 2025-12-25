@@ -1,0 +1,54 @@
+{% extends "core/base.html" %}
+{% load i18n static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/auth.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<div class="auth">
+    <div class="container">
+        <div class="auth__wrapper">
+            <h1 class="title auth__title">{% trans "Sign In" %}</h1>
+
+            <form method="post" class="auth__form" action="{% url 'account_login' %}">
+                {% csrf_token %}
+
+                {% for field in form %}
+                    {% if field.field.widget.input_type != "checkbox" %}
+                        <div class="auth__field fl-label">
+                            {{ field }}
+                            <label for="{{ field.id_for_label }}" class="auth__label">{{ field.label }}</label>
+                    {% else %}
+                        <div class="auth__field auth__check-field">
+                            {{ field }}
+                            <label for="{{ field.id_for_label }}" class="auth__check-label">{{ field.label }}</label>
+                    {% endif %}
+                            {% if field.errors %}
+                                <div class="auth__error">{{ field.errors }}</div>
+                            {% endif %}
+                        </div>
+                {% endfor %}
+
+                <!-- Ссылка "Забыл пароль" -->
+                <div class="auth__forgot">
+                    <a href="{% url 'account_reset_password' %}" class="link-green">{% trans "Forgot Password?" %}</a>
+                </div>
+
+                <button type="submit" class="auth__btn button">
+                    {% trans "Sign In" %}
+                </button>
+
+                <!-- Общие ошибки формы (например, неверный пароль) -->
+                {% if form.non_field_errors %}
+                    <div class="auth__error auth__error-general">
+                        {% for error in form.non_field_errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

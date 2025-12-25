@@ -1,0 +1,134 @@
+{% extends "core/base.html" %}
+{% load i18n static %}
+{% load custom_filters %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'accounts/css/profile.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<section class="profile">
+    <div class="container">
+        <div class="profile__wrapper">
+
+            <form method="post" enctype="multipart/form-data" class="profile__form">
+                {% csrf_token %}
+
+                <!-- ===== TOP ===== -->
+                <div class="profile__top">
+                    <div class="profile__img">
+						<img
+							src="{% if user.profile.photo %}{{ user.profile.photo.url }}{% else %}{% static 'accounts/img/profile_default.png' %}{% endif %}"
+							alt="profile image"
+							class="profile__img-preview"
+							id="photoPreview"
+						>
+
+						<label class="profile__img-overlay">
+							<input type="file" name="photo" id="id_photo" accept="image/*">
+							<span class="profile__img-text">
+								{% if user.profile.photo %}Change photo{% else %}Upload photo{% endif %}
+							</span>
+						</label>
+					</div>
+                    <div class="profile__basic">
+                        <div class="profile__row">
+                            <div class="profile__field-top fl-label">
+                                {{ form.first_name }}
+                                <label for="{{ form.first_name.id_for_label }}">
+                                    {{ form.first_name.label }}
+                                </label>
+                                {{ form.first_name.errors }}
+                            </div>
+
+                            <div class="profile__field-top fl-label">
+                                {{ form.last_name }}
+                                <label for="{{ form.last_name.id_for_label }}">
+                                    {{ form.last_name.label }}
+                                </label>
+                                {{ form.last_name.errors }}
+                            </div>
+                        </div>
+
+                        <div class="profile__row">
+                            <div class="profile__field-top fl-label">
+                                {{ form.father_name }}
+                                <label for="{{ form.father_name.id_for_label }}">
+                                    {{ form.father_name.label }}
+                                </label>
+                                {{ form.father_name.errors }}
+                            </div>
+
+                            <div class="profile__field-top fl-label">
+                                {{ form.birth_date }}
+                                <label for="{{ form.birth_date.id_for_label }}">
+                                    {{ form.birth_date.label }}
+                                </label>
+                                {{ form.birth_date.errors }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				<h3 class="profile__title">{% trans "Your Details" %}</h3>
+              	<!-- ===== BOTTOM ===== -->
+				<div class="profile__bottom">
+
+					{% for field in form %}
+						{% if field.name not in "first_name last_name father_name birth_date photo" %}
+							<div class="profile__field fl-label">
+
+								<!-- input и label сразу -->
+								{{ field }}
+								<label for="{{ field.id_for_label }}">
+									{{ field.label }}
+								</label>
+
+								<!-- Файлы: Файл сохранён, если есть -->
+								{% if field.name in "passport_copy employment_verification photo" %}
+									{% with file_obj=user.profile|attr:field.name %}
+										{% if file_obj %}
+											<div class="profile__file-saved">
+												Файл сохранён: <a href="{{ file_obj.url }}" target="_blank">{{ file_obj.name|cut:"media/" }}</a>
+											</div>
+										{% endif %}
+									{% endwith %}
+								{% endif %}
+
+								<!-- Ошибки -->
+								{% if field.errors %}
+									<div class="profile__error">
+										{% for error in field.errors %}
+											{{ error }}
+										{% endfor %}
+									</div>
+								{% endif %}
+
+							</div>
+						{% endif %}
+					{% endfor %}
+
+				</div>
+
+
+
+                <button type="submit" class="button profile__btn">
+                    {% trans "Save Changes" %}
+                </button>
+
+            </form>
+			<div class="profile__btns">
+				<form method="post" action="{% url 'account_logout' %}">
+					{% csrf_token %}
+					<button type="submit" class="button profile__logout-btn">
+						Выйти
+					</button>
+				</form>
+
+				<a href="{% url 'account_reset_password' %}" class="button profile__reset-btn">Сбросить пароль</a>
+
+			</div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}

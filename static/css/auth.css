@@ -1,0 +1,98 @@
+.auth{
+	padding-top: 6rem;
+}
+
+.auth__wrapper{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 4rem;
+}
+
+.auth__form{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	width: 40rem;
+}
+
+.auth__field{
+	flex: 1;
+}
+
+
+
+.auth__input {
+	height: 2.5rem;
+	width: 100%;
+}
+
+
+.auth__error {
+	color: var(--color-danger); /* красный цвет для ошибок */
+	font-size: 1.2rem;
+	margin-top: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #ecc7cb;
+	border: 1px solid var(--color-danger);
+	border-radius: 1.5rem;
+	padding: 3rem 3rem;
+}
+
+
+
+.auth__check-field {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.auth__check-label {
+    cursor: pointer;
+    font-size: var(--text-small);
+    color: var(--color-body);
+}
+
+.auth__check {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.auth__btn{
+	width: 100%;
+}
+
+.auth__forgot{
+	font-size: var(--text-small);
+}
+
+/* verification */
+
+.verif__btn{
+	width: 25rem;
+}
+
+
+
+/* confirm */
+
+.confirm{
+	align-items: center;
+	justify-content: center;
+	height: 50vh;
+}
+
+
+/* reset */
+
+.reset__wrapper{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+}

@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="{{ request.LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>{% block title %}IFT2026{% endblock %}</title>
+
+    <!-- Meta description (SEO) -->
+    <meta name="description" content="{% block meta_description %}Welcome to My Forum - join discussions, share ideas, and connect with delegates.{% endblock %}">
+
+    <!-- Meta keywords (не критично, но иногда полезно) -->
+    <meta name="keywords" content="{% block meta_keywords %}forum, delegates, discussion, registration{% endblock %}">
+
+    <!-- Open Graph (для соцсетей) -->
+    <meta property="og:title" content="{% block og_title %}IFT2026{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Welcome to IFT2026 - join discussions, share ideas, and connect with delegates.{% endblock %}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{% block og_url %}{{ request.build_absolute_uri }}{% endblock %}">
+    <meta property="og:image" content="{% block og_image %}{% static 'img/og_image.png' %}{% endblock %}">
+
+
+    <!-- Favicon -->
+    <!-- Классический favicon -->
+	<link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicons/favicon-32x32.png' %}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicons/favicon-16x16.png' %}">
+	<link rel="shortcut icon" href="{% static 'img/favicons/favicon.ico' %}">
+
+	<!-- Apple touch icon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/favicons/apple-touch-icon.png' %}">
+
+	<!-- Android / PWA -->
+	<link rel="manifest" href="{% static 'img/favicons/site.webmanifest' %}">
+	<meta name="theme-color" content="#ffffff"> <!-- цвет панели браузера на мобильных -->
+
+
+    <!-- Глобальные стили -->
+	<link rel="stylesheet" href="{% static 'css/reset.css' %}">
+	<link rel="stylesheet" href="{% static 'css/container.css' %}">
+    <link rel="stylesheet" href="{% static 'css/variables.css' %}">
+	<link rel="stylesheet" href="{% static 'core/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
+
+    <!-- Дополнительные стили для конкретной страницы -->
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+
+    {% include 'core/components/header.html' %}
+
+    <main class="main">
+        {% block content %}{% endblock %}
+    </main>
+
+    {% include 'core/components/footer.html' %}
+
+
+    <!-- Глобальный JS -->
+    <script type="module" src="{% static 'js/global.js' %}"></script>
+
+    <!-- Дополнительные JS для конкретной страницы -->
+    {% block extra_js %}{% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+{% extends 'core/base.html' %}
+{% load i18n %}
+{% load account %}
+{% load allauth %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/auth.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+
+
+<div class="auth__wrapper container confirm">
+	<h1 class="confirm__mail title">Confirm Your Email Addeess</h1>
+	{% if confirmation %}
+	{% user_display confirmation.email_address.user as user_display %}
+	{% if can_confirm %}
+	<p>
+		{% blocktrans with confirmation.email_address.email as email %}
+		Please confirm that <a href="mailto:{{ email }}">{{ email }}</a> is an email address for user <b>{{ user_display }}</b>.
+		{% endblocktrans %}
+	</p>
+	{% endif %}
+	{% endif %}
+
+	<form  method="post">
+			{% csrf_token %}
+		<button class='auth__btn button' type="submit">Confirm EMail</button>
+	</form>
+</div>
+
+
+{% endblock content %}

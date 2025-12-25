@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+{% load i18n static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/auth.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<div class="auth">
+    <div class="container">
+        <div class="auth__wrapper">
+            <h1 class="title auth__title">{% trans "Verification Email Sent" %}</h1>
+            <p>{% trans "We have sent a verification email to your email address." %}</p>
+            <p>{% trans "If you didn't receive it, please check your spam folder or contact us." %}</p>
+
+            <a href="{% url 'account_signup' %}" class="verif__btn button">{% trans "Back to Sign Up" %}</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

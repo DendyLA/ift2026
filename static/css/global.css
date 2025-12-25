@@ -1,0 +1,113 @@
+/* Глобальные стили */
+body {
+    font-family: var(--font-primary);
+    font-size: var(--text-size);
+    color: var(--color-body);
+    background-color: var(--color-background);
+    line-height: 1.5;
+}
+
+h1 { font-size: var(--h1-size); font-family: var(--font-heading); }
+h2 { font-size: var(--h2-size); font-family: var(--font-heading); }
+h3 { font-size: var(--h3-size); font-family: var(--font-heading); }
+h4 { font-size: var(--h4-size); font-family: var(--font-heading); }
+h5 { font-size: var(--h5-size); font-family: var(--font-heading); }
+h6 { font-size: var(--h6-size); font-family: var(--font-heading); }
+
+p {
+    font-size: var(--text-size);
+    margin-bottom: var(--spacing-md);
+}
+
+.title{
+	font-size: var(--h1-size);
+	font-weight: 600;
+	color: var(--color-primary);
+}
+
+.link {
+    color: var(--color-dark);
+	transition: color .4s;
+}
+
+.link:hover {
+    color: var(--color-primary);
+}
+
+.link-green{
+	color: var(--color-primary);
+	transition: all .4s;
+}
+.link-green:hover{
+	color: var(--color-secondary);
+}
+
+
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--color-light);
+    font-family: var(--font-primary);
+    font-size: var(--text-size);
+    padding: 1.2rem 3.2rem;
+    border-radius: var(--radius-md);
+	background-color: var(--color-primary);
+	border: 2px solid var(--color-primary);
+    cursor: pointer;
+	transition: all .4s;
+	font-weight: 500;
+}
+
+.button:hover{
+	background: none;
+	color: var(--color-primary);
+}
+
+
+/* floating */
+
+.fl-label{
+	position: relative;
+}
+
+.fl-label input,
+.fl-label textarea,
+.fl-label select {
+    width: 100%;
+    padding: 1rem 0rem 0.3rem ; /* сверху место для лейбла */
+	padding-left: 1.5rem;
+    font-size: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.6rem;
+    background: transparent;
+	height: 4rem;
+	outline: none;
+	transition: all .4s;
+}
+
+.fl-label label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: var(--text-small);
+    color: #777;
+    pointer-events: none; 
+    transition: 0.2s ease all; 
+	background-color: var(--color-background);
+	padding: 0 1rem;
+}
+.fl-label input:focus, .fl-label select:focus{
+	border-color: var(--color-primary);
+}
+
+/* Лейбл "взлетает" */
+.fl-label input:focus + label,
+.fl-label input:not(:placeholder-shown) + label,
+.fl-label textarea:focus + label,
+.fl-label textarea:not(:placeholder-shown) + label {
+    top: -0.65rem;
+    left: 1rem;
+    font-size: 1rem;
+    color: var(--color-primary);
+}
