@@ -1,8 +1,14 @@
 from django.shortcuts import render
-
+from .models import Intro
 
 def index(request):
-    return render(request, 'core/index.html')
+	intro = Intro.objects.first()
+
+	context = {
+		'intro': intro,
+	}
+
+	return render(request, 'core/index.html', context)
 
 
 def privacy_policy(request):

@@ -44,6 +44,7 @@ THIRD_APPS = [
     'parler',
     'django_cleanup.apps.CleanupConfig',
 	'django_countries',
+	'ckeditor',
 ]
 
 LOCAL_APPS = [
@@ -188,3 +189,5 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 
 DATA_UPLOAD_MAX_MEMORY_SIZE = 20 * 1024 * 1024  # 20MB
 FILE_UPLOAD_MAX_MEMORY_SIZE = 20 * 1024 * 1024
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
