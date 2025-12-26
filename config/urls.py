@@ -3,7 +3,7 @@ from django.urls import path, include
 from django.conf.urls.i18n import i18n_patterns
 from django.conf import settings
 from django.conf.urls.static import static
-from django.contrib.auth import views as auth_views
+
 
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),  # для смены языка через POST
@@ -15,6 +15,7 @@ urlpatterns += i18n_patterns(
      
     path('', include(('apps.core.urls', 'core'), namespace='core')),  # namespace
 	path('profile/', include(('apps.accounts.urls', 'accounts'), namespace='accounts')),
+    path('about/', include(('apps.about.urls', 'about'), namespace='about')),
 )
 
 
