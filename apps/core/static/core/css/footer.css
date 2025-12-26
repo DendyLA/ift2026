@@ -1,0 +1,36 @@
+.footer{
+	padding: 4rem 0;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.footer__top{
+	display: flex;
+	justify-content: space-between;
+}
+
+.footer__logo{
+	width: 20rem;
+	height: 100%;
+}
+
+
+.footer__bottom{
+	margin-top: 4rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+.footer__bottom span{
+	font-size: var(--text-size);
+	color: var(--color-primary);
+}
+
+.footer__phone, .footer__mail{
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.footer__bottom p {
+	margin-top: 2rem;
+}

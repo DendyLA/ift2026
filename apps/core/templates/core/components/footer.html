@@ -1,0 +1,37 @@
+{% load static %}
+{% load i18n %}
+
+{% block extracss %}
+<link rel="stylesheet" href="{% static 'core/css/footer.css' %}">
+{% endblock extracss %}
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer__top">
+            <div class="footer__logo">
+                <a href="/">
+                    <img src="{% static 'img/logo.png' %}" alt="Logo">
+                </a>
+            </div>
+            {% include "core/components/menu.html" %}
+        </div>
+        <div class="footer__bottom">
+			<div class="footer__phone">
+				<span>Phone</span><br>
+				<a class="link link--phone" href="tel:+99312753644">+993 12 75 36 44</a>
+				<a class="link link--phone" href="tel:+99312753648">+993 12 75 36 48</a>
+			</div>
+			<div class="footer__mail">
+				<span>Email</span><br>
+				<a href="mailto:info@tmt.tm">info@tmt.tm</a>
+			</div>
+            <p>&copy; {% now "Y" %} IFT. All rights reserved.  Ashgabat, Turkmenistan.</p>
+        </div>
+    </div>
+</footer>
+
+
+{% block extra_js %}
+<script type="module" src="{% static 'core/js/footer.js' %}"></script>
+{% endblock extra_js %}

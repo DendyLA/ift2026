@@ -20,12 +20,7 @@
 	height: 100%;
 }
 
-.menu{
-	display: flex;
-	align-items: center;
-	gap: 5rem;
-	font-weight: 500;
-}
+
 
 .header__buttons{
 	display: flex;
@@ -115,11 +110,7 @@
 	color: #616161;
 }
 
-.menu__item{
-	font-size: var(--text-size);
-	color: #616161;
-	transition: all .4s;
-}
+
 .dropdown__item:hover{
 	background-color: #e9eaed;
 	

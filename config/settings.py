@@ -50,6 +50,7 @@ THIRD_APPS = [
 LOCAL_APPS = [
 	'apps.core',
 	'apps.accounts.apps.AccountsConfig',
+	'apps.about',
 ]
 
 INSTALLED_APPS = CORE_APPS + THIRD_APPS + LOCAL_APPS

@@ -9,13 +9,7 @@
 	<div class="container">
 		<div class="header__wrapper">
 			<div class="logo"><a href={% url "core:index" %}><img class="lazy-image" data-src='{% static 'img/logo.png' %}'  alt="IFT2026" ></a></div>
-			<ul class="menu">
-				<li class="menu__item"><a class='link' href="#">About us</a></li>
-				<li class="menu__item"><a class='link' href="#">Agenda</a></li>
-				<li class="menu__item"><a class='link' href="#">Speakers</a></li>
-				<li class="menu__item"><a class='link' href="#">News</a></li>
-				<li class="menu__item"><a class='link' href="#">Contacts</a></li>
-			</ul>
+			{% include "core/components/menu.html" %}
 			<div class="header__buttons">
 				{% if user.is_authenticated %}
 				<div class="header__user" id="userMenu">

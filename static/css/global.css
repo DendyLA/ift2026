@@ -111,3 +111,17 @@ p {
     font-size: 1rem;
     color: var(--color-primary);
 }
+
+
+.menu{
+	display: flex;
+	align-items: center;
+	gap: 5rem;
+	font-weight: 500;
+}
+
+.menu__item{
+	font-size: var(--text-size);
+	color: #616161;
+	transition: all .4s;
+}

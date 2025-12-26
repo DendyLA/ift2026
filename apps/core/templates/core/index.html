@@ -2,7 +2,9 @@
 {% load static i18n %}
 
 {% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}" />
 <link rel="stylesheet" href="{% static 'core/css/index.css' %}">
+<link rel="stylesheet" href="{% static 'core/css/partners.css' %}">
 {% endblock extra_css %}
 
 {% block content %}
@@ -21,12 +23,167 @@
 <section class="about">
 	<div class="container">
 		<div class="about__wrapper">
-			<div class="about__img"><img src="" alt=""></div>
+			<div class="about__img"><img src="{{ about.image.url }}" alt="ift 2026"></div>
 			<div class="about__content">
-				<h3 class="about__title"></h3>
-				<div class="about__descr"></div>
+				<h3 class="about__title title">{{ about.title }}</h3>
+				<div class="about__descr">{{ about.description|safe }}</div>
+				<button class="button about__btn">Details</button>
+			</div>
+			<div class="about__tabs">
+				{% for tab in tabs %}
+				<div class="about__tab">
+					<img src="{{ tab.img_optimized.url }}" alt="Tab Image">
+				</div>
+				{% endfor %}
 			</div>
 		</div>
 	</div>
 </section>
+
+<section class="partners">
+	<div class="container">
+		<div class="partners__wrapper">
+			<h4 class="title partners__title">Partners</h4>
+			<div class="partners__top">
+				<ul class="partners__menu">
+					{% for type in partnership_types %}
+						<li class="partners__item {% if forloop.first %}active{% endif %}" 
+							data-type="{{ type.id }}">
+							<span>{{ type.name }}</span>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+
+			<div class="partners__bottom swiper">
+				<div class="partners__list swiper-wrapper">
+					{% for partner in partnership_types.0.partners.all %}
+						<div class="partners__list-item swiper-slide">
+							
+							<img 
+								src="{{ partner.logo.url }}" 
+								alt="{{ partner.name }}" 
+								class="partners__img
+									{% if partner.level %}
+										partners__img--{{ partner.level.name|lower }}
+									{% endif %}"
+							>
+
+							<div class="partners__name">{{ partner.name }}</div>
+
+						</div>
+					{% endfor %}
+				</div>
+
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+
+{% comment %} <section class="speakers">
+	<div class="container">
+		<div class="speakers__wrapper">
+			<div class="speakers__item">
+				<div class="speakers__img"><img src="" alt=""></div>
+				<div class="speakers__name"></div>
+				<div class="speakers__position"></div>
+			</div>
+		</div>
+	</div>
+</section> {% endcomment %}
+
+
+
+
 {% endblock content %}
+
+{% block extra_js %}
+<script src="{% static 'js/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'core/js/index.js' %}"></script>
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    const menuItems = document.querySelectorAll('.partners__item');
+    const sliderEl = document.querySelector('.partners__bottom'); // ❗ КОНТЕЙНЕР
+    const wrapperEl = sliderEl.querySelector('.partners__list');
+
+    const allPartners = [
+        {% for type in partnership_types %}
+        {
+            typeId: {{ type.id }},
+            partners: [
+                {% for partner in type.partners.all %}
+                {
+                    name: "{{ partner.name|escapejs }}",
+                    logo: "{{ partner.logo.url|default:'' }}"
+                },
+                {% endfor %}
+            ]
+        },
+        {% endfor %}
+    ];
+
+    // === ИНИЦИАЛИЗАЦИЯ SWIPER ===
+    const swiper = new Swiper(sliderEl, {
+        slidesPerView: 5,
+        spaceBetween: 20,
+
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        breakpoints: {
+            1200: { slidesPerView: 5 },
+            992:  { slidesPerView: 4 },
+            768:  { slidesPerView: 3 },
+            480:  { slidesPerView: 1 }
+        },
+
+        watchOverflow: true,
+        observer: true,
+        observeParents: true,
+    });
+
+    // === ТАБЫ ===
+    menuItems.forEach(item => {
+        item.addEventListener('click', () => {
+            menuItems.forEach(i => i.classList.remove('active'));
+            item.classList.add('active');
+
+            const typeId = item.dataset.type;
+            const typePartners = allPartners.find(t => t.typeId == typeId)?.partners || [];
+
+            // очистка
+            swiper.removeAllSlides();
+
+            // новые слайды
+            swiper.appendSlide(
+                typePartners.map(p => `
+                    <div class="swiper-slide partners__list-item">
+                        <img src="${p.logo}" alt="${p.name}" class="partners__img">
+                        <div class="partners__name">${p.name}</div>
+                    </div>
+                `)
+            );
+
+            swiper.slideTo(0);
+            swiper.update();
+        });
+    });
+
+});
+</script>
+
+
+
+{% endblock extra_js %}
+
