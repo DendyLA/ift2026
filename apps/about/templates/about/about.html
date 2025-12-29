@@ -1,15 +1,48 @@
 {% extends "core/base.html" %}
 
-{% block extra_css %}{% endblock extra_css %}
+{% load static i18n%}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'about/css/about.css' %}">
+{% endblock extra_css %}
 
 
 {% block content %}
 
 <section class="intro">
 	<div class="container">
-		<h1 class="intro__title">About us</h1>
+		<h1 class="intro__title title">About IFT</h1>
 	</div>
 </section>
+
+<section class="about">
+	<div class="container">
+		<div class="about__wrapper">
+			<div class="about__left">
+				<div class="about__item">
+					<div class="about__point">Established</div>
+					<div class="about__text">March 2024</div>
+				</div>
+				<div class="about__item">
+					<div class="about__point">Address</div>
+					<div class="about__text">G.Kuliyeva Ojar Aziya. Asghabat, Turkmenistan</div>
+				</div>
+				<div class="about__item">
+					<div class="about__point">Phone</div>
+					<a href='tel:+99312753644' class="about__text link">+993 12 75 36 44</a>
+					<a href='tel:+99312753648' class="about__text link">+993 12 75 36 48</a>
+				</div>
+			</div>
+			<div class="about__right">
+				<div class="about__descr">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, enim expedita. Quibusdam, voluptatem nisi, neque explicabo dolor nobis eos adipisci provident pariatur soluta unde cumque commodi odit placeat inventore animi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, enim expedita. Quibusdam, voluptatem nisi, neque explicabo dolor nobis eos adipisci provident pariatur soluta unde cumque commodi odit placeat inventore animi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, enim expedita. Quibusdam, voluptatem nisi, neque explicabo dolor nobis eos adipisci provident pariatur soluta unde cumque commodi odit placeat inventore animi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, enim expedita. Quibusdam, voluptatem nisi, neque explicabo dolor nobis eos adipisci provident pariatur soluta unde cumque commodi odit placeat inventore animi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, enim expedita. Quibusdam, voluptatem nisi, neque explicabo dolor nobis eos adipisci provident pariatur soluta unde cumque commodi odit placeat inventore animi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, enim expedita. Quibusdam, voluptatem nisi, neque explicabo dolor nobis eos adipisci provident pariatur soluta unde cumque commodi odit placeat inventore animi.
+				</div>
+			</div>
+		</div>
+		{% include "about/components/gallery.html" %}
+	</div>
+</section>
+
 
 {% endblock content %}
 

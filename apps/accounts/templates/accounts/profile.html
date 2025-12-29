@@ -84,7 +84,7 @@
 								</label>
 
 								<!-- Файлы: Файл сохранён, если есть -->
-								{% if field.name in "passport_copy employment_verification photo" %}
+								{% if field.name in "passport_copy employment_verification photo diploma_scan" %}
 									{% with file_obj=user.profile|attr:field.name %}
 										{% if file_obj %}
 											<div class="profile__file-saved">
@@ -93,6 +93,7 @@
 										{% endif %}
 									{% endwith %}
 								{% endif %}
+
 
 								<!-- Ошибки -->
 								{% if field.errors %}
@@ -116,6 +117,7 @@
                 </button>
 
             </form>
+			<a href="{% url 'accounts:catalog_edit' %}" class="button profile__btn"> Company information </a>
 			<div class="profile__btns">
 				<form method="post" action="{% url 'account_logout' %}">
 					{% csrf_token %}

@@ -27,7 +27,7 @@
 			<div class="about__content">
 				<h3 class="about__title title">{{ about.title }}</h3>
 				<div class="about__descr">{{ about.description|safe }}</div>
-				<button class="button about__btn">Details</button>
+				<a href="{% url "about:about" %}" class="button about__btn">Details</a>
 			</div>
 			<div class="about__tabs">
 				{% for tab in tabs %}

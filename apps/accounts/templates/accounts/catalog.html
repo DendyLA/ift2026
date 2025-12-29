@@ -1,0 +1,90 @@
+{% extends "core/base.html" %}
+{% load static i18n %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'accounts/css/profile.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<section class="profile">
+    <div class="container">
+        <div class="profile__wrapper">
+
+            <form method="post" enctype="multipart/form-data" class="profile__form">
+                {% csrf_token %}
+
+                <!-- ===== TOP (IMAGE) ===== -->
+                <div class="profile__top">
+                    <div class="profile__img">
+                        <img
+                            src="{% if form.instance.img %}{{ form.instance.img.url }}{% else %}{% static 'accounts/img/profile_default.png' %}{% endif %}"
+                            alt="company logo"
+                            class="profile__img-preview"
+                            id="imgPreview"
+                        >
+
+                        <label class="profile__img-overlay">
+                            {{ form.img }}
+                            <span class="profile__img-text">
+                                {% if form.instance.img %}
+                                    {% trans "Change logo" %}
+                                {% else %}
+                                    {% trans "Upload logo" %}
+                                {% endif %}
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- ===== CONTENT ===== -->
+                <h3 class="profile__title">{% trans "Company Information" %}</h3>
+
+                <div class="profile__bottom">
+
+                    <!-- Description -->
+                    <div class="profile__field fl-label">
+                        {{ form.description }}
+                        <label for="{{ form.description.id_for_label }}">
+                            {{ form.description.label }}
+                        </label>
+
+                        {% if form.description.errors %}
+                            <div class="profile__error">
+                                {% for error in form.description.errors %}
+                                    {{ error }}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                </div>
+
+                <button type="submit" class="button profile__btn">
+                    {% trans "Save" %}
+                </button>
+				<a href='{% url "accounts:profile" %}' type="submit" class="button profile__back-btn">
+                    {% trans "Back" %}
+                </a>
+
+            </form>
+
+        </div>
+    </div>
+</section>
+
+<!-- ===== IMAGE PREVIEW SCRIPT ===== -->
+<script>
+    const input = document.getElementById("id_img");
+    const preview = document.getElementById("imgPreview");
+
+    if (input) {
+        input.addEventListener("change", function () {
+            const file = this.files[0];
+            if (file) {
+                preview.src = URL.createObjectURL(file);
+            }
+        });
+    }
+</script>
+
+{% endblock %}

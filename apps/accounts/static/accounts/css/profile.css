@@ -148,3 +148,17 @@
 	color: var(--color-primary);
 	width: 100%;
 }
+
+.profile__btn{
+	margin-top: 2rem;
+}
+
+.profile__form textarea {
+	height: 35rem;
+    resize: none;
+}
+
+.profile__back-btn {
+	background: none;
+  	color: var(--color-primary);
+}

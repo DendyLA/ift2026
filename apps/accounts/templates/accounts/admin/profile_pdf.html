@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: sans-serif; font-size: 12px; line-height: 1.4; }
+        h1, h3 { text-align: center; margin-bottom: 15px; }
+        .row { margin-bottom: 8px; }
+        .label { font-weight: bold; display: inline-block; width: 180px; vertical-align: top; }
+        img { max-width: 150px; margin-bottom: 15px; display: block; }
+        hr { margin: 20px 0; }
+    </style>
+</head>
+<body>
+
+<h1>Profile Information</h1>
+
+{% if photo_path %}
+<div class="row">
+    <span class="label">Photo:</span>
+    <img src="file:///{{ photo_path }}" alt="Фото пользователя">
+</div>
+{% endif %}
+
+<div class="row"><span class="label">Username:</span> {{ profile.user.username }}</div>
+<div class="row"><span class="label">First name:</span> {{ profile.first_name }}</div>
+<div class="row"><span class="label">Last name:</span> {{ profile.last_name }}</div>
+<div class="row"><span class="label">Father's name:</span> {{ profile.father_name|default:"-" }}</div>
+<div class="row"><span class="label">Date of birth:</span> {{ profile.birth_date|date:"Y-m-d"|default:"-" }}</div>
+<div class="row"><span class="label">Country:</span> {{ profile.country|default:"-" }}</div>
+<div class="row"><span class="label">Address:</span> {{ profile.address|default:"-" }}</div>
+<div class="row"><span class="label">Company:</span> {{ profile.company|default:"-" }}</div>
+<div class="row"><span class="label">Position:</span> {{ profile.position|default:"-" }}</div>
+<div class="row"><span class="label">Website:</span> {{ profile.website|default:"-" }}</div>
+
+<hr>
+
+<h3>Education</h3>
+<div class="row"><span class="label">Degree:</span> {{ profile.education_degree|default:"-" }}</div>
+<div class="row"><span class="label">Institute:</span> {{ profile.education_institute|default:"-" }}</div>
+<div class="row"><span class="label">Specialization:</span> {{ profile.specialization|default:"-" }}</div>
+
+<div class="row">
+    <span class="label">Diploma Scan:</span>
+    {% if diploma_scan_path %}
+        <a href="file:///{{ diploma_scan_path }}">{{ profile.diploma_scan.name }}</a>
+    {% else %}
+        -
+    {% endif %}
+</div>
+
+<hr>
+
+<h3>Passport</h3>
+<div class="row"><span class="label">Number:</span> {{ profile.passport_number|default:"-" }}</div>
+<div class="row"><span class="label">Issued:</span> {{ profile.passport_issue_date|date:"Y-m-d"|default:"-" }}</div>
+<div class="row"><span class="label">Expires:</span> {{ profile.passport_expiry_date|date:"Y-m-d"|default:"-" }}</div>
+<div class="row">
+    <span class="label">Copy:</span>
+    {% if passport_copy_path %}
+        <a href="file:///{{ passport_copy_path }}">{{ profile.passport_copy.name }}</a>
+    {% else %}
+        -
+    {% endif %}
+</div>
+
+<hr>
+
+<h3>Employment Verification</h3>
+<div class="row">
+    <span class="label">File:</span>
+    {% if employment_verification_path %}
+        <a href="file:///{{ employment_verification_path }}">{{ profile.employment_verification.name }}</a>
+    {% else %}
+        -
+    {% endif %}
+</div>
+
+</body>
+</html>

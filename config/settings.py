@@ -131,8 +131,17 @@ ACCOUNT_LOGIN_ATTEMPTS_LIMIT = env('ATTEMPTS_LIMIT')
 ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = env('ATTEMPTS_TIMEOUT')  # в секундах
 
 
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-DEFAULT_FROM_EMAIL = "noreply@example.com" #test
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+
+EMAIL_HOST = "smtp.yandex.ru"
+EMAIL_PORT = 465          # или 587
+EMAIL_USE_SSL = True      # для 465
+EMAIL_USE_TLS = False
+
+EMAIL_HOST_USER = "noreply@tmt.tm"
+EMAIL_HOST_PASSWORD = env("YANDEX_SMTP_PASSWORD")
+
+DEFAULT_FROM_EMAIL = "TMT Consulting Group <noreply@tmt.tm>"
 
 
 ACCOUNT_FORMS = {

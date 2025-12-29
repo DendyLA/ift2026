@@ -1,0 +1,39 @@
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'libs/fancybox/fancybox.css' %}">
+<link rel="stylesheet" href="{% static 'about/css/gallery.css' %}">
+{% endblock extra_css %}
+
+
+<div class="gallery">
+    {% for item in gallery %}
+        <a href="{{ item.image.url }}"
+           data-fancybox="gallery"
+           class="gallery__item">
+           
+            <img src="{{ item.image_compressed.url }}"
+                 alt=""
+                 class="gallery__img">
+        </a>
+    {% endfor %}
+</div>
+
+
+
+
+{% block extra_js %}
+<script src="{% static 'libs/fancybox/fancybox.umd.js' %}"></script>
+<script>
+Fancybox.bind('[data-fancybox="gallery"]', {
+    Thumbs: false,
+    Toolbar: {
+        display: [
+            "close"
+        ]
+    }
+});
+</script>
+{% endblock extra_js %}
+
+

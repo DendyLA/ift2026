@@ -2,14 +2,17 @@
 from django.db import models
 import os
 from datetime import datetime
+from django.utils.html import format_html
 from django.utils.text import slugify
 from django.contrib.auth.models import User
 from django_countries.fields import CountryField
 import uuid
 
 def user_file_path(instance, filename, folder):
-    if instance.user_id:
-        name_slug = slugify(f"{instance.user.first_name}_{instance.user.last_name}") or instance.user.username
+    # определяем пользователя через профиль
+    user = getattr(instance, "user", None) or getattr(instance, "profile", None) and instance.profile.user
+    if user:
+        name_slug = slugify(f"{user.first_name}_{user.last_name}") or user.username
     else:
         name_slug = "unknown_user"
 
@@ -17,6 +20,7 @@ def user_file_path(instance, filename, folder):
     unique = uuid.uuid4().hex[:8]
     new_filename = f"{base}_{unique}{ext}"
     return os.path.join(name_slug, folder, new_filename)
+
 
 
 
@@ -29,7 +33,11 @@ def passport_copy_path(instance, filename):
 def employment_verification_path(instance, filename):
     return user_file_path(instance, filename, 'employment_verification')
 
+def diploma_scan_path(instance, filename):
+    return user_file_path(instance, filename, 'diploma_scan')
 
+def logo_path(instance, filename):
+    return user_file_path(instance, filename, 'logo')
 
 class Profile(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile", verbose_name="Пользователь", help_text="Связанный аккаунт пользователя")
@@ -61,6 +69,45 @@ class Profile(models.Model):
 	photo = models.ImageField(upload_to=photo_path, blank=True, null=True, verbose_name="Фото", help_text="Загрузите ваше фото")
 	passport_copy = models.FileField(upload_to=passport_copy_path, blank=True, null=True, verbose_name="Копия паспорта", help_text="Загрузите скан вашего паспорта")
 	employment_verification = models.FileField(upload_to=employment_verification_path, blank=True, null=True, verbose_name="Справка с работы", help_text="Загрузите подтверждение занятости")
+	diploma_scan = models.FileField(upload_to=diploma_scan_path,blank=True, null=True, verbose_name="Скан диплома", help_text="Загрузите скан вашего диплома")
+
+
+	def render_file_link(self, field):
+		file_field = getattr(self, field)
+		if not file_field:
+			return "-"
+		ext = os.path.splitext(file_field.name)[1].lower()
+		file_path = file_field.path.replace("\\", "/")  # на Windows важно заменить слэши
+		if ext in [".jpg", ".jpeg", ".png", ".gif"]:
+			return format_html(
+				'<img src="file://{}" alt="{}" style="max-width:150px;">',
+				file_path, os.path.basename(file_field.name)
+			)
+		else:
+			return format_html(
+				'<a href="file://{}" download>{}</a>',
+				file_path, os.path.basename(file_field.name)
+			)
+
+
 
 	def __str__(self):
 		return f"{self.user.username} Profile"
+
+
+
+class CatalogEntry(models.Model):
+	profile = models.OneToOneField(
+        Profile,
+        on_delete=models.CASCADE,
+        related_name="catalog",
+        verbose_name="Профиль"
+    )
+	description = models.TextField(verbose_name="О компании", help_text="Введите инфомрацию о вашей компании", blank=True, null=True)
+	img = models.ImageField(upload_to=logo_path, verbose_name="Изображение", help_text="Загрузите логотип вашей компании", blank=True, null=True)
+	created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания", help_text="Дата и время создания записи", )
+	updated_at = models.DateTimeField(auto_now=True, verbose_name="Дата обновления", help_text="Дата и время последнего обновления записи", )
+       
+
+	def __str__(self):
+		return f'Catalog Entry {self.id}'

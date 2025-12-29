@@ -6,4 +6,5 @@ app_name = 'accounts'
 
 urlpatterns = [
     path('', views.profile_view, name='profile'),
+	path("company/", views.catalog_edit_view,name="catalog_edit"),
 ]

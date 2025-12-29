@@ -3,7 +3,7 @@ from django import forms
 from django.utils.translation import gettext_lazy as _
 from django_countries.widgets import CountrySelectWidget
 
-from .models import Profile
+from .models import Profile, CatalogEntry
 
 
 class CustomLoginForm(LoginForm):
@@ -131,6 +131,7 @@ class ProfileForm(forms.ModelForm):
 			'photo': forms.FileInput(attrs={'class': 'profile__input', }),
 			'passport_copy': forms.FileInput(attrs={'class': 'profile__input', }),
             'employment_verification': forms.FileInput(attrs={'class': 'profile__input', }),
+            'diploma_scan': forms.FileInput(attrs={'class': 'profile__input'}),
 		}
 	def __init__(self, *args, **kwargs):
 		super().__init__(*args, **kwargs)
@@ -150,3 +151,14 @@ class ProfileForm(forms.ModelForm):
 		if edu_choices and edu_choices[0][0] == '':
 			edu_choices.pop(0)
 		self.fields['education_degree'].choices = [('', 'Выберите уровень')] + edu_choices
+            
+
+class CatalogEntryForm(forms.ModelForm):
+    class Meta:
+        model = CatalogEntry
+        exclude = ["profile"]
+        widgets = {
+            "description": forms.Textarea(attrs={"class": "profile__input", "rows": 5}),
+            "img": forms.FileInput(attrs={"class": "profile__input", "accept": "image/*"}),
+        }
+
