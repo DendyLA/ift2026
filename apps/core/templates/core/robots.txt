@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://ift2026.com/sitemap.xml

@@ -1,12 +1,13 @@
 .header{
-	/* background-color: rgba(var(--color-primary-rgb), .6); */
+	background-color: #fff;
 	position: fixed;
-	background-color: var(--color-background);
+	top: 4rem;
 	width: 100%;
 	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 	min-height: 12rem;
 	padding: var(--spacing-lg) 0;
 	z-index: 999;
+	transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 .header__wrapper{
@@ -37,6 +38,7 @@
 
 .header__user {
     position: relative;
+	height: 6rem;
 }
 
 .header__avatar-btn {
@@ -48,8 +50,8 @@
 
 .header__avatar-img,
 .header__avatar-fallback {
-    width: 5rem;
-    height: 5rem;
+    width: 6rem;
+    height: 6rem;
 	border: 1px solid var(--color-body);
     border-radius: 50%;
     object-fit: cover;
@@ -115,3 +117,135 @@
 	background-color: #e9eaed;
 	
 }
+
+
+.subheader{
+	width: 100%;
+	height: 4rem;
+	background-color: var(--color-primary);
+	padding: .5rem 0;
+	position: fixed;
+	top: 0;
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+}
+
+.subheader .container{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	/* gap: 7rem; */
+}
+
+.language form{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 1.5rem;
+}
+
+.language__item{
+	color: var(--color-background);
+	font-weight: 700;
+	background: none;
+	border: none;
+	cursor: pointer;
+	transition: all .4s;
+}
+
+.language__item:hover{
+	opacity: .5;
+}
+
+.social{
+	display: flex;
+	align-items: center;
+	gap: 1.5rem;
+	color: var(--color-background);
+}
+
+.social__item{
+	font-size: var(--text-large);
+	height: 2rem;
+	transition: all .4s;
+}
+
+.social__item:hover{
+	opacity: .7;
+}
+
+
+.header--transparent{
+	background-color: rgba(0, 0, 0, 0);
+	box-shadow: none;
+}
+
+.header--transparent .burger span{
+	background-color: #fff;
+}
+
+.header--transparent.header--scrolled .burger span{
+	background-color: #212529;
+}
+
+.header--transparent .menu.active a{
+	color: #212529;
+}
+
+/* белый текст */
+.header--transparent .menu a,
+.header--transparent .language__item,
+.header--transparent .logo {
+    color: #fff;
+    transition: color 0.3s ease;
+}
+.header--transparent .menu a:hover{
+	color: var(--color-primary);
+}
+
+/* иконки соцсетей если есть */
+.header--transparent i {
+    color: #fff;
+}
+
+/* ===== ПОСЛЕ СКРОЛЛА ===== */
+.header--transparent.header--scrolled {
+    background: #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* текст становится тёмным */
+.header--transparent.header--scrolled .menu a,
+.header--transparent.header--scrolled .language__item{
+    color: #212529;
+	transition: all .3s;
+}
+
+.header--transparent.header--scrolled .menu a:hover{
+	color: var(--color-primary);
+}
+
+/* иконки */
+.header--transparent.header--scrolled i {
+    color: #212529;
+}
+
+
+
+
+@media (max-width: 575px) {
+	.header__buttons{
+		flex-wrap: wrap;
+		margin-left: 4rem;
+	}
+	.header__buttons .button{
+		width: 80%;
+	}
+}
+
+
+
+
+
+

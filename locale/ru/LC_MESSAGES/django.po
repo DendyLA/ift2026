@@ -1,0 +1,372 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-12 15:56+0500\n"
+"PO-Revision-Date: 2026-01-12 17:00+0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 3.6\n"
+
+#: .\apps\about\templates\about\about.html:7
+msgid "About forum — IFT2026 | Investment to the Future of Turkmenistan"
+msgstr "О форуме - IFT2026 | Инвестиции в будущее Туркменистана"
+
+#: .\apps\about\templates\about\about.html:11
+msgid ""
+"IFT2026 — an international investment forum dedicated to the future of "
+"Turkmenistan's economy. Learn about the mission, goals, and participants of "
+"the forum."
+msgstr ""
+"IFT2026 — международный инвестиционный форум, посвященный будущему экономики "
+"Туркменистана. Узнайте больше о миссии, целях и участниках форума."
+
+#: .\apps\about\templates\about\about.html:14
+msgid "About IFT2026"
+msgstr "О IFT2026"
+
+#: .\apps\about\templates\about\about.html:18
+msgid ""
+"IFT2026 unites investors, businesses, and government agencies to unlock and "
+"advance the investment potential of Turkmenistan."
+msgstr ""
+"IFT2026 объединяет инвесторов, бизнес и государственные структуры для "
+"раскрытия и развития инвестиционного потенциала Туркменистана."
+
+#: .\apps\about\templates\about\about.html:32
+msgid "About IFT"
+msgstr "О форуме"
+
+#: .\apps\about\templates\about\about.html:41
+msgid "Established"
+msgstr "Основано"
+
+#: .\apps\about\templates\about\about.html:42
+msgid "March 2024"
+msgstr "Март 2024 года"
+
+#: .\apps\about\templates\about\about.html:45 .\apps\accounts\forms.py:148
+msgid "Address"
+msgstr "Адрес"
+
+#: .\apps\about\templates\about\about.html:46
+msgid "G.Kuliyeva Ojar Aziya. Asghabat, Turkmenistan"
+msgstr "Г.Кулиева Оджар Азия. Ашхабад, Туркменистан"
+
+#: .\apps\about\templates\about\about.html:49
+msgid "Phone"
+msgstr "Номер Телефона"
+
+#: .\apps\about\templates\about\about.html:56
+msgid ""
+"\n"
+"\t\t\t\t\tThe International Forum on Attracting Investment into the Private "
+"Sector, ‘Investing in the Future of Turkmenistan’ (IFT 2026), will take "
+"place on 18 March 2026 in Ashgabat, at the Chamber of Commerce and Industry "
+"of Turkmenistan. The Forum is organised by the Chamber of Commerce and "
+"Industry of Turkmenistan and the Union of Industrialists and Entrepreneurs "
+"of Turkmenistan, in partnership with TMT Consulting Group. IFT 2026 is "
+"designed to serve as an international platform for the comprehensive "
+"presentation of Turkmenistan’s economic and investment potential, the "
+"attraction of investment into the country’s private sector, and the "
+"expansion of mutually beneficial business ties between national and "
+"international partners. The Forum will be held in parallel with the "
+"International Exhibition of the Private Sector of Turkmenistan, enabling "
+"delegates to efficiently combine participation in two complementary events. "
+"In addition to the traditional B2B and B2G formats, opportunities for B2C "
+"engagement will also be created.\n"
+"\t\t\t\t\t"
+msgstr ""
+"\n"
+"Международный форум по привлечению инвестиций в частный сектор\n"
+"«Инвестиции в будущее Туркменистана» (IFT 2026) состоится 18 марта 2026 года "
+"в Ашхабаде, в здании Торгово-промышленной палаты Туркменистана.\n"
+"Организаторами мероприятия выступает Торгово-промышленная палата и Союз "
+"промышленников и предпринимателей Туркменистана в партнёрстве с TMT "
+"Consulting Group. \n"
+"Форум призван стать международной платформой для комплексной презентации "
+"экономического и инвестиционного потенциала Туркменистана, привлечения "
+"инвестиций в частный сектор страны, а также расширения взаимовыгодных "
+"деловых связей между национальными и зарубежными партнёрами.\n"
+"Форум IFT 2026 будет проходить параллельно с Международной выставкой "
+"частного сектора Туркменистана, что позволит делегатам эффективно объединить "
+"участие в двух взаимодополняющих мероприятиях. Дополнительно создаются "
+"условия для взаимодействия в формате B2C наряду с традиционными форматами "
+"B2B и B2G."
+
+#: .\apps\accounts\forms.py:14 .\apps\accounts\forms.py:49
+#: .\apps\accounts\forms.py:79
+msgid "Email"
+msgstr "Email"
+
+#: .\apps\accounts\forms.py:22 .\apps\accounts\forms.py:56
+msgid "Password"
+msgstr "Пароль"
+
+#: .\apps\accounts\forms.py:40
+msgid "I have read and agree to the Privacy Policy and Terms of Service"
+msgstr ""
+"Я прочитал и согласен с Политикой конфиденциальности и Условиями "
+"предоставления услуг."
+
+#: .\apps\accounts\forms.py:63 .\apps\accounts\forms.py:97
+msgid "Confirm Password"
+msgstr "Подтвердите пароль"
+
+#: .\apps\accounts\forms.py:90
+msgid "New Password"
+msgstr "Новый пароль"
+
+#: .\apps\accounts\forms.py:141
+msgid "First name"
+msgstr "Имя"
+
+#: .\apps\accounts\forms.py:142
+msgid "Last name"
+msgstr "Фамилия"
+
+#: .\apps\accounts\forms.py:143
+msgid "Father name"
+msgstr "Отчество"
+
+#: .\apps\accounts\forms.py:144
+msgid "Date of birth"
+msgstr "Дата раождения"
+
+#: .\apps\accounts\forms.py:145
+msgid "Company"
+msgstr "Компания"
+
+#: .\apps\accounts\forms.py:146
+msgid "Position"
+msgstr "Должность"
+
+#: .\apps\accounts\forms.py:147
+msgid "Country"
+msgstr "Страна"
+
+#: .\apps\accounts\forms.py:149
+msgid "Passport number"
+msgstr "Номер пасспорта"
+
+#: .\apps\accounts\forms.py:150
+msgid "Passport issue date"
+msgstr "Дата выдачи паспорта"
+
+#: .\apps\accounts\forms.py:151
+msgid "Passport expiry date"
+msgstr "Срок действия паспорта"
+
+#: .\apps\accounts\forms.py:152
+msgid "Education level"
+msgstr "Уровень образования"
+
+#: .\apps\accounts\forms.py:153
+msgid "Educational institution"
+msgstr "Учебное заведение"
+
+#: .\apps\accounts\forms.py:154
+msgid "Specialization"
+msgstr "Специальность"
+
+#: .\apps\accounts\forms.py:155
+msgid "Website"
+msgstr "Сайт"
+
+#: .\apps\accounts\forms.py:156
+msgid "Profile photo"
+msgstr "Фото профиля"
+
+#: .\apps\accounts\forms.py:157
+msgid "Passport photo"
+msgstr "Фото пасспорта"
+
+#: .\apps\accounts\forms.py:158
+msgid "Employment verification photo"
+msgstr "Фото справки о занятости"
+
+#: .\apps\accounts\forms.py:159
+msgid "Diploma photo"
+msgstr "Фото диплома"
+
+#: .\apps\accounts\forms.py:170
+msgid "Select country"
+msgstr "Выберите страну"
+
+#: .\apps\accounts\forms.py:175
+msgid "Select level"
+msgstr "Выберите уровень"
+
+#: .\apps\accounts\templates\accounts\catalog.html:30
+msgid "Change logo"
+msgstr "Изменить логотип"
+
+#: .\apps\accounts\templates\accounts\catalog.html:32
+msgid "Upload logo"
+msgstr "Загрузить лого"
+
+#: .\apps\accounts\templates\accounts\catalog.html:40
+msgid "Company Information"
+msgstr "Информация о компании"
+
+#: .\apps\accounts\templates\accounts\catalog.html:63
+msgid "Save"
+msgstr "Сохранить"
+
+#: .\apps\accounts\templates\accounts\catalog.html:66
+msgid "Back"
+msgstr "Назад"
+
+#: .\apps\accounts\templates\accounts\profile.html:30
+msgid "Change photo"
+msgstr "Изменить фото"
+
+#: .\apps\accounts\templates\accounts\profile.html:30
+msgid "Upload photo"
+msgstr "Загрузить фото"
+
+#: .\apps\accounts\templates\accounts\profile.html:72
+msgid "Your Details"
+msgstr "Ваши данные"
+
+#: .\apps\accounts\templates\accounts\profile.html:91
+msgid "File is saved:"
+msgstr "Файл сохранён:"
+
+#: .\apps\accounts\templates\accounts\profile.html:116
+msgid "Save Changes"
+msgstr "Сохранить изменения"
+
+#: .\apps\accounts\templates\accounts\profile.html:120
+msgid "Company information"
+msgstr "Информация о компании"
+
+#: .\apps\accounts\templates\accounts\profile.html:125
+#: .\apps\core\templates\core\components\header.html:78
+msgid "Log out"
+msgstr "Выйти"
+
+#: .\apps\accounts\templates\accounts\profile.html:129
+msgid "Reset Password"
+msgstr "Сбросить пароль"
+
+#: .\apps\core\templates\core\components\footer.html:29
+msgid "IFT. All rights reserved.  Ashgabat, Turkmenistan."
+msgstr "IFT. Все права защищены.  Ашхабад, Туркменистан."
+
+#: .\apps\core\templates\core\components\header.html:73
+msgid "Profile"
+msgstr "Профиль"
+
+#: .\apps\core\templates\core\components\header.html:74
+msgid "Reset password"
+msgstr "Сбросить пароль"
+
+#: .\apps\core\templates\core\components\header.html:85
+msgid "Log in"
+msgstr "Войти"
+
+#: .\apps\core\templates\core\components\header.html:86
+#: .\templates\account\login.html:41
+msgid "Sign up"
+msgstr "Зарегистрироваться"
+
+#: .\apps\core\templates\core\components\menu.html:3
+msgid "About the forum"
+msgstr "О форуме"
+
+#: .\apps\core\templates\core\components\menu.html:4
+msgid "Speakers"
+msgstr "Спикеры"
+
+#: .\apps\core\templates\core\components\menu.html:5
+msgid "News"
+msgstr "Новости"
+
+#: .\apps\core\templates\core\index.html:11
+msgid ""
+"IFT2026 — Investment to the Future of Turkmenistan. International investment "
+"forum uniting investors, business and government."
+msgstr ""
+"IFT2026 — Инвестиции в будущее Туркменистана. Международный инвестиционный "
+"форум, объединяющий инвесторов, бизнес и государство."
+
+#: .\apps\core\templates\core\index.html:15
+msgid ""
+"investment forum, Turkmenistan investment, IFT2026, business forum, economy"
+msgstr ""
+"инвестиционный форум, инвестиции в Туркменистан, IFT2026, бизнес-форум, "
+"экономика, развитие бизнеса."
+
+#: .\apps\core\templates\core\index.html:19
+msgid "IFT2026 — Investment Forum"
+msgstr "IFT2026 — Инвестиционный форум"
+
+#: .\apps\core\templates\core\index.html:33
+msgid "IFT2026 Investment in the future of Turkmenistan"
+msgstr "IFT2026 Инвестиции в будущее Туркменистана"
+
+#: .\apps\core\templates\core\index.html:34
+msgid ""
+"Join discussions, share ideas, and connect with delegates from around the "
+"world."
+msgstr ""
+"Присоединяйтесь к обсуждениям, делитесь идеями и общайтесь с делегатами со "
+"всего мира."
+
+#: .\apps\core\templates\core\index.html:36
+msgid "Official support"
+msgstr "Официальная поддержка"
+
+#: .\apps\core\templates\core\index.html:37
+msgid "Agenda"
+msgstr "Программа"
+
+#: .\apps\core\templates\core\index.html:38
+msgid "Partners"
+msgstr "Партнёры"
+
+#: .\apps\core\templates\core\index.html:50
+msgid "Details"
+msgstr "Детальнее"
+
+#: .\config\settings.py:168
+msgid "English"
+msgstr ""
+
+#: .\config\settings.py:169
+msgid "Russian"
+msgstr ""
+
+#: .\config\settings.py:170
+msgid "Turkmen"
+msgstr ""
+
+#: .\templates\account\email_confirm.html:15
+msgid "Confirm Your Email Addeess"
+msgstr "Подтвердите свой адрес электронной почты"
+
+#: .\templates\account\email_confirm.html:20
+#, python-format
+msgid ""
+"\n"
+"\t\tPlease confirm that <a href=\"mailto:%(email)s\">%(email)s</a>is an "
+"email address for user  <b>%(user_display)s</b>.\n"
+"\t\t"
+msgstr ""
+"\n"
+"\t\tПожалуйста, подтвердите, что <a href=\"mailto:%(email)s\">%(email)s</a> "
+"является адресом электронной почты пользователя  <b>%(user_display)s</b>.\n"
+"\t\t"

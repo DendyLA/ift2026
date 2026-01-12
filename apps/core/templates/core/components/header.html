@@ -1,11 +1,45 @@
 {% load static %}
 {% load i18n %}
 
-{% block extracss %}
+{% block extracss %}\
+<link rel="stylesheet" href="{% static 'core/css/menu.css' %}">
 <link rel="stylesheet" href="{% static 'core/css/header.css' %}">
 {% endblock extracss %}
 
-<header class="header">
+
+<div class="subheader">
+    <div class="container">
+		<div class="social">
+			<a target="_blank" href="https://www.instagram.com/tmt_consulting_group/" class="social__item"><i class="lni lni-instagram"></i></a>
+			<a target="_blank" href="https://www.facebook.com/profile.php?id=61572642102689&locale=ru_RU" class="social__item"><i class="lni lni-facebook"></i></a>
+			<a target="_blank" href="https://www.linkedin.com/company/tmt-consulting-group" class="social__item"><i class="lni lni-linkedin"></i></a>
+		</div>
+        <div class="language">
+            <form action="{% url 'set_language' %}" method="post">
+                {% csrf_token %}
+                <input name="next" type="hidden" value="{{ request.get_full_path }}">
+
+                {% get_current_language as CURRENT_LANGUAGE %}
+                {% get_available_languages as LANGUAGES %}
+
+                {% for lang in LANGUAGES %}
+                    <button
+                        type="submit"
+                        name="language"
+                        value="{{ lang.0 }}"
+                        class="language__item {% if lang.0 == CURRENT_LANGUAGE %}active{% endif %}">
+                        {{ lang.0|upper }}
+                    </button>
+                {% endfor %}
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% with url_name=request.resolver_match.url_name %}
+<header class="header {% if url_name == 'index' %}header--transparent{% endif %}">
+{% endwith %}
 	<div class="container">
 		<div class="header__wrapper">
 			<div class="logo"><a href={% url "core:index" %}><img class="lazy-image" data-src='{% static 'img/logo.png' %}'  alt="IFT2026" ></a></div>
@@ -22,7 +56,7 @@
 							</span>
 						{% endif %}
 					</button>
-
+					
 					<div class="header__dropdown" id="userDropdown">
 						<div class="header__dropdown-user">
 							<strong>
@@ -32,15 +66,15 @@
 									{{ user.username }}
 								{% endif %}
 							</strong>
-							<small>{{ user.email }}</small>
+							{% comment %} <small>{{ user.email }}</small> {% endcomment %}
 						</div>
 
-						<a href="{% url 'accounts:profile' %}" class="dropdown__item">Profile</a>
-						<a href="{% url 'account_reset_password' %}" class="dropdown__item">Reset password</a>
+						<a href="{% url 'accounts:profile' %}" class="dropdown__item">{% trans "Profile" %} </a>
+						<a href="{% url 'account_reset_password' %}" class="dropdown__item">{% trans "Reset password" %} </a>
 
 						<form method="post" action="{% url 'account_logout' %}" class="menu__item">
 							{% csrf_token %}
-							<button type="submit">Log out</button>
+							<button type="submit">{% trans "Log out" %} </button>
 						</form>
 					</div>
 				</div>
@@ -57,4 +91,14 @@
 
 {% block extra_js %}
 <script type="module" src="{% static 'core/js/header.js' %}"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('.header');
+    if (!header || !header.classList.contains('header--transparent')) return;
+
+    window.addEventListener('scroll', () => {
+        header.classList.toggle('header--scrolled', window.scrollY > 30);
+    });
+});
+</script>
 {% endblock extra_js %}

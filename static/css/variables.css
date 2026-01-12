@@ -1,7 +1,7 @@
 /* --- Переменные сайта --- */
 :root {
     /* Базовый размер шрифта */
-    font-size: 10px; /* 1rem = 10px */
+    font-size: clamp(6px, 0.6vw, 10px); /* 1rem = 10px */
 
     /* Шрифты */
     --font-primary: 'FixelVariable', sans-serif;

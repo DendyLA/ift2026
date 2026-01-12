@@ -23,7 +23,7 @@ class PartnershipTypeAdmin(TranslatableAdmin):
 
 
 @admin.register(Partner)
-class PartnerAdmin(admin.ModelAdmin):
+class PartnerAdmin(TranslatableAdmin):
 	list_display = ('name', 'partnership_type', 'logo')
 	list_filter = ('partnership_type',)
 

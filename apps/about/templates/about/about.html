@@ -2,16 +2,34 @@
 
 {% load static i18n%}
 
+
+{% block title %}
+	{% trans "About forum — IFT2026 | Investment to the Future of Turkmenistan" %} 
+{% endblock %}
+
+{% block meta_description %}
+	{% trans "IFT2026 — an international investment forum dedicated to the future of Turkmenistan's economy. Learn about the mission, goals, and participants of the forum." %} 
+{% endblock %}
+
+{% block og_title %}{% trans "About IFT2026" %} 
+{% endblock %}
+
+{% block og_description %}
+	{% trans "IFT2026 unites investors, businesses, and government agencies to unlock and advance the investment potential of Turkmenistan." %} 
+{% endblock %}
+
+
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'about/css/about.css' %}">
 {% endblock extra_css %}
+
 
 
 {% block content %}
 
 <section class="intro">
 	<div class="container">
-		<h1 class="intro__title title">About IFT</h1>
+		<h1 class="intro__title title">{% trans "About IFT" %} </h1>
 	</div>
 </section>
 
@@ -20,22 +38,25 @@
 		<div class="about__wrapper">
 			<div class="about__left">
 				<div class="about__item">
-					<div class="about__point">Established</div>
-					<div class="about__text">March 2024</div>
+					<div class="about__point">{% trans "Established" %} </div>
+					<div class="about__text">{% trans "March 2024" %} </div>
 				</div>
 				<div class="about__item">
-					<div class="about__point">Address</div>
-					<div class="about__text">G.Kuliyeva Ojar Aziya. Asghabat, Turkmenistan</div>
+					<div class="about__point">{% trans "Address" %} </div>
+					<div class="about__text">{% trans "G.Kuliyeva Ojar Aziya. Asghabat, Turkmenistan" %} </div>
 				</div>
 				<div class="about__item">
-					<div class="about__point">Phone</div>
+					<div class="about__point">{% trans "Phone" %} </div>
 					<a href='tel:+99312753644' class="about__text link">+993 12 75 36 44</a>
 					<a href='tel:+99312753648' class="about__text link">+993 12 75 36 48</a>
 				</div>
 			</div>
 			<div class="about__right">
 				<div class="about__descr">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, enim expedita. Quibusdam, voluptatem nisi, neque explicabo dolor nobis eos adipisci provident pariatur soluta unde cumque commodi odit placeat inventore animi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, enim expedita. Quibusdam, voluptatem nisi, neque explicabo dolor nobis eos adipisci provident pariatur soluta unde cumque commodi odit placeat inventore animi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, enim expedita. Quibusdam, voluptatem nisi, neque explicabo dolor nobis eos adipisci provident pariatur soluta unde cumque commodi odit placeat inventore animi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, enim expedita. Quibusdam, voluptatem nisi, neque explicabo dolor nobis eos adipisci provident pariatur soluta unde cumque commodi odit placeat inventore animi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, enim expedita. Quibusdam, voluptatem nisi, neque explicabo dolor nobis eos adipisci provident pariatur soluta unde cumque commodi odit placeat inventore animi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, enim expedita. Quibusdam, voluptatem nisi, neque explicabo dolor nobis eos adipisci provident pariatur soluta unde cumque commodi odit placeat inventore animi.
+					{% blocktrans %}
+					The International Forum on Attracting Investment into the Private Sector, ‘Investing in the Future of Turkmenistan’ (IFT 2026), will take place on 18 March 2026 in Ashgabat, at the Chamber of Commerce and Industry of Turkmenistan. The Forum is organised by the Chamber of Commerce and Industry of Turkmenistan and the Union of Industrialists and Entrepreneurs of Turkmenistan, in partnership with TMT Consulting Group. IFT 2026 is designed to serve as an international platform for the comprehensive presentation of Turkmenistan’s economic and investment potential, the attraction of investment into the country’s private sector, and the expansion of mutually beneficial business ties between national and international partners. The Forum will be held in parallel with the International Exhibition of the Private Sector of Turkmenistan, enabling delegates to efficiently combine participation in two complementary events. In addition to the traditional B2B and B2G formats, opportunities for B2C engagement will also be created.
+					{% endblocktrans %}
+					 
 				</div>
 			</div>
 		</div>

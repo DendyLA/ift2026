@@ -2,7 +2,7 @@
 /* partners */
 
 .partners{
-	padding: 8rem 0;
+	padding: 5rem 0;
 }
 
 .partners__wrapper{
@@ -19,7 +19,7 @@
 
 .partners__menu{
 	width: fit-content;
-	height: 5.5rem;
+	height: 7.5rem;
 	margin-top: 4rem;
 	display: flex;
 	justify-content: center;
@@ -30,10 +30,12 @@
 	border-radius: 30px;
 	color: #6a7282;
 	overflow: hidden;
+	/* padding: 4rem 0rem; */
 }
 
 .partners__item{
-	font-size: var(--text-small);
+	font-size: var(--text-large);
+	font-weight: 600;
 	width: 100%;
 	height: 100%;
 	display: flex;
@@ -41,10 +43,11 @@
 	align-items: center;
 	cursor: pointer;
 	transition: all .4s;
+	
 }
 
 .partners__item span{
-	padding: 2rem 4rem;
+	padding: 0rem 6rem;
 }
 
 .partners__item.active{
@@ -70,6 +73,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	cursor: pointer;
 }
 
 .partners__img{
@@ -95,7 +99,9 @@
     flex-shrink: 0;
 }
 
-
+.partners__name{
+	text-align: center;
+}
 
 .partners__img--gold {
 

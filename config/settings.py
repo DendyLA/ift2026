@@ -34,6 +34,7 @@ CORE_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+	'django.contrib.sitemaps',
 ]
 
 THIRD_APPS = [
@@ -152,6 +153,10 @@ ACCOUNT_FORMS = {
 }
 
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://ift2026.com",
+    "https://www.ift2026.com",
+]
 
 
 # Internationalization
@@ -185,6 +190,9 @@ USE_L10N = True
 LOCALE_PATHS = [
     BASE_DIR / 'locale',
 ]
+
+LANGUAGE_COOKIE_NAME = 'django_language'
+LANGUAGE_COOKIE_AGE = 60 * 60 * 24 * 365  # 1 год
 
 
 # Static files (CSS, JavaScript, Images)

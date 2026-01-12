@@ -27,7 +27,7 @@
 						<label class="profile__img-overlay">
 							<input type="file" name="photo" id="id_photo" accept="image/*">
 							<span class="profile__img-text">
-								{% if user.profile.photo %}Change photo{% else %}Upload photo{% endif %}
+								{% if user.profile.photo %}{% trans "Change photo" %} {% else %}{% trans "Upload photo" %} {% endif %}
 							</span>
 						</label>
 					</div>
@@ -88,7 +88,7 @@
 									{% with file_obj=user.profile|attr:field.name %}
 										{% if file_obj %}
 											<div class="profile__file-saved">
-												Файл сохранён: <a href="{{ file_obj.url }}" target="_blank">{{ file_obj.name|cut:"media/" }}</a>
+												{% trans "File is saved:" %} <a href="{{ file_obj.url }}" target="_blank">{{ file_obj.name|cut:"media/" }}</a>
 											</div>
 										{% endif %}
 									{% endwith %}
@@ -117,16 +117,16 @@
                 </button>
 
             </form>
-			<a href="{% url 'accounts:catalog_edit' %}" class="button profile__btn"> Company information </a>
+			<a href="{% url 'accounts:catalog_edit' %}" class="button profile__btn">{% trans "Company information" %}  </a>
 			<div class="profile__btns">
 				<form method="post" action="{% url 'account_logout' %}">
 					{% csrf_token %}
 					<button type="submit" class="button profile__logout-btn">
-						Выйти
+						{% trans "Log out" %}
 					</button>
 				</form>
 
-				<a href="{% url 'account_reset_password' %}" class="button profile__reset-btn">Сбросить пароль</a>
+				<a href="{% url 'account_reset_password' %}" class="button profile__reset-btn">{% trans "Reset Password" %} </a>
 
 			</div>
 
@@ -134,3 +134,9 @@
     </div>
 </section>
 {% endblock %}
+
+
+
+{% block extra_js %}
+<script src="{% static 'accounts/js/profile.js' %}"></script>
+{% endblock extra_js %}

@@ -38,6 +38,7 @@
                 <button type="submit" class="auth__btn button">
                     {% trans "Sign In" %}
                 </button>
+				<span class='exist' >{% trans "Don’t have an account?" %}  <a href="{% url 'account_signup' %}" class="link-green">{% trans "Sign up" %} </a> </span>
 
                 <!-- Общие ошибки формы (например, неверный пароль) -->
                 {% if form.non_field_errors %}

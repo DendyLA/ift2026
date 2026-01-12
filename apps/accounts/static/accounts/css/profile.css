@@ -162,3 +162,10 @@
 	background: none;
   	color: var(--color-primary);
 }
+
+
+@media (max-width: 575px) {
+	.profile__row{
+		flex-direction: column;
+	}
+}

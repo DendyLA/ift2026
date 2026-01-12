@@ -16,20 +16,21 @@ class ProfileAdmin(admin.ModelAdmin):
 		"country",
 		"company",
 		"position",
-		'download_pdf'
 	)
 
 	# Фильтры справа
 	list_filter = (
-		"country",
-		"education_degree",
+		"country",                # фильтр по стране
+		"education_degree",       # фильтр по образованию
+		"has_paid_delegate_fee",  # фильтр по оплате делегатского взноса
+		"visa_processed",         # фильтр по обработке визы
 	)
 
 	# Поиск сверху
 	search_fields = (
 		"user__username",
-		"first_name",
-		"last_name",
+		"first_name",   # поиск по имени
+		"last_name",    # поиск по фамилии
 		"company",
 	)
 
@@ -89,6 +90,9 @@ class ProfileAdmin(admin.ModelAdmin):
 		("Дополнительно", {
 			"fields": ("website",)
 		}),
+		("Корпоративная информация", {
+			"fields": ("has_paid_delegate_fee", "visa_processed")
+		}),
 	)
 
 	def photo_preview(self, obj):
@@ -106,14 +110,6 @@ class ProfileAdmin(admin.ModelAdmin):
 		]
 		return custom_urls + urls
 
-	def download_pdf(self, obj):
-		# ключевое: target="_blank" помогает браузеру скачать
-		return format_html(
-			'<a href="{}" target="_blank">📄 Скачать PDF</a>', 
-			f'{obj.id}/pdf/'
-		)
-
-	download_pdf.short_description = "Анкета"
 
 	photo_preview.short_description = "Превью фото"
 

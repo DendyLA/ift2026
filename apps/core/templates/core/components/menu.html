@@ -1,6 +1,23 @@
+{% load i18n %}
 <ul class="menu">
-	<li class="menu__item"><a class="link" href="{% url "about:about" %}">About us</a></li>
-	<li class="menu__item"><a class="link" href="#">Agenda</a></li>
-	<li class="menu__item"><a class="link" href="#">Speakers</a></li>
-	<li class="menu__item"><a class="link" href="#">News</a></li>
+	<li class="menu__item"><a class="link" href="{% url "about:about" %}">{% trans "About the forum" %} </a></li>
+	<li class="menu__item"><a class="link" href="#">{% trans "Speakers" %} </a></li>
+	<li class="menu__item"><a class="link" href="#">{% trans "News" %} </a></li>
 </ul>
+<button class="burger" id="burger" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
+
+
+<script>
+	const burger = document.getElementById('burger');
+	const menu = document.querySelector('.menu');
+
+	burger.addEventListener('click', () => {
+		burger.classList.toggle('active');
+		menu.classList.toggle('active');
+	});
+</script>

@@ -1,6 +1,11 @@
+.main{
+	padding-top: 0;
+}
+
 .intro{
-	height: 85vh;
+	height: 100vh;
 	position: relative;
+
 }
 
 .intro__video{
@@ -11,16 +16,18 @@
 	height: 100%;
 	object-fit: cover;
 	z-index: 1;
-	filter: brightness(0.5);
+	filter: brightness(0.8);
 }
 
 .intro .container{
+	padding-top: 25rem;
 	position: relative;
 	z-index: 2;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
+	align-items: center;
 	gap: 1rem;
 }
 
@@ -28,16 +35,34 @@
 	color: var(--color-primary);
 	font-size: 7rem;
 	font-weight: 700;
+	text-align: center;
 }
 
 .intro__subtitle{
 	color: var(--color-light);
 }
 
-.intro__button{
-	margin-top: 4rem;
-	width: 24rem;
+.intro__buttons{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 3rem;
+	flex-wrap: wrap;
 }
+
+.intro__button{
+	/* width: 20rem; */
+	background: none;
+  	color: var(--color-primary);
+}
+
+.intro__button:hover{
+	background-color: var(--color-primary);
+	color: var(--color-light);
+}
+
+
+
 
 
 .about{
@@ -71,7 +96,7 @@
 
 .about__descr{
 	font-size: var(--text-large);
-	width: 60%;
+	text-align: justify;
 }
 
 .about__btn{
@@ -112,3 +137,80 @@
 	border-radius: 2rem;
 }
 
+
+
+/* popup */
+.popup-overlay {
+	display: none; /* скрыто по умолчанию */
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+	justify-content: center;
+	align-items: center;
+	z-index: 9999;
+}
+
+.popup-content {
+	background: #fff;
+	padding: 30px;
+	border-radius: 8px;
+	max-width: 400px;
+	width: 90%;
+	text-align: center;
+	position: relative;
+}
+
+.popup-close {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	background: none;
+	border: none;
+	font-size: 24px;
+	cursor: pointer;
+}
+
+
+
+
+
+
+@media (max-width: 400px) {
+	
+}
+/* ===== LARGE MOBILE ===== */
+@media (max-width: 576px) {
+	.about__wrapper{
+		flex-direction: column;
+	}
+	.about__tabs{
+		flex-direction: row;
+		position: static;
+		width: 100%;
+		height: 100%;
+	}
+	.about__tab{
+		position: static;
+		filter: none;
+		transform: none !important;
+	}
+	.partners__menu{
+		width: 100% !important;
+		padding-left: 1rem;
+	}
+	.partners__item{
+		font-size: 1.2rem !important;
+	}
+	.partners__item span {
+		padding: 2rem .5rem !important;
+	}
+}
+
+@media (max-width: 1400px) {
+	.intro__video{
+		object-fit: none;
+	}
+}

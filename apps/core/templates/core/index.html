@@ -7,6 +7,22 @@
 <link rel="stylesheet" href="{% static 'core/css/partners.css' %}">
 {% endblock extra_css %}
 
+{% block meta_description %}
+	{% trans "IFT2026 — Investment to the Future of Turkmenistan. International investment forum uniting investors, business and government." %} 
+{% endblock %}
+
+{% block meta_keywords %}
+ 	{% trans "investment forum, Turkmenistan investment, IFT2026, business forum, economy" %} 
+{% endblock %}
+
+{% block og_title %}
+	{% trans "IFT2026 — Investment Forum" %} 
+{% endblock %}
+
+{% block og_description %}
+{% endblock %}
+
+
 {% block content %}
 <section class="intro">
 	<video class="intro__video" autoplay muted loop playsinline >
@@ -14,9 +30,13 @@
 </video>
 
 	<div class="container">
-		<h1 class="intro__title">Welcome to IFT2026</h1>
-		<p class="intro__subtitle">Join discussions, share ideas, and connect with delegates from around the world.</p>
-		<a href="{% url 'account_signup' %}" class="button intro__button">Get Started</a>
+		<h1 class="intro__title">{% trans "IFT2026 Investment in the future of Turkmenistan" %} </h1>
+		<p class="intro__subtitle">{% trans "Join discussions, share ideas, and connect with delegates from around the world." %} </p>
+		<div class="intro__buttons">
+			<a href="" class="intro__button button">{% trans "Official support" %}</a>
+			<a href="" class="intro__button button">{% trans "Agenda" %} </a>
+			<a href="#partners" class="intro__button button">{% trans "Partners" %} </a>
+		</div>
 	</div>
 </section>
 
@@ -27,7 +47,7 @@
 			<div class="about__content">
 				<h3 class="about__title title">{{ about.title }}</h3>
 				<div class="about__descr">{{ about.description|safe }}</div>
-				<a href="{% url "about:about" %}" class="button about__btn">Details</a>
+				<a href="{% url "about:about" %}" class="button about__btn">{% trans "Details" %} </a>
 			</div>
 			<div class="about__tabs">
 				{% for tab in tabs %}
@@ -40,10 +60,10 @@
 	</div>
 </section>
 
-<section class="partners">
+<section class="partners" id="partners">
 	<div class="container">
 		<div class="partners__wrapper">
-			<h4 class="title partners__title">Partners</h4>
+			{% comment %} <h4 class="title partners__title">{% trans "Partners" %} </h4> {% endcomment %}
 			<div class="partners__top">
 				<ul class="partners__menu">
 					{% for type in partnership_types %}
@@ -58,7 +78,7 @@
 			<div class="partners__bottom swiper">
 				<div class="partners__list swiper-wrapper">
 					{% for partner in partnership_types.0.partners.all %}
-						<div class="partners__list-item swiper-slide">
+						<a class="partners__list-item swiper-slide" href="{{ partner.link }}">
 							
 							<img 
 								src="{{ partner.logo.url }}" 
@@ -71,7 +91,7 @@
 
 							<div class="partners__name">{{ partner.name }}</div>
 
-						</div>
+						</a>
 					{% endfor %}
 				</div>
 
@@ -97,12 +117,24 @@
 </section> {% endcomment %}
 
 
+{% if user.is_authenticated %}
+<div id="profile-popup" class="popup-overlay">
+	<div class="popup-content">
+		<button id="close-popup" class="popup-close">&times;</button>
+		<h2>Заполните профиль</h2>
+		<p>Чтобы учавствовать в форуме, пожалуйста, заполните информацию о себе.</p>
+		<a href="{% url 'accounts:profile' %}" class="button">Перейти к профилю</a>
+	</div>
+</div>
+{% endif %}
+
 
 
 {% endblock content %}
 
 {% block extra_js %}
 <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'core/js/popup.js' %}"></script>
 <script src="{% static 'core/js/index.js' %}"></script>
 
 
@@ -145,7 +177,8 @@ document.addEventListener('DOMContentLoaded', function () {
             1200: { slidesPerView: 5 },
             992:  { slidesPerView: 4 },
             768:  { slidesPerView: 3 },
-            480:  { slidesPerView: 1 }
+            480:  { slidesPerView: 2 },
+			320: { slidesPerView: 1 },
         },
 
         watchOverflow: true,

@@ -70,24 +70,8 @@ class Profile(models.Model):
 	passport_copy = models.FileField(upload_to=passport_copy_path, blank=True, null=True, verbose_name="Копия паспорта", help_text="Загрузите скан вашего паспорта")
 	employment_verification = models.FileField(upload_to=employment_verification_path, blank=True, null=True, verbose_name="Справка с работы", help_text="Загрузите подтверждение занятости")
 	diploma_scan = models.FileField(upload_to=diploma_scan_path,blank=True, null=True, verbose_name="Скан диплома", help_text="Загрузите скан вашего диплома")
-
-
-	def render_file_link(self, field):
-		file_field = getattr(self, field)
-		if not file_field:
-			return "-"
-		ext = os.path.splitext(file_field.name)[1].lower()
-		file_path = file_field.path.replace("\\", "/")  # на Windows важно заменить слэши
-		if ext in [".jpg", ".jpeg", ".png", ".gif"]:
-			return format_html(
-				'<img src="file://{}" alt="{}" style="max-width:150px;">',
-				file_path, os.path.basename(file_field.name)
-			)
-		else:
-			return format_html(
-				'<a href="file://{}" download>{}</a>',
-				file_path, os.path.basename(file_field.name)
-			)
+	has_paid_delegate_fee = models.BooleanField( default=False, verbose_name="Оплатил делегатский взнос")
+	visa_processed = models.BooleanField( default=False, verbose_name="Подача на визу обработана")
 
 
 

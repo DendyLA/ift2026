@@ -12,13 +12,13 @@
 
 
 <div class="auth__wrapper container confirm">
-	<h1 class="confirm__mail title">Confirm Your Email Addeess</h1>
+	<h1 class="confirm__mail title">{% trans "Confirm Your Email Addeess" %} </h1>
 	{% if confirmation %}
 	{% user_display confirmation.email_address.user as user_display %}
 	{% if can_confirm %}
 	<p>
 		{% blocktrans with confirmation.email_address.email as email %}
-		Please confirm that <a href="mailto:{{ email }}">{{ email }}</a> is an email address for user <b>{{ user_display }}</b>.
+		Please confirm that <a href="mailto:{{ email }}">{{ email }}</a>is an email address for user  <b>{{ user_display }}</b>.
 		{% endblocktrans %}
 	</p>
 	{% endif %}
@@ -26,7 +26,7 @@
 
 	<form  method="post">
 			{% csrf_token %}
-		<button class='auth__btn button' type="submit">Confirm EMail</button>
+		<button class='auth__btn button' type="submit">{% trans "Confirm Email" %} </button>
 	</form>
 </div>
 

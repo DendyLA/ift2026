@@ -8,6 +8,7 @@
 	justify-content: center;
 	align-items: center;
 	gap: 4rem;
+	padding: 7rem 0;
 }
 
 .auth__form{
@@ -73,7 +74,7 @@
 /* verification */
 
 .verif__btn{
-	width: 25rem;
+	/* width: 25rem; */
 }
 
 
@@ -96,3 +97,6 @@
 	align-items: center;
 	gap: 2rem;
 }
+
+
+

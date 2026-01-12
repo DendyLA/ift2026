@@ -1,6 +1,6 @@
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
     gap: 20px;
 	margin-top: 10rem;
 }
@@ -20,4 +20,11 @@
 
 .gallery__item:hover .gallery__img {
     transform: scale(1.05);
+}
+
+
+@media (max-width: 450px) {
+	.gallery{
+		grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+	}
 }

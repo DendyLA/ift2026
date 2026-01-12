@@ -7,19 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Title -->
-    <title>{% block title %}IFT2026{% endblock %}</title>
+    <title>{% block title %}IFT2026 — Investment to the Future of Turkmenistan{% endblock %}</title>
 
-    <!-- Meta description (SEO) -->
-    <meta name="description" content="{% block meta_description %}Welcome to My Forum - join discussions, share ideas, and connect with delegates.{% endblock %}">
+    <meta name="description" content="{% block meta_description %}{% endblock %}">
+    <meta name="keywords" content="investment forum, Turkmenistan, IFT2026, business, economy">
 
-    <!-- Meta keywords (не критично, но иногда полезно) -->
-    <meta name="keywords" content="{% block meta_keywords %}forum, delegates, discussion, registration{% endblock %}">
-
-    <!-- Open Graph (для соцсетей) -->
+    <!-- Open Graph -->
     <meta property="og:title" content="{% block og_title %}IFT2026{% endblock %}">
-    <meta property="og:description" content="{% block og_description %}Welcome to IFT2026 - join discussions, share ideas, and connect with delegates.{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}{% endblock %}">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{% block og_url %}{{ request.build_absolute_uri }}{% endblock %}">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
     <meta property="og:image" content="{% block og_image %}{% static 'img/og_image.png' %}{% endblock %}">
 
 
@@ -41,6 +38,7 @@
 	<link rel="stylesheet" href="{% static 'css/reset.css' %}">
 	<link rel="stylesheet" href="{% static 'css/container.css' %}">
     <link rel="stylesheet" href="{% static 'css/variables.css' %}">
+	<link rel="stylesheet" href="{% static 'css/lineicons.css' %}">
 	<link rel="stylesheet" href="{% static 'core/css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/global.css' %}">
 

@@ -8,13 +8,14 @@
 
 <div class="gallery">
     {% for item in gallery %}
-        <a href="{{ item.image.url }}"
+        <a href="{{ item.image_compressed.url }}"
            data-fancybox="gallery"
            class="gallery__item">
            
             <img src="{{ item.image_compressed.url }}"
                  alt=""
-                 class="gallery__img">
+                 class="gallery__img"
+				 lazyload="true">
         </a>
     {% endfor %}
 </div>
