@@ -1,0 +1,53 @@
+{% extends "core/base.html" %}
+
+{% load static i18n%}
+
+
+{% block title %}
+	{% trans "News — IFT2026 | Investment to the Future of Turkmenistan" %} 
+{% endblock %}
+
+{% block meta_description %}
+	{% trans "IFT2026 — an international investment forum dedicated to the future of Turkmenistan's economy. Learn about the mission, goals, and participants of the forum." %} 
+{% endblock %}
+
+{% block og_title %}{% trans "About IFT2026" %} 
+{% endblock %}
+
+{% block og_description %}
+	{% trans "IFT2026 unites investors, businesses, and government agencies to unlock and advance the investment potential of Turkmenistan." %} 
+{% endblock %}
+
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'news/css/news.css' %}">
+{% endblock extra_css %}
+
+
+
+{% block content %}
+
+<section class="intro">
+	<div class="container">
+		<h1 class="intro__title title">{% trans "News" %} </h1>
+	</div>
+</section>
+
+<section class="news">
+	<div class="container">
+		<div class="news__wrapper">
+			<div class="news__item">
+				<div class="news__top"><img src="" alt="" class="news__img"></div>
+				<div class="news__bottom">
+					<div class="news__date"></div>
+					<h5 class="news__title"></h5>
+					<a href="" class="news__link"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock content %}
+
+
+{% block extra_js %}{% endblock extra_js %}

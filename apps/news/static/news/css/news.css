@@ -1,0 +1,15 @@
+.intro{
+	padding: 4rem;
+	height: 20vh;
+	background-image: url('../img/bg.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+.intro__title{
+	
+	color: #fff;
+}

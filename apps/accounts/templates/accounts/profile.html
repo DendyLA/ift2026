@@ -3,6 +3,7 @@
 {% load custom_filters %}
 
 {% block extra_css %}
+<link rel="stylesheet" href="{% static 'accounts/css/visa_checkbox.css' %}">
 <link rel="stylesheet" href="{% static 'accounts/css/profile.css' %}">
 {% endblock extra_css %}
 
@@ -31,6 +32,7 @@
 							</span>
 						</label>
 					</div>
+					<div class="profile__help">{% trans "The photo must be 3x4." %}</div>
                     <div class="profile__basic">
                         <div class="profile__row">
                             <div class="profile__field-top fl-label">
@@ -70,11 +72,28 @@
                     </div>
                 </div>
 				<h3 class="profile__title">{% trans "Your Details" %}</h3>
+
+				<div class="profile__visa-toggle">
+					<span class="profile__visa-title">
+						{% trans "Do you need a visa?" %}
+					</span>
+					<div class="checkbox-wrapper-55">
+						<label class="rocker rocker-small">
+							{{ form.need_visa }}
+							 {% comment %} <label for="{{ form.need_visa.id_for_label }}">
+								{{ form.need_visa.label }}
+							</label> {% endcomment %}
+							<span class="switch-left">{% trans "Yes" %}</span>
+							<span class="switch-right">{% trans "No" %}</span>
+						</label>
+					</div>
+				</div>
+
               	<!-- ===== BOTTOM ===== -->
 				<div class="profile__bottom">
-
+					
 					{% for field in form %}
-						{% if field.name not in "first_name last_name father_name birth_date photo" %}
+						{% if field.name not in "first_name last_name father_name birth_date photo  need_visa" %}
 							<div class="profile__field fl-label">
 
 								<!-- input и label сразу -->
@@ -112,7 +131,7 @@
 
 
 
-                <button type="submit" class="button profile__btn">
+                <button type="submit" class="button profile__btn profile__btn_save">
                     {% trans "Save Changes" %}
                 </button>
 

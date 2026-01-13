@@ -6,6 +6,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 4rem;
+	position: relative;
 }
 
 .profile__top{
@@ -13,12 +14,29 @@
 	gap: 5rem;
 }
 
+.profile__help{
+	position: absolute;
+	top: -5rem;
+	color: var(--color-secondary);
+	font-size: var(--text-small);
+	background-color: #fff;
+	border-radius: 2rem;
+	padding: 1rem 2rem;
+	filter: drop-shadow(0px 0px 0.2rem rgba(0, 0, 0, 0.3));
+	opacity: 0;
+	transition: all .4s;
+}
+
+.profile__img:hover + .profile__help{
+	opacity: 1;
+}
+
 .profile__img{
 	position: relative;
 	border: 1px solid var(--color-body);
 	border-radius: 100%;
 	width: 20rem;
-	height: 18rem;
+	height: 17rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -153,6 +171,12 @@
 	margin-top: 2rem;
 }
 
+.profile__btn_save{
+	position: sticky;
+	bottom: 2rem;
+	padding: 2rem 0;
+}
+
 .profile__form textarea {
 	height: 35rem;
     resize: none;
@@ -164,8 +188,23 @@
 }
 
 
+#id_need_visa{
+	width: max-content;
+}
+
+.profile__visa-toggle{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 2rem;
+}
+
+
 @media (max-width: 575px) {
 	.profile__row{
 		flex-direction: column;
+	}
+	.profile__img{
+		height: 13rem;
 	}
 }

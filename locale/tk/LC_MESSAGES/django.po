@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-12 15:56+0500\n"
-"PO-Revision-Date: 2026-01-12 17:02+0500\n"
+"POT-Creation-Date: 2026-01-13 15:36+0500\n"
+"PO-Revision-Date: 2026-01-13 15:40+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: tk\n"
@@ -58,7 +58,7 @@ msgstr "Esaslandyralan"
 msgid "March 2024"
 msgstr "2024 Mart"
 
-#: .\apps\about\templates\about\about.html:45 .\apps\accounts\forms.py:148
+#: .\apps\about\templates\about\about.html:45 .\apps\accounts\forms.py:157
 msgid "Address"
 msgstr "Salgysy"
 
@@ -134,83 +134,87 @@ msgstr "Açar sözüni tassyklamak "
 msgid "New Password"
 msgstr "Täze açar söz"
 
-#: .\apps\accounts\forms.py:141
+#: .\apps\accounts\forms.py:113
+msgid "Visa "
+msgstr "Wiza"
+
+#: .\apps\accounts\forms.py:150
 msgid "First name"
 msgstr "Ady"
 
-#: .\apps\accounts\forms.py:142
+#: .\apps\accounts\forms.py:151
 msgid "Last name"
 msgstr "Familiýasy"
 
-#: .\apps\accounts\forms.py:143
+#: .\apps\accounts\forms.py:152
 msgid "Father name"
 msgstr "Atasynyň ady"
 
-#: .\apps\accounts\forms.py:144
+#: .\apps\accounts\forms.py:153
 msgid "Date of birth"
 msgstr "Doglan senesi"
 
-#: .\apps\accounts\forms.py:145
+#: .\apps\accounts\forms.py:154
 msgid "Company"
 msgstr "Kompaniýanyň ady"
 
-#: .\apps\accounts\forms.py:146
+#: .\apps\accounts\forms.py:155
 msgid "Position"
 msgstr "Wezipesi"
 
-#: .\apps\accounts\forms.py:147
+#: .\apps\accounts\forms.py:156
 msgid "Country"
 msgstr "Ýurdy"
 
-#: .\apps\accounts\forms.py:149
+#: .\apps\accounts\forms.py:158
 msgid "Passport number"
 msgstr "Pasport belgisi"
 
-#: .\apps\accounts\forms.py:150
+#: .\apps\accounts\forms.py:159
 msgid "Passport issue date"
 msgstr "Berilen senesi"
 
-#: .\apps\accounts\forms.py:151
+#: .\apps\accounts\forms.py:160
 msgid "Passport expiry date"
 msgstr "Möhletiniň tamamlanýan senesi"
 
-#: .\apps\accounts\forms.py:152
+#: .\apps\accounts\forms.py:161
 msgid "Education level"
 msgstr "Bilim derejesi"
 
-#: .\apps\accounts\forms.py:153
+#: .\apps\accounts\forms.py:162
 msgid "Educational institution"
 msgstr "Okuw jaýynyň ady"
 
-#: .\apps\accounts\forms.py:154
+#: .\apps\accounts\forms.py:163
 msgid "Specialization"
 msgstr "Ugry"
 
-#: .\apps\accounts\forms.py:155
+#: .\apps\accounts\forms.py:164
 msgid "Website"
 msgstr "Web sahypasy"
 
-#: .\apps\accounts\forms.py:156
+#: .\apps\accounts\forms.py:165
 msgid "Profile photo"
 msgstr "Suraty"
 
-#: .\apps\accounts\forms.py:157
+#: .\apps\accounts\forms.py:166
 msgid "Passport photo"
 msgstr "Pasport nusgasy"
 
-#: .\apps\accounts\forms.py:158
+#: .\apps\accounts\forms.py:167
 msgid "Employment verification photo"
 msgstr "Iş ýerinden kepilnama nusgasy"
 
-#: .\apps\accounts\forms.py:159
+#: .\apps\accounts\forms.py:168
 msgid "Diploma photo"
 msgstr "Diplom nusgasy"
 
-#: .\apps\accounts\forms.py:170
+#: .\apps\accounts\forms.py:179
 msgid "Select country"
 msgstr "Ýurdy saýla"
 
-#: .\apps\accounts\forms.py:175
+#: .\apps\accounts\forms.py:184
 msgid "Select level"
 msgstr "Derejäni saýla"
 
@@ -234,36 +238,54 @@ msgstr "Ýatda sakla"
 msgid "Back"
 msgstr "Yza"
 
-#: .\apps\accounts\templates\accounts\profile.html:30
+#: .\apps\accounts\templates\accounts\profile.html:31
 msgid "Change photo"
 msgstr "Saýla"
 
-#: .\apps\accounts\templates\accounts\profile.html:30
+#: .\apps\accounts\templates\accounts\profile.html:31
 msgid "Upload photo"
 msgstr "Surat ýükle"
 
-#: .\apps\accounts\templates\accounts\profile.html:72
+#: .\apps\accounts\templates\accounts\profile.html:35
+msgid "The photo must be 3x4."
+msgstr ""
+
+#: .\apps\accounts\templates\accounts\profile.html:74
 msgid "Your Details"
 msgstr "Şahsy maglumat"
 
-#: .\apps\accounts\templates\accounts\profile.html:91
+#: .\apps\accounts\templates\accounts\profile.html:78
+msgid "Do you need a visa?"
+msgstr "Wiza size gerekmi?"
+
+#: .\apps\accounts\templates\accounts\profile.html:87
+#: .\venv\Lib\site-packages\django\forms\widgets.py:870
+msgid "Yes"
+msgstr ""
+
+#: .\apps\accounts\templates\accounts\profile.html:88
+#: .\venv\Lib\site-packages\django\forms\widgets.py:871
+msgid "No"
+msgstr ""
+
+#: .\apps\accounts\templates\accounts\profile.html:111
 msgid "File is saved:"
 msgstr "Ýatda saklandy"
 
-#: .\apps\accounts\templates\accounts\profile.html:116
+#: .\apps\accounts\templates\accounts\profile.html:136
 msgid "Save Changes"
 msgstr "Üýtgetmäni ýatda sakla "
 
-#: .\apps\accounts\templates\accounts\profile.html:120
+#: .\apps\accounts\templates\accounts\profile.html:140
 msgid "Company information"
 msgstr "Kompaniýa barada maglumat"
 
-#: .\apps\accounts\templates\accounts\profile.html:125
+#: .\apps\accounts\templates\accounts\profile.html:145
 #: .\apps\core\templates\core\components\header.html:78
 msgid "Log out"
 msgstr "Çykyş"
 
-#: .\apps\accounts\templates\accounts\profile.html:129
+#: .\apps\accounts\templates\accounts\profile.html:149
 msgid "Reset Password"
 msgstr "Açar sözüni täzele"
 
@@ -317,7 +339,7 @@ msgstr ""
 
 #: .\apps\core\templates\core\index.html:19
 msgid "IFT2026 — Investment Forum"
-msgstr ""
+msgstr "IFT2026 — Maýa goýum forumy"
 
 #: .\apps\core\templates\core\index.html:33
 msgid "IFT2026 Investment in the future of Turkmenistan"
@@ -348,15 +370,15 @@ msgstr "Hyzmatdaşlarymyz"
 msgid "Details"
 msgstr "Giňişleýin"
 
-#: .\config\settings.py:168
+#: .\config\settings.py:169
 msgid "English"
 msgstr "Iňlisçe"
 
-#: .\config\settings.py:169
+#: .\config\settings.py:170
 msgid "Russian"
 msgstr "Rusça"
 
-#: .\config\settings.py:170
+#: .\config\settings.py:171
 msgid "Turkmen"
 msgstr "Türkmençe"
 
@@ -1200,14 +1222,6 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\forms\widgets.py:869
 msgid "Unknown"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\forms\widgets.py:870
-msgid "Yes"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\forms\widgets.py:871
-msgid "No"
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\tasks\base.py:34

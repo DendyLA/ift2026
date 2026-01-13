@@ -1,13 +1,14 @@
 from django.contrib import admin
 from django.utils.html import format_html
 from django.urls import path
-from .views import profile_pdf_view
+from import_export.admin import ExportMixin
 
 from .models import Profile, CatalogEntry
-
+from .admin_resources import ProfileResource
 
 @admin.register(Profile)
-class ProfileAdmin(admin.ModelAdmin):
+class ProfileAdmin(ExportMixin, admin.ModelAdmin):
+	resource_class = ProfileResource
 	# Что видно в списке
 	list_display = (
 		"user",
@@ -16,6 +17,7 @@ class ProfileAdmin(admin.ModelAdmin):
 		"country",
 		"company",
 		"position",
+		'need_visa'
 	)
 
 	# Фильтры справа
@@ -24,6 +26,7 @@ class ProfileAdmin(admin.ModelAdmin):
 		"education_degree",       # фильтр по образованию
 		"has_paid_delegate_fee",  # фильтр по оплате делегатского взноса
 		"visa_processed",         # фильтр по обработке визы
+		'need_visa'
 	)
 
 	# Поиск сверху
@@ -36,7 +39,7 @@ class ProfileAdmin(admin.ModelAdmin):
 
 	# Поля только для чтения
 	readonly_fields = ("photo_preview",)
-
+	ordering = ("country", "last_name", "first_name", 'need_visa')
 	# Группировка полей (ВАЖНО для красоты)
 	fieldsets = (
 		("Пользователь", {
@@ -88,7 +91,7 @@ class ProfileAdmin(admin.ModelAdmin):
 		}),
 
 		("Дополнительно", {
-			"fields": ("website",)
+			"fields": ("website",'need_visa')
 		}),
 		("Корпоративная информация", {
 			"fields": ("has_paid_delegate_fee", "visa_processed")
@@ -102,13 +105,7 @@ class ProfileAdmin(admin.ModelAdmin):
 				obj.photo.url
 			)
 		return "Нет фото"
-    
-	def get_urls(self):
-		urls = super().get_urls()
-		custom_urls = [
-			path('<int:profile_id>/pdf/', self.admin_site.admin_view(profile_pdf_view), name='profile-pdf')
-		]
-		return custom_urls + urls
+
 
 
 	photo_preview.short_description = "Превью фото"

@@ -1,0 +1,149 @@
+/* ===============================
+   VISA SWITCH (Django compatible)
+   =============================== */
+
+.profile__visa-toggle {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.profile__visa-title {
+    font-weight: 500;
+    font-size: 14px;
+    color: #333;
+    white-space: nowrap;
+}
+
+/* === BASE WRAPPER === */
+.checkbox-wrapper-55 *,
+.checkbox-wrapper-55 *::before,
+.checkbox-wrapper-55 *::after {
+    box-sizing: border-box;
+}
+
+/* === HIDE NATIVE CHECKBOX (IMPORTANT) === */
+.checkbox-wrapper-55 input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* === ROCKER SWITCH === */
+.checkbox-wrapper-55 .rocker {
+    display: inline-block;
+    position: relative;
+    font-size: 0.75em;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    width: 7em;
+    height: 4em;
+    color: #888;
+    cursor: pointer;
+    overflow: hidden;
+    border-bottom: 0.5em solid #eee;
+}
+
+/* BACKGROUND */
+.checkbox-wrapper-55 .rocker::before {
+    content: "";
+    position: absolute;
+    inset: 0.5em 0 0;
+    background-color: #999;
+    border: 0.5em solid #eee;
+    border-bottom: 0;
+}
+
+/* === BUTTONS === */
+.checkbox-wrapper-55 .switch-left,
+.checkbox-wrapper-55 .switch-right {
+    position: absolute;
+    bottom: 0;
+    width: 3em;
+    height: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    transition: 0.2s ease;
+}
+
+/* LEFT */
+.checkbox-wrapper-55 .switch-left {
+    left: 0.85em;
+    bottom: 0.4em;
+    width: 2.75em;
+    height: 2.4em;
+    background-color: #ddd;
+    transform: rotate(15deg) skewX(15deg);
+}
+
+/* RIGHT */
+.checkbox-wrapper-55 .switch-right {
+    right: 0.5em;
+    background-color: #bd5757;
+    color: #fff;
+}
+
+/* DECOR */
+.checkbox-wrapper-55 .switch-left::before,
+.checkbox-wrapper-55 .switch-right::before {
+    content: "";
+    position: absolute;
+    width: 0.4em;
+    height: 2.45em;
+    bottom: -0.45em;
+    background-color: #ccc;
+}
+
+.checkbox-wrapper-55 .switch-left::before {
+    left: -0.4em;
+    transform: skewY(-65deg);
+}
+
+.checkbox-wrapper-55 .switch-right::before {
+    right: -0.375em;
+    transform: skewY(65deg);
+    background-color: transparent;
+}
+
+/* === CHECKED STATE === */
+.checkbox-wrapper-55 input:checked + .switch-left {
+    left: 0.5em;
+    bottom: 0;
+    width: 3em;
+    height: 2.5em;
+    background-color: #0084d0;
+    color: #fff;
+    transform: rotate(0deg) skewX(0deg);
+}
+
+.checkbox-wrapper-55 input:checked + .switch-left::before {
+    width: 3.083em;
+    background-color: transparent;
+}
+
+.checkbox-wrapper-55 input:checked + .switch-left + .switch-right {
+    right: 0.8em;
+    bottom: 0.4em;
+    width: 2.75em;
+    height: 2.4em;
+    background-color: #ddd;
+    color: #888;
+    transform: rotate(-15deg) skewX(-15deg);
+}
+
+.checkbox-wrapper-55 input:checked + .switch-left + .switch-right::before {
+    background-color: #ccc;
+}
+
+/* === ACCESSIBILITY === */
+.checkbox-wrapper-55 input:focus + .switch-left {
+    outline: 2px solid #aaa;
+}
+
+.checkbox-wrapper-55 input:checked:focus + .switch-left {
+    outline-color: #0084d0;
+}

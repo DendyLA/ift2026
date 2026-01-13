@@ -30,39 +30,6 @@ def profile_view(request):
 
 
 
-def profile_pdf_view(request, profile_id):
-    profile = get_object_or_404(Profile, id=profile_id)
-
-    # нормализуем пути файлов
-    def file_path_url(file_field):
-        if file_field:
-            # абсолютный путь и заменяем \ на /
-            return os.path.abspath(file_field.path).replace("\\", "/")
-        return None
-
-    context = {
-        "profile": profile,
-        "photo_path": file_path_url(profile.photo),
-        "passport_copy_path": file_path_url(profile.passport_copy),
-        "employment_verification_path": file_path_url(profile.employment_verification),
-        "diploma_scan_path": file_path_url(profile.diploma_scan),
-    }
-
-    html = render_to_string("accounts/admin/profile_pdf.html", context)
-
-    config = pdfkit.configuration(
-        wkhtmltopdf=r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"
-    )
-
-    pdf = pdfkit.from_string(html, False, configuration=config, options={
-        "enable-local-file-access": True
-    })
-
-    response = HttpResponse(pdf, content_type="application/pdf")
-    response['Content-Disposition'] = f'attachment; filename="profile_{profile.user.username}.pdf"'
-    return response
-
-
 
 @login_required
 def catalog_edit_view(request):

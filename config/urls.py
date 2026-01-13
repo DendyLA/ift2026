@@ -27,6 +27,7 @@ sitemaps = {
 urlpatterns = [
     path("robots.txt", robots_txt),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
+     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('i18n/', include('django.conf.urls.i18n')),  # для смены языка через POST
 ]
 
@@ -37,6 +38,7 @@ urlpatterns += i18n_patterns(
     path('', include(('apps.core.urls', 'core'), namespace='core')),  # namespace
 	path('profile/', include(('apps.accounts.urls', 'accounts'), namespace='accounts')),
     path('about/', include(('apps.about.urls', 'about'), namespace='about')),
+     path('news/', include(('apps.news.urls', 'news'), namespace='news')),
     
 )
 

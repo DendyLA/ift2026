@@ -46,12 +46,14 @@ THIRD_APPS = [
     'django_cleanup.apps.CleanupConfig',
 	'django_countries',
 	'ckeditor',
+	'import_export',
 ]
 
 LOCAL_APPS = [
 	'apps.core',
 	'apps.accounts.apps.AccountsConfig',
 	'apps.about',
+	'apps.news'
 ]
 
 INSTALLED_APPS = CORE_APPS + THIRD_APPS + LOCAL_APPS
@@ -88,7 +90,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'config.wsgi.application'
-
+SITE_DOMAIN = "https://ift2026.com"
 
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases

@@ -73,7 +73,12 @@ class Profile(models.Model):
 	has_paid_delegate_fee = models.BooleanField( default=False, verbose_name="Оплатил делегатский взнос")
 	visa_processed = models.BooleanField( default=False, verbose_name="Подача на визу обработана")
 
-
+	# ===== VISA =====
+	need_visa = models.BooleanField(
+		default=False,
+		verbose_name="Needs visa",
+		help_text="Does the user require a visa"
+	)
 
 	def __str__(self):
 		return f"{self.user.username} Profile"

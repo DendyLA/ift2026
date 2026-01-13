@@ -108,7 +108,15 @@ class CustomPasswordResetFromKeyForm(ResetPasswordKeyForm):
 # apps/accounts/forms.py
 
 class ProfileForm(forms.ModelForm):
-
+    need_visa = forms.BooleanField(
+        required=False,
+        label=_("Visa "),
+        widget=forms.CheckboxInput(attrs={
+            "class": "profile__input",
+            "id": "id_need_visa"
+        })
+    )
+	
     class Meta:
         model = Profile
         exclude = ['user', 'has_paid_delegate_fee', 'visa_processed']
@@ -133,6 +141,7 @@ class ProfileForm(forms.ModelForm):
             'employment_verification': forms.FileInput(attrs={'class': 'profile__input'}),
             'diploma_scan': forms.FileInput(attrs={'class': 'profile__input'}),
         }
+
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -174,6 +183,7 @@ class ProfileForm(forms.ModelForm):
             edu_choices.pop(0)
         self.fields['education_degree'].choices = [('', _("Select level"))] + edu_choices
         
+
 
 
 class CatalogEntryForm(forms.ModelForm):
