@@ -5,7 +5,7 @@
 .intro{
 	height: 100vh;
 	position: relative;
-
+	background-color: var(--color-dark);
 }
 
 .intro__video{

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-13 15:36+0500\n"
-"PO-Revision-Date: 2026-01-13 15:40+0500\n"
+"POT-Creation-Date: 2026-01-14 15:58+0500\n"
+"PO-Revision-Date: 2026-01-14 16:01+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: tk\n"
@@ -24,6 +24,8 @@ msgid "About forum — IFT2026 | Investment to the Future of Turkmenistan"
 msgstr "Forum barada — IFT2026 | Türkmenistanyň geljegine maýa goýumlary"
 
 #: .\apps\about\templates\about\about.html:11
+#: .\apps\news\templates\news\news.html:11
+#: .\apps\news\templates\news\news_detail.html:11
 msgid ""
 "IFT2026 — an international investment forum dedicated to the future of "
 "Turkmenistan's economy. Learn about the mission, goals, and participants of "
@@ -34,10 +36,14 @@ msgstr ""
 "barada has giňişleýin öwreniň."
 
 #: .\apps\about\templates\about\about.html:14
+#: .\apps\news\templates\news\news.html:14
+#: .\apps\news\templates\news\news_detail.html:14
 msgid "About IFT2026"
 msgstr "IFT2026 barada — Türkmenistanyň geljegine maýa goýumlary"
 
 #: .\apps\about\templates\about\about.html:18
+#: .\apps\news\templates\news\news.html:18
+#: .\apps\news\templates\news\news_detail.html:18
 msgid ""
 "IFT2026 unites investors, businesses, and government agencies to unlock and "
 "advance the investment potential of Turkmenistan."
@@ -58,7 +64,7 @@ msgstr "Esaslandyralan"
 msgid "March 2024"
 msgstr "2024 Mart"
 
-#: .\apps\about\templates\about\about.html:45 .\apps\accounts\forms.py:157
+#: .\apps\about\templates\about\about.html:45 .\apps\accounts\forms.py:160
 msgid "Address"
 msgstr "Salgysy"
 
@@ -138,83 +144,83 @@ msgstr "Täze açar söz"
 msgid "Visa "
 msgstr "Wiza"
 
-#: .\apps\accounts\forms.py:150
+#: .\apps\accounts\forms.py:153
 msgid "First name"
 msgstr "Ady"
 
-#: .\apps\accounts\forms.py:151
+#: .\apps\accounts\forms.py:154
 msgid "Last name"
 msgstr "Familiýasy"
 
-#: .\apps\accounts\forms.py:152
+#: .\apps\accounts\forms.py:155
 msgid "Father name"
 msgstr "Atasynyň ady"
 
-#: .\apps\accounts\forms.py:153
+#: .\apps\accounts\forms.py:156
 msgid "Date of birth"
 msgstr "Doglan senesi"
 
-#: .\apps\accounts\forms.py:154
+#: .\apps\accounts\forms.py:157
 msgid "Company"
 msgstr "Kompaniýanyň ady"
 
-#: .\apps\accounts\forms.py:155
+#: .\apps\accounts\forms.py:158
 msgid "Position"
 msgstr "Wezipesi"
 
-#: .\apps\accounts\forms.py:156
+#: .\apps\accounts\forms.py:159
 msgid "Country"
 msgstr "Ýurdy"
 
-#: .\apps\accounts\forms.py:158
+#: .\apps\accounts\forms.py:161
 msgid "Passport number"
 msgstr "Pasport belgisi"
 
-#: .\apps\accounts\forms.py:159
+#: .\apps\accounts\forms.py:162
 msgid "Passport issue date"
 msgstr "Berilen senesi"
 
-#: .\apps\accounts\forms.py:160
+#: .\apps\accounts\forms.py:163
 msgid "Passport expiry date"
 msgstr "Möhletiniň tamamlanýan senesi"
 
-#: .\apps\accounts\forms.py:161
+#: .\apps\accounts\forms.py:164
 msgid "Education level"
 msgstr "Bilim derejesi"
 
-#: .\apps\accounts\forms.py:162
+#: .\apps\accounts\forms.py:165
 msgid "Educational institution"
 msgstr "Okuw jaýynyň ady"
 
-#: .\apps\accounts\forms.py:163
+#: .\apps\accounts\forms.py:166
 msgid "Specialization"
 msgstr "Ugry"
 
-#: .\apps\accounts\forms.py:164
+#: .\apps\accounts\forms.py:167
 msgid "Website"
 msgstr "Web sahypasy"
 
-#: .\apps\accounts\forms.py:165
+#: .\apps\accounts\forms.py:168
 msgid "Profile photo"
 msgstr "Suraty"
 
-#: .\apps\accounts\forms.py:166
+#: .\apps\accounts\forms.py:169
 msgid "Passport photo"
 msgstr "Pasport nusgasy"
 
-#: .\apps\accounts\forms.py:167
+#: .\apps\accounts\forms.py:170
 msgid "Employment verification photo"
 msgstr "Iş ýerinden kepilnama nusgasy"
 
-#: .\apps\accounts\forms.py:168
+#: .\apps\accounts\forms.py:171
 msgid "Diploma photo"
 msgstr "Diplom nusgasy"
 
-#: .\apps\accounts\forms.py:179
+#: .\apps\accounts\forms.py:182
 msgid "Select country"
 msgstr "Ýurdy saýla"
 
-#: .\apps\accounts\forms.py:184
+#: .\apps\accounts\forms.py:187
 msgid "Select level"
 msgstr "Derejäni saýla"
 
@@ -248,7 +254,7 @@ msgstr "Surat ýükle"
 
 #: .\apps\accounts\templates\accounts\profile.html:35
 msgid "The photo must be 3x4."
-msgstr ""
+msgstr "Foto 3x4 bolmaly"
 
 #: .\apps\accounts\templates\accounts\profile.html:74
 msgid "Your Details"
@@ -272,22 +278,30 @@ msgstr ""
 msgid "File is saved:"
 msgstr "Ýatda saklandy"
 
-#: .\apps\accounts\templates\accounts\profile.html:136
+#: .\apps\accounts\templates\accounts\profile.html:137
 msgid "Save Changes"
 msgstr "Üýtgetmäni ýatda sakla "
 
-#: .\apps\accounts\templates\accounts\profile.html:140
+#: .\apps\accounts\templates\accounts\profile.html:141
 msgid "Company information"
 msgstr "Kompaniýa barada maglumat"
 
-#: .\apps\accounts\templates\accounts\profile.html:145
+#: .\apps\accounts\templates\accounts\profile.html:146
 #: .\apps\core\templates\core\components\header.html:78
 msgid "Log out"
 msgstr "Çykyş"
 
-#: .\apps\accounts\templates\accounts\profile.html:149
+#: .\apps\accounts\templates\accounts\profile.html:150
 msgid "Reset Password"
 msgstr "Açar sözüni täzele"
+
+#: .\apps\accounts\templates\accounts\profile.html:160
+msgid "File is too large. Maximum size is 15 MB."
+msgstr "Faýl çakdan aşa uly. Iň uly ölçeg — 15 MB."
+
+#: .\apps\accounts\validators.py:9
+msgid "File size must not exceed 15 MB."
+msgstr "Faýlyň ölçegi 15 MB-dan geçmeli däldir."
 
 #: .\apps\core\templates\core\components\footer.html:29
 msgid "IFT. All rights reserved.  Ashgabat, Turkmenistan."
@@ -319,6 +333,7 @@ msgid "Speakers"
 msgstr "Çykyş edýänler"
 
 #: .\apps\core\templates\core\components\menu.html:5
+#: .\apps\news\templates\news\news.html:32
 msgid "News"
 msgstr "Habarlar"
 
@@ -370,15 +385,32 @@ msgstr "Hyzmatdaşlarymyz"
 msgid "Details"
 msgstr "Giňişleýin"
 
-#: .\config\settings.py:169
+#: .\apps\news\templates\news\news.html:7
+#: .\apps\news\templates\news\news_detail.html:7
+msgid "News — IFT2026 | Investment to the Future of Turkmenistan"
+msgstr "Forum barada — IFT2026 | Türkmenistanyň geljegine maýa goýumlary"
+
+#: .\apps\news\templates\news\news.html:47
+msgid "Read more"
+msgstr "Dowamy"
+
+#: .\apps\news\templates\news\news.html:52
+msgid "No news yet"
+msgstr "Şindizelikçe täzelik ýok"
+
+#: .\apps\news\templates\news\news_detail.html:50
+msgid "Latest news"
+msgstr "Soňky täzelikler"
+
+#: .\config\settings.py:170
 msgid "English"
 msgstr "Iňlisçe"
 
-#: .\config\settings.py:170
+#: .\config\settings.py:171
 msgid "Russian"
 msgstr "Rusça"
 
-#: .\config\settings.py:171
+#: .\config\settings.py:172
 msgid "Turkmen"
 msgstr "Türkmençe"
 

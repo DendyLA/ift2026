@@ -1,0 +1,72 @@
+{% extends "core/base.html" %}
+
+{% load static i18n%}
+
+
+{% block title %}
+	{% trans "News — IFT2026 | Investment to the Future of Turkmenistan" %} 
+{% endblock %}
+
+{% block meta_description %}
+	{% trans "IFT2026 — an international investment forum dedicated to the future of Turkmenistan's economy. Learn about the mission, goals, and participants of the forum." %} 
+{% endblock %}
+
+{% block og_title %}{% trans "About IFT2026" %} 
+{% endblock %}
+
+{% block og_description %}
+	{% trans "IFT2026 unites investors, businesses, and government agencies to unlock and advance the investment potential of Turkmenistan." %} 
+{% endblock %}
+
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'news/css/news_detail.css' %}">
+<link rel="stylesheet" href="{% static 'news/css/news.css' %}">
+{% endblock extra_css %}
+
+
+
+{% block content %}
+
+<section class="intro" style="background-image: url({% static 'img/bg.png' %});">
+	<div class="container">
+		<h1 class="intro__title title">{{ news.title }} </h1>
+	</div>
+</section>
+
+<section class="detail">
+	<div class="container">
+		<div class="detail__wrapper">
+			<div class="detail__left">
+				<div class="detail__img">
+					<img src="{% if news.image %}{{ news.image_preview.url }}{% else %}{% static 'img/noPhoto.jpg' %}{% endif %}" alt="{{ news.title }}">
+				</div>
+				<div class="detail__date">{{ news.date }}</div>
+				<h1 class="detail__title">{{ news.title }}</h1>
+				<div class="detail__text">{{ news.content|safe }}</div>
+			</div>
+			<div class="detail__right">
+				<div class="latest__wrapper">
+					<div class="latest__top">{% trans "Latest news" %}</div>
+					<div class="latest__bottom">
+						{% for ln in latest_news %}
+						<div class="latest__item">
+							<a href={% url 'news:detail' slug=ln.slug %} class="latest__img"><img src="{% if ln.image %}{{ ln.image_preview.url }}{% else %}{% static 'img/noPhoto.jpg' %}{% endif %}" alt="{{ ln.title }}"></a>
+							<div class="latest__content">
+								<div class="latest__date">{{ ln.date|date:"d.m.Y" }}</div>
+								<a href={% url 'news:detail' slug=ln.slug %}  class="latest__title">{{ ln.title }}</a>
+							</div>
+						</div>
+						{% endfor %}
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock content %}
+
+
+{% block extra_js %}{% endblock extra_js %}

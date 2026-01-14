@@ -78,7 +78,7 @@
 			<div class="partners__bottom swiper">
 				<div class="partners__list swiper-wrapper">
 					{% for partner in partnership_types.0.partners.all %}
-						<a class="partners__list-item swiper-slide" href="{{ partner.link }}">
+						<a class="partners__list-item swiper-slide" href="{{ partner.link }}" target="_blank">
 							
 							<img 
 								src="{{ partner.logo.url }}" 

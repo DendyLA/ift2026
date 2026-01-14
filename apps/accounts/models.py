@@ -1,6 +1,7 @@
 # apps/accounts/models.py
 from django.db import models
 import os
+from .validators import validate_file_size
 from datetime import datetime
 from django.utils.html import format_html
 from django.utils.text import slugify
@@ -66,13 +67,14 @@ class Profile(models.Model):
 	website = models.URLField(blank=True, null=True, verbose_name="Веб-сайт", help_text="Если есть личный сайт или компания")
 
 	# Файлы
-	photo = models.ImageField(upload_to=photo_path, blank=True, null=True, verbose_name="Фото", help_text="Загрузите ваше фото")
-	passport_copy = models.FileField(upload_to=passport_copy_path, blank=True, null=True, verbose_name="Копия паспорта", help_text="Загрузите скан вашего паспорта")
-	employment_verification = models.FileField(upload_to=employment_verification_path, blank=True, null=True, verbose_name="Справка с работы", help_text="Загрузите подтверждение занятости")
-	diploma_scan = models.FileField(upload_to=diploma_scan_path,blank=True, null=True, verbose_name="Скан диплома", help_text="Загрузите скан вашего диплома")
+	photo = models.ImageField(upload_to=photo_path, blank=True, null=True, verbose_name="Фото", help_text="Загрузите ваше фото", validators=[validate_file_size],)
+	passport_copy = models.FileField(upload_to=passport_copy_path, blank=True, null=True, verbose_name="Копия паспорта", help_text="Загрузите скан вашего паспорта", validators=[validate_file_size],)
+	employment_verification = models.FileField(upload_to=employment_verification_path, blank=True, null=True, verbose_name="Справка с работы", help_text="Загрузите подтверждение занятости", validators=[validate_file_size],)
+	diploma_scan = models.FileField(upload_to=diploma_scan_path,blank=True, null=True, verbose_name="Скан диплома", help_text="Загрузите скан вашего диплома", validators=[validate_file_size],)
+     
+	 #info
 	has_paid_delegate_fee = models.BooleanField( default=False, verbose_name="Оплатил делегатский взнос")
 	visa_processed = models.BooleanField( default=False, verbose_name="Подача на визу обработана")
-
 	# ===== VISA =====
 	need_visa = models.BooleanField(
 		default=False,

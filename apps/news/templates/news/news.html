@@ -27,7 +27,7 @@
 
 {% block content %}
 
-<section class="intro">
+<section class="intro" style="background-image: url({% static 'img/bg.png' %});">
 	<div class="container">
 		<h1 class="intro__title title">{% trans "News" %} </h1>
 	</div>
@@ -36,14 +36,23 @@
 <section class="news">
 	<div class="container">
 		<div class="news__wrapper">
+			{% for news in news  %}
 			<div class="news__item">
-				<div class="news__top"><img src="" alt="" class="news__img"></div>
+				<a href="{% url 'news:detail' slug=news.slug %}" class="news__top">
+					<img src="{% if news.image %}{{ news.image_preview.url }}{% else %}{% static 'img/noPhoto.jpg' %}{% endif %}" alt="{{ news.title }}" class="news__img" loading="lazy">
+				</a>
 				<div class="news__bottom">
-					<div class="news__date"></div>
-					<h5 class="news__title"></h5>
-					<a href="" class="news__link"></a>
+					<div class="news__date">{{ news.date }}</div>
+					<h5 class="news__title"><a href="{% url 'news:detail' slug=news.slug %}">{{ news.title }}</a></h5>
+					<a href="{% url 'news:detail' slug=news.slug %}" class="news__link">{% trans "Read more" %}<i class="lni lni-arrow-right"></i></a>
 				</div>
 			</div>
+			{% empty %}
+			<div class="news__empty">
+				{% trans "No news yet" %}
+			</div>
+			{% endfor %}
+			
 		</div>
 	</div>
 </section>

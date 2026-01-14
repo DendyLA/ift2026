@@ -115,13 +115,13 @@
 
 
 								<!-- Ошибки -->
-								{% if field.errors %}
+								{% comment %} {% if field.errors %}
 									<div class="profile__error">
 										{% for error in field.errors %}
 											{{ error }}
 										{% endfor %}
 									</div>
-								{% endif %}
+								{% endif %} {% endcomment %}
 
 							</div>
 						{% endif %}
@@ -152,6 +152,15 @@
         </div>
     </div>
 </section>
+
+<div id="fileErrorPopup" class="file-popup">
+    <div class="file-popup__content">
+        <span id="fileErrorText">{% trans 'File is too large. Maximum size is 15 MB.' %}</span>
+        <button type="button" class="file-popup__close">&times;</button>
+    </div>
+</div>
+
+
 {% endblock %}
 
 
