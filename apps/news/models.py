@@ -32,6 +32,7 @@ class News(TranslatableModel):
 	)
 	slug = models.SlugField(max_length=255, unique=True, blank=True)
 
+
 	class Meta:
 		ordering = ['-date']
 		verbose_name = "News"

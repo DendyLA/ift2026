@@ -60,6 +60,67 @@
 	</div>
 </section>
 
+
+<section class="news">
+	<div class="container">
+		<div class="news__top">
+			<div class="news__title title">{% trans "Latest News" %}</div>
+			<div class="news__btn">
+				<a href="{% url "news:news" %}" class="button">{% trans "More News & Insights" %}</a>
+			</div>
+			
+		</div>
+		
+		<div class="news__wrapper">
+			<div class="news__left">
+				{% if latest_news %}
+					{% for news in latest_news %}
+						<div class="news__item">
+							<a href="{% url 'news:detail' slug=news.slug %}" class="news__img">
+								<img 
+									src="{% if news.image %}{{ news.image_preview.url }}{% else %}{% static 'img/noPhoto.jpg' %}{% endif %}" 
+									alt="{{ news.title }}" 
+									loading="lazy">
+							</a>
+							<div class="news__name">
+								<div class="news__date">{{ news.date }}</div>
+								<a href="{% url 'news:detail' slug=news.slug %}">{{ news.title }}</a>
+							</div>
+							{% comment %} <div class="news__descr">
+								{{ news.content|truncatewords:30|safe }}
+							</div> {% endcomment %}
+						</div>
+					{% endfor %}
+				{% else %}
+					<p>{% trans "No news available at the moment." %}</p>
+				{% endif %}
+			</div>
+			<div class="news__right">
+				{% if more_news %}
+					{% with news=more_news.0 %}
+						<div class="news__img">
+							<a href="{% url 'news:detail' slug=news.slug %}">
+								<img 
+									src="{% if news.image %}{{ news.image_preview.url }}{% else %}{% static 'img/noPhoto.jpg' %}{% endif %}" 
+									alt="{{ news.title }}" 
+									loading="lazy">
+							</a>
+						</div>
+						<div class="news__name">
+							<div class="news__date">{{ news.date|date:"d.m.Y" }}</div>
+							<a href="{% url 'news:detail' slug=news.slug %}">{{ news.title }}</a>
+						</div>
+					{% endwith %}
+				{% else %}
+					<p>{% trans "No news available." %}</p>
+				{% endif %}
+			</div>
+
+			
+		</div>
+	</div>
+</section>
+
 <section class="partners" id="partners">
 	<div class="container">
 		<div class="partners__wrapper">
