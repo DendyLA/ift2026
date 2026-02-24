@@ -8,6 +8,7 @@ from django.utils.text import slugify
 from django.contrib.auth.models import User
 from django_countries.fields import CountryField
 import uuid
+from phonenumber_field.modelfields import PhoneNumberField
 
 def user_file_path(instance, filename, folder):
     # определяем пользователя через профиль
@@ -47,7 +48,8 @@ class Profile(models.Model):
 		('bachelor', "Bachelor's"),
 		('master', "Master's"),
 		('phd', "PhD"),
-		('other', "Other"),
+		('secondary', "Secondary"),
+		('secondary_professional', 'Secondary professional'),
 	]
     # Персональные данные
 	first_name = models.CharField(max_length=100, verbose_name="Имя", help_text="Введите ваше имя")  
@@ -65,7 +67,12 @@ class Profile(models.Model):
 	education_institute = models.CharField(max_length=255, blank=True, null=True, verbose_name="Учебное заведение", help_text="Название университета или колледжа")
 	specialization = models.CharField(max_length=255, blank=True, null=True, verbose_name="Специализация", help_text="Ваша специализация или факультет")
 	website = models.URLField(blank=True, null=True, verbose_name="Веб-сайт", help_text="Если есть личный сайт или компания")
-
+	phone = PhoneNumberField(
+        blank=True,
+        null=True,
+        verbose_name="Номер телефона",
+        help_text="Укажите номер в международном формате, например: +99361234567"
+    )
 	# Файлы
 	photo = models.ImageField(upload_to=photo_path, blank=True, null=True, verbose_name="Фото", help_text="Загрузите ваше фото", validators=[validate_file_size],)
 	passport_copy = models.FileField(upload_to=passport_copy_path, blank=True, null=True, verbose_name="Копия паспорта", help_text="Загрузите скан вашего паспорта", validators=[validate_file_size],)

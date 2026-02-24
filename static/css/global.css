@@ -94,7 +94,7 @@ p {
     position: absolute;
     top: 1rem;
     left: 1rem;
-    font-size: var(--text-small);
+    font-size: var(--text-size);
     color: #777;
     pointer-events: none; 
     transition: 0.2s ease all; 

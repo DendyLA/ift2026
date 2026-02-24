@@ -54,6 +54,7 @@ class ProfileAdmin(ExportMixin, admin.ModelAdmin):
 				"birth_date",
 				"country",
 				"address",
+				"phone",
 			)
 		}),
 
@@ -109,15 +110,24 @@ class ProfileAdmin(ExportMixin, admin.ModelAdmin):
 
 
 	photo_preview.short_description = "Превью фото"
+	
+	# 🔹 Исключаем staff и superuser из списка в админке
+	def get_queryset(self, request):
+		qs = super().get_queryset(request)
+		return qs.exclude(user__is_staff=True).exclude(user__is_superuser=True)
 
+	# 🔹 Исключаем staff и superuser при экспорте
+	def get_export_queryset(self, request):
+		qs = super().get_export_queryset(request)
+		return qs.exclude(user__is_staff=True).exclude(user__is_superuser=True)
 
 
 
 
 @admin.register(CatalogEntry)
 class CatalogEntryAdmin(admin.ModelAdmin):
-	list_display = ('id', 'description', "photo_preview", 'created_at', 'updated_at')
-	list_display_links = ('id', 'description', "photo_preview",)
+	list_display = ('profile',  'description', "photo_preview", 'created_at', 'updated_at')
+	list_display_links = ('profile', 'description', "photo_preview",)
 	readonly_fields = ('created_at', 'updated_at')
 
 	def photo_preview(self, obj):

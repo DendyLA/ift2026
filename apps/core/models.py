@@ -75,6 +75,12 @@ class Partner(TranslatableModel):
 		related_name='partners'
 	)
 
+	order = models.PositiveIntegerField(
+        default=0,
+        verbose_name="Порядок",
+        help_text="Чем меньше число — тем выше отображается"
+    )
+
 	level = models.ForeignKey(
 		PartnerLevel,
 		on_delete=models.SET_NULL,
@@ -94,3 +100,71 @@ class Partner(TranslatableModel):
 
 
 
+class FileResource(TranslatableModel):
+    """
+    Модель для PDF-файлов вроде брошюр и тревел-гайдов.
+    Каждый файл можно загрузить отдельно для разных языков.
+    """
+    translations = TranslatedFields(
+        name=models.CharField(max_length=255, blank=True, null=True),
+        description=models.TextField(blank=True, null=True),
+        file=models.FileField(
+            upload_to='files/',
+            blank=True,
+            null=True,
+            help_text="Upload a PDF file for this language"
+        )
+    )
+
+    RESOURCE_TYPE_CHOICES = [
+        ('brochure', 'Brochure'),
+        ('travel_guide', 'Travel Guide'),
+		('off_support', 'Official Support'),
+		('meet_req', 'Meeting Request'),
+		('investment', 'Investors Guide '),
+    ]
+    resource_type = models.CharField(
+        max_length=50,
+        choices=RESOURCE_TYPE_CHOICES,
+        default='brochure'
+    )
+
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "File Resource"
+        verbose_name_plural = "File Resources"
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return self.safe_translation_getter('name', any_language=True) or str(self.id)
+
+
+
+
+
+def sector_image_path(instance, filename):
+    # загружаем изображения в папку sectors
+    import os, uuid
+    base, ext = os.path.splitext(filename)
+    unique = uuid.uuid4().hex[:8]
+    return f"sectors/{base}_{unique}{ext}"
+
+class Sector(TranslatableModel):
+    translations = TranslatedFields(
+        name=models.CharField(max_length=150, verbose_name="Название сектора"),
+        description=models.TextField(verbose_name="Описание сектора", blank=True, null=True)
+    )
+    image = models.ImageField(upload_to=sector_image_path, verbose_name="Фото сектора", blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name="Дата обновления")
+
+    class Meta:
+        verbose_name = "Сектор"
+        verbose_name_plural = "Секторы"
+        ordering = ['id']
+
+    def __str__(self):
+        return self.safe_translation_getter('name', any_language=True) or "Сектор"

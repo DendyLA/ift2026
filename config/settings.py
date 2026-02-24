@@ -47,13 +47,15 @@ THIRD_APPS = [
 	'django_countries',
 	'ckeditor',
 	'import_export',
+	"phonenumber_field",
 ]
 
 LOCAL_APPS = [
 	'apps.core',
 	'apps.accounts.apps.AccountsConfig',
 	'apps.about',
-	'apps.news'
+	'apps.news',
+	'apps.speakers',
 ]
 
 INSTALLED_APPS = CORE_APPS + THIRD_APPS + LOCAL_APPS

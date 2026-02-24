@@ -3,8 +3,12 @@
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}" />
-<link rel="stylesheet" href="{% static 'core/css/index.css' %}">
 <link rel="stylesheet" href="{% static 'core/css/partners.css' %}">
+<link rel="stylesheet" href="{% static 'core/css/stat.css' %}">
+<link rel="stylesheet" href="{% static 'core/css/speakers.css' %}">
+<link rel="stylesheet" href="{% static 'core/css/counter.css' %}">
+<link rel="stylesheet" href="{% static 'core/css/index.css' %}">
+
 {% endblock extra_css %}
 
 {% block meta_description %}
@@ -31,11 +35,93 @@
 
 	<div class="container">
 		<h1 class="intro__title">{% trans "IFT2026 Investment in the future of Turkmenistan" %} </h1>
-		<p class="intro__subtitle">{% trans "Join discussions, share ideas, and connect with delegates from around the world." %} </p>
+		<p class="intro__subtitle">{% trans "18 March, Asghabat" %} </p>
 		<div class="intro__buttons">
-			<a href="" class="intro__button button">{% trans "Official support" %}</a>
+			{% if off_support %}
+				<a href="{{ off_support.0.file.url }}" class="intro__button button" target="_blank">{% trans "Official support" %}</a>
+			{% endif %}
+			
 			<a href="" class="intro__button button">{% trans "Agenda" %} </a>
-			<a href="#partners" class="intro__button button">{% trans "Partners" %} </a>
+			{% if brochures %}
+				<a href="{{ brochures.0.file.url }}" class="intro__button button" target="_blank">
+					{% trans "Brochure" %}
+				</a>
+			{% endif %}
+			{% if travel_guides %}
+				<a href="{{ travel_guides.0.file.url }}" class="intro__button button" target="_blank">
+					{% trans "Travel Guide" %}
+				</a>
+			{% endif %}
+			{% if meet_req %}
+				<a href="{{ meet_req.0.file.url }}" class="intro__button button" target="_blank">
+					{% trans "Meeting Request" %}
+				</a>
+			{% endif %}
+			{% if investment %}
+				<a href="{{ investment.0.file.url }}" class="intro__button button" target="_blank">
+					{% trans "Investment Guide" %}
+				</a>
+			{% endif %}
+			
+
+			
+		</div>
+
+		<div class="registration-counter">
+			<div class="counter-item">
+				<span class="days">0</span>
+				<div class="label">Days</div>
+			</div>
+			<div class="counter-item">
+				<span class="hours">0</span>
+				<div class="label">Hours</div>
+			</div>
+			<div class="counter-item">
+				<span class="minutes">0</span>
+				<div class="label">Minutes</div>
+			</div>
+			<div class="counter-item">
+				<span class="seconds">0</span>
+				<div class="label">Seconds</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="stat">
+	<div class="container">
+		<div class="stat__wrapper">
+			<div class="stat__left">
+				<h3 class="stat__title title">{% trans "Investing in the Future of Turkmenistan" %} </h3>
+				<div class="stat__descr">{% trans "IFT is a platform where vision becomes action. By connecting capital, expertise, and ambition, we foster strategic investments, empower emerging sectors, and create new pathways for economic growth and long-term prosperity in Turkmenistan." %}</div>
+				<a href="{% url "account_signup" %}" class="button stat__btn">{% trans "Become a Delegate" %}</a>
+			</div>
+			<div class="stat__box">
+				
+			</div>
+			<div class="stat__right">
+				<div class="stat__item">
+					<div class="stat__info">500+</div>
+					<div class="stat__name">{% trans "Delegates" %}</div>
+				</div>
+				<div class="stat__item">
+					<div class="stat__info">21+</div>
+					<div class="stat__name">{% trans "Memorandums Signed" %}</div>
+				</div>
+				<div class="stat__item">
+					<div class="stat__info">6</div>
+					<div class="stat__name">{% trans "Strategic Sectors" %}</div>
+				</div>
+				<div class="stat__item">
+					<div class="stat__info">400+</div>
+					<div class="stat__name">{% trans "Companies" %}</div>
+				</div>
+				<div class="stat__item">
+					<div class="stat__info">187+</div>
+					<div class="stat__name">{% trans "Business Meetings" %}</div>
+				</div>
+				<div class="stat__extra"><span>*</span>{% trans "Results of IFT 2025" %} </div>
+			</div>
 		</div>
 	</div>
 </section>
@@ -61,12 +147,69 @@
 </section>
 
 
+<div class="investment">
+	<div class="container">
+		<div class="investment__wrapper">
+			
+		</div>
+	</div>
+</div>
+
+
+<section class="speakers">
+	<div class="container">
+		{% if speakers %}
+			<h3 class="speakers__title title">{% trans "Speakers" %}</h3>
+
+			<div class="speakers__wrapper">
+				{% for sp in speakers %}
+					<a href="#" class="speakers__item">
+						<img src="{% if sp.photo %}{{ sp.photo_small.url }}{% else %}{% static 'img/noPhoto.jpg' %}{% endif %}" alt="{{ sp.name }}" class="speakers__img">
+						<img src="{% if sp.logo %}{{ sp.logo.url }}{% else %}{% static 'img/earth.png' %}{% endif %}" alt="" class="speakers__logo">
+						<div class="speakers__box">
+							<div class="speakers__name">{{ sp.name }}</div>
+							{% comment %} <div class="speakers__position">{{ sp.position }}</div>	 {% endcomment %}
+						</div>
+						{% comment %} <div class="speakers__session">{% if sp.session %}{{ sp.session }}{% endif %}</div> {% endcomment %}
+					</a>
+				{% endfor %}
+			</div>
+		{% endif %}
+
+	</div>
+</section>
+
+
+<section class="delegates" id="delegates">
+    <div class="container">
+        <h3 class="title">{% trans "Participants" %}</h3>
+
+        <div class="delegates__slider swiper">
+            <div class="swiper-wrapper">
+                {% for item in catalog_entries %}
+                    {% if item.img %}
+                        <div class="swiper-slide delegates__slide">
+                            <img class='delegates__img' src="{{ item.img.url }}" alt="Company Logo">
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+            <div class="swiper-button-prev delegates-prev"></div>
+            <div class="swiper-button-next delegates-next"></div>
+        </div>
+    </div>
+</section>
+
+
+
+
 <section class="news">
 	<div class="container">
 		<div class="news__top">
 			<div class="news__title title">{% trans "Latest News" %}</div>
 			<div class="news__btn">
-				<a href="{% url "news:news" %}" class="button">{% trans "More News & Insights" %}</a>
+				<a href="{% url "news:news" %}" class="button">{% trans "More News" %}</a>
 			</div>
 			
 		</div>
@@ -96,30 +239,32 @@
 				{% endif %}
 			</div>
 			<div class="news__right">
-				{% if more_news %}
-					{% with news=more_news.0 %}
-						<div class="news__img">
-							<a href="{% url 'news:detail' slug=news.slug %}">
-								<img 
-									src="{% if news.image %}{{ news.image_preview.url }}{% else %}{% static 'img/noPhoto.jpg' %}{% endif %}" 
-									alt="{{ news.title }}" 
-									loading="lazy">
-							</a>
+					{% for news in more_news %}
+						<div class="news__item-small">
+							<div class="news__img news__img-small">
+								<a href="{% url 'news:detail' slug=news.slug %}">
+									<img 
+										src="{% if news.image %}{{ news.image_preview.url }}{% else %}{% static 'img/noPhoto.jpg' %}{% endif %}" 
+										alt="{{ news.title }}" 
+										loading="lazy">
+								</a>
+							</div>
+							<div class="news__name">
+								<div class="news__date">{{ news.date|date:"d.m.Y" }}</div>
+								<a href="{% url 'news:detail' slug=news.slug %}">{{ news.title }}</a>
+							</div>
 						</div>
-						<div class="news__name">
-							<div class="news__date">{{ news.date|date:"d.m.Y" }}</div>
-							<a href="{% url 'news:detail' slug=news.slug %}">{{ news.title }}</a>
-						</div>
-					{% endwith %}
-				{% else %}
-					<p>{% trans "No news available." %}</p>
-				{% endif %}
+					{% endfor %}
 			</div>
-
-			
 		</div>
 	</div>
 </section>
+
+
+
+
+
+
 
 <section class="partners" id="partners">
 	<div class="container">
@@ -146,7 +291,7 @@
 								alt="{{ partner.name }}" 
 								class="partners__img
 									{% if partner.level %}
-										partners__img--{{ partner.level.name|lower }}
+										partners__img--{{ partner.level.slug|lower }}
 									{% endif %}"
 							>
 
@@ -196,6 +341,7 @@
 {% block extra_js %}
 <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
 <script src="{% static 'core/js/popup.js' %}"></script>
+<script src="{% static 'core/js/counter.js' %}"></script>
 <script src="{% static 'core/js/index.js' %}"></script>
 
 
@@ -203,6 +349,24 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+	const delegatesSwiper = new Swiper('.delegates__slider', {
+		slidesPerView: 5,
+		spaceBetween: 30,
+		loop: true,
+
+		navigation: {
+			nextEl: '.delegates-next',
+			prevEl: '.delegates-prev',
+		},
+
+		breakpoints: {
+			1200: { slidesPerView: 7 },
+			992:  { slidesPerView: 4 },
+			768:  { slidesPerView: 3 },
+			480:  { slidesPerView: 2 },
+			320:  { slidesPerView: 2 },
+		}
+	});
 
     const menuItems = document.querySelectorAll('.partners__item');
     const sliderEl = document.querySelector('.partners__bottom'); // ❗ КОНТЕЙНЕР
@@ -216,7 +380,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 {% for partner in type.partners.all %}
                 {
                     name: "{{ partner.name|escapejs }}",
-                    logo: "{{ partner.logo.url|default:'' }}"
+                    logo: "{{ partner.logo.url|default:'' }}",
+					level: "{% if partner.level %}{{ partner.level.slug }}{% endif %}"
                 },
                 {% endfor %}
             ]
@@ -263,8 +428,9 @@ document.addEventListener('DOMContentLoaded', function () {
             swiper.appendSlide(
                 typePartners.map(p => `
                     <div class="swiper-slide partners__list-item">
-                        <img src="${p.logo}" alt="${p.name}" class="partners__img">
+                        <img src="${p.logo}" alt="${p.name}" class="partners__img ${p.level ? 'partners__img--' + p.level : ''}">
                         <div class="partners__name">${p.name}</div>
+						
                     </div>
                 `)
             );

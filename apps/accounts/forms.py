@@ -4,6 +4,12 @@ from django.utils.translation import gettext_lazy as _
 from django_countries.widgets import CountrySelectWidget
 
 from .models import Profile, CatalogEntry
+from django.core.validators import RegexValidator
+
+english_validator = RegexValidator(
+    regex=r'^[A-Za-z0-9\s.,\-_/()]*$',
+    message="Only English letters are allowed."
+)
 
 
 class CustomLoginForm(LoginForm):
@@ -125,6 +131,7 @@ class ProfileForm(forms.ModelForm):
 			'last_name': forms.TextInput(attrs={'class': 'profile__input'}),
 			'father_name': forms.TextInput(attrs={'class': 'profile__input'}),
 			'birth_date': forms.DateInput(attrs={'type': 'date', 'class': 'profile__input'}, format='%Y-%m-%d'),
+			'phone': forms.TextInput(attrs={'class': 'profile__input'}),
 			'company': forms.TextInput(attrs={'class': 'profile__input'}),
 			'position': forms.TextInput(attrs={'class': 'profile__input'}),
 			'country': CountrySelectWidget(attrs={'class': 'profile__input'}),
@@ -185,6 +192,23 @@ class ProfileForm(forms.ModelForm):
 		if edu_choices and edu_choices[0][0] == '':
 			edu_choices.pop(0)
 		self.fields['education_degree'].choices = [('', _("Select level"))] + edu_choices
+            
+
+		english_fields = [
+			"first_name",
+			"last_name",
+			"father_name",
+			"company",
+			"position",
+			"address",
+			"passport_number",
+			"education_institute",
+			"specialization",
+		]
+
+		for field in english_fields:
+			if field in self.fields:
+				self.fields[field].validators.append(english_validator)
         
 
 

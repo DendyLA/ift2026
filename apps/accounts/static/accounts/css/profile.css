@@ -241,6 +241,11 @@
     margin-left: 12px;
 }
 
+.errorlist{
+	color: var(--color-danger);
+	font-size: 1.2rem;
+}
+
 @keyframes slideIn {
     from {
         transform: translateX(120%);

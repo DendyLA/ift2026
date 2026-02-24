@@ -68,6 +68,20 @@
                                 </label>
                                 {{ form.birth_date.errors }}
                             </div>
+							<div class="profile__field-top fl-label">
+								{{ form.phone }}
+								<label for="{{ form.phone.id_for_label }}">
+									{{ form.phone.label }}
+								</label>
+
+								{% if form.phone.help_text %}
+									<small class="profile__help">
+										{{ form.phone.help_text }}
+									</small>
+								{% endif %}
+
+								{{ form.phone.errors }}
+							</div>
                         </div>
                     </div>
                 </div>
@@ -93,7 +107,7 @@
 				<div class="profile__bottom">
 					
 					{% for field in form %}
-						{% if field.name not in "first_name last_name father_name birth_date photo  need_visa" %}
+						{% if field.name not in "first_name last_name father_name birth_date photo  need_visa phone" %}
 							<div class="profile__field fl-label">
 
 								<!-- input и label сразу -->
@@ -155,10 +169,13 @@
 
 <div id="fileErrorPopup" class="file-popup">
     <div class="file-popup__content">
-        <span id="fileErrorText">{% trans 'File is too large. Maximum size is 15 MB.' %}</span>
+        {% comment %} <span id="fileErrorText">{% trans 'File is too large. Maximum size is 15 MB.' %}</span> {% endcomment %}
+		<span id="fileErrorText"></span>
         <button type="button" class="file-popup__close">&times;</button>
     </div>
 </div>
+
+
 
 
 {% endblock %}
@@ -166,5 +183,20 @@
 
 
 {% block extra_js %}
+{% if form.errors %}
+<script>
+    window.djangoErrors = [
+        {% for field in form %}
+            {% for error in field.errors %}
+                "{{ error|escapejs }}",
+            {% endfor %}
+        {% endfor %}
+        {% for error in form.non_field_errors %}
+            "{{ error|escapejs }}",
+        {% endfor %}
+    ];
+</script>
+{% endif %}
+
 <script src="{% static 'accounts/js/profile.js' %}"></script>
 {% endblock extra_js %}

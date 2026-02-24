@@ -30,16 +30,22 @@
 					{% endif %}
 				{% endfor %}
 
-				{# чекбокс В КОНЦЕ #}
-				<div class="auth__field auth__check-field">
-					{{ form.agree_terms }}
+				<div class="auth__field auth__check-field checkbox-wrapper-12">
+					<div class="cbx">
+						{{ form.agree_terms }}
+						<label for="{{ form.agree_terms.id_for_label }}"></label>
+						<svg width="15" height="14" viewBox="0 0 15 14" fill="none">
+							<path d="M2 8.36364L6.23077 12L13 2"></path>
+						</svg>
+					</div>
+
 					<label for="{{ form.agree_terms.id_for_label }}" class="auth__check-label">
 						{% trans "I have read and agree to the" %}
-						<a href="{% url "core:privacy_policy" %}" target="_blank" class="link-green">
+						<a href="{% url 'core:privacy_policy' %}" target="_blank" class="link-green">
 							{% trans "Privacy Policy" %}
 						</a>
 						{% trans "and" %}
-						<a href="{% url "core:terms_of_service" %}" target="_blank" class="link-green">
+						<a href="{% url 'core:terms_of_service' %}" target="_blank" class="link-green">
 							{% trans "Terms of Service" %}
 						</a>
 					</label>
@@ -47,6 +53,18 @@
 					{% if form.agree_terms.errors %}
 						<div class="auth__error">{{ form.agree_terms.errors }}</div>
 					{% endif %}
+
+					<!-- Gooey SVG -->
+					<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+						<defs>
+							<filter id="goo-12">
+								<feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"></feGaussianBlur>
+								<feColorMatrix in="blur" mode="matrix"
+									values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -7" result="goo-12"></feColorMatrix>
+								<feBlend in="SourceGraphic" in2="goo-12"></feBlend>
+							</filter>
+						</defs>
+					</svg>
 				</div>
 
 				<button type="submit" class="auth__btn button">

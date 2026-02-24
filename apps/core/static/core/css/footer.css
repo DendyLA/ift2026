@@ -34,3 +34,9 @@
 .footer__bottom p {
 	margin-top: 2rem;
 }
+
+
+.footer__box{
+	display: flex;
+	gap: 10rem;
+}

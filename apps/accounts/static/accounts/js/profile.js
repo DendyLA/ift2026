@@ -88,3 +88,11 @@ document.addEventListener('DOMContentLoaded', () => {
         visaCheckbox.addEventListener('change', toggleVisaFields);
     }
 });
+
+
+/* =======================
+   DJANGO SERVER ERRORS
+======================= */
+if (window.djangoErrors && window.djangoErrors.length > 0) {
+    showPopup(window.djangoErrors.join('\n'));
+}
