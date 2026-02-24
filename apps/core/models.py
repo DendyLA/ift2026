@@ -4,6 +4,9 @@ from ckeditor.fields import RichTextField
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
 from django.urls import reverse
+import os
+import uuid
+from django.utils.text import slugify
 
 class Intro(models.Model):
 	video = models.FileField(upload_to='intro_videos/%Y/%m/%d', verbose_name='Intro Video')
@@ -121,7 +124,6 @@ class FileResource(TranslatableModel):
         ('travel_guide', 'Travel Guide'),
 		('off_support', 'Official Support'),
 		('meet_req', 'Meeting Request'),
-		('investment', 'Investors Guide '),
     ]
     resource_type = models.CharField(
         max_length=50,
@@ -142,6 +144,73 @@ class FileResource(TranslatableModel):
         return self.safe_translation_getter('name', any_language=True) or str(self.id)
 
 
+
+
+def investment_cover_path(instance, filename):
+    """Загружаем обложку в папку investments"""
+    ext = filename.split('.')[-1]
+    unique = uuid.uuid4().hex[:8]
+    return f"investments/covers/{unique}.{ext}"
+
+def investment_file_path(instance, filename):
+    """Загружаем PDF-файл в папку investments"""
+    ext = filename.split('.')[-1]
+    unique = uuid.uuid4().hex[:8]
+    return f"investments/files/{unique}.{ext}"
+
+class Investment(TranslatableModel):
+	translations = TranslatedFields(
+		name=models.CharField(max_length=255, verbose_name="Название инвестмента"),
+	)
+
+	cover = models.ImageField(
+		upload_to=investment_cover_path,
+		verbose_name="Обложка",
+		blank=True,
+		null=True
+	)
+
+	link = models.URLField(
+		verbose_name="Ссылка",
+		blank=True,
+		null=True
+	)
+
+	file = models.FileField(
+		upload_to=investment_file_path,
+		verbose_name="PDF файл",
+		blank=True,
+		null=True
+	)
+
+	order = models.PositiveIntegerField(
+		default=0,
+		verbose_name="Порядок",
+		help_text="Чем меньше число, тем выше отображение"
+	)
+
+	is_active = models.BooleanField(default=True, verbose_name="Активен")
+
+	created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
+	updated_at = models.DateTimeField(auto_now=True, verbose_name="Дата обновления")
+
+	
+	@property
+	def get_url(self):
+		if self.link:
+			return self.link
+		if self.file:
+			return self.file.url
+		return None
+	
+
+	class Meta:
+		verbose_name = "Инвестмент"
+		verbose_name_plural = "Инвестменты"
+		ordering = ['order', 'created_at']
+
+	def __str__(self):
+		return self.safe_translation_getter('name', any_language=True) or "Investment"
 
 
 
@@ -168,3 +237,63 @@ class Sector(TranslatableModel):
 
     def __str__(self):
         return self.safe_translation_getter('name', any_language=True) or "Сектор"
+
+
+
+
+class SponsorType(TranslatableModel):
+    translations = TranslatedFields(
+        name=models.CharField(max_length=100, verbose_name="Название типа")
+    )
+
+    order = models.PositiveIntegerField(default=0, verbose_name="Порядок")
+
+    class Meta:
+        verbose_name = "Тип спонсора"
+        verbose_name_plural = "Типы спонсоров"
+        ordering = ['order']
+
+
+    def __str__(self):
+        return self.safe_translation_getter('name', any_language=True) or "Sponsor Type"
+
+
+
+def sponsor_logo_path(instance, filename):
+    base, ext = os.path.splitext(filename)
+    unique = uuid.uuid4().hex[:8]
+    return f"sponsors/{base}_{unique}{ext}"
+
+
+class Sponsor(TranslatableModel):
+    translations = TranslatedFields(
+        name=models.CharField(max_length=255, verbose_name="Имя спонсора")
+    )
+
+    logo = models.ImageField(
+        upload_to=sponsor_logo_path,
+        verbose_name="Лого"
+    )
+
+    link = models.URLField(
+        verbose_name="Ссылка",
+        blank=True,
+        null=True
+    )
+
+    sponsor_type = models.ForeignKey(
+        SponsorType,
+        on_delete=models.CASCADE,
+        related_name='sponsors',
+        verbose_name="Тип спонсора"
+    )
+
+    order = models.PositiveIntegerField(default=0, verbose_name="Очередность")
+
+    class Meta:
+        verbose_name = "Спонсор"
+        verbose_name_plural = "Спонсоры"
+        ordering = ['order']
+
+    def __str__(self):
+        return self.safe_translation_getter('name', any_language=True) or "Sponsor"

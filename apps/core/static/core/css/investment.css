@@ -1,0 +1,22 @@
+
+
+
+.investment__wrapper{
+	display: flex;
+	gap: 2rem;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+.investment__item{
+	flex: 1;
+	height: 620px;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.investment__title{
+	color: var(--color-light);
+	font-size: var(--h1-size);
+}

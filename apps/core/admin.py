@@ -1,6 +1,6 @@
 from django.contrib import admin
 from parler.admin import TranslatableAdmin
-from .models import Intro, About, Tabs, PartnershipType, Partner, PartnerLevel, FileResource, Sector
+from .models import Intro, About, Tabs, PartnershipType, Partner, PartnerLevel, FileResource, Sector, SponsorType, Sponsor, Investment
 from django.utils.html import format_html
 
 @admin.register(Intro)
@@ -58,6 +58,14 @@ class FileResourceAdmin(TranslatableAdmin):
         return {}
 	
 
+@admin.register(Investment)
+class InvestmentAdmin(TranslatableAdmin):
+    list_display = ('name', 'order', 'is_active', 'created_at')
+    list_editable = ('order', 'is_active')
+    search_fields = ('translations__name',)
+
+
+
 @admin.register(Sector)
 class SectorAdmin(TranslatableAdmin):
     list_display = ('name', 'created_at', 'updated_at', 'preview_image')
@@ -69,3 +77,26 @@ class SectorAdmin(TranslatableAdmin):
             return format_html('<img src="{}" style="width: 100px; height:auto; border-radius:5px;" />', obj.image.url)
         return "-"
     preview_image.short_description = "Фото сектора"
+
+
+@admin.register(SponsorType)
+class SponsorTypeAdmin(TranslatableAdmin):
+    list_display = ('name', 'order')
+    search_fields = ('translations__name',)
+
+
+@admin.register(Sponsor)
+class SponsorAdmin(TranslatableAdmin):
+    list_display = ('name', 'sponsor_type', 'order', 'preview_logo')
+    list_filter = ('sponsor_type',)
+    search_fields = ('translations__name',)
+    readonly_fields = ('preview_logo',)
+
+    def preview_logo(self, obj):
+        if obj.logo:
+            return format_html(
+                '<img src="{}" style="height:60px; border-radius:5px;" />',
+                obj.logo.url
+            )
+        return "-"
+    preview_logo.short_description = "Превью"

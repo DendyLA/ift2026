@@ -7,6 +7,8 @@
 <link rel="stylesheet" href="{% static 'core/css/stat.css' %}">
 <link rel="stylesheet" href="{% static 'core/css/speakers.css' %}">
 <link rel="stylesheet" href="{% static 'core/css/counter.css' %}">
+<link rel="stylesheet" href="{% static 'core/css/sponsors.css' %}">
+<link rel="stylesheet" href="{% static 'core/css/investment.css' %}">
 <link rel="stylesheet" href="{% static 'core/css/index.css' %}">
 
 {% endblock extra_css %}
@@ -30,8 +32,8 @@
 {% block content %}
 <section class="intro">
 	<video class="intro__video" autoplay muted loop playsinline >
-    <source src="{{ intro.video.url }}" type="video/mp4">
-</video>
+    	<source src="{{ intro.video.url }}" type="video/mp4">
+	</video>
 
 	<div class="container">
 		<h1 class="intro__title">{% trans "IFT2026 Investment in the future of Turkmenistan" %} </h1>
@@ -55,11 +57,6 @@
 			{% if meet_req %}
 				<a href="{{ meet_req.0.file.url }}" class="intro__button button" target="_blank">
 					{% trans "Meeting Request" %}
-				</a>
-			{% endif %}
-			{% if investment %}
-				<a href="{{ investment.0.file.url }}" class="intro__button button" target="_blank">
-					{% trans "Investment Guide" %}
 				</a>
 			{% endif %}
 			
@@ -147,14 +144,35 @@
 </section>
 
 
-<div class="investment">
-	<div class="container">
-		<div class="investment__wrapper">
-			
-		</div>
-	</div>
-</div>
+<section class="investment">
+    <div class="container">
+        <div class="investment__wrapper">
 
+            {% for inv in investment %}
+            <a href="{% if inv.file %}
+                        {{ inv.file.url }}
+                     {% elif inv.link %}
+                        {{ inv.link }}
+                     {% else %}
+                        
+                     {% endif %}"
+               class="investment__item"
+               {% if inv.cover %}
+                   style="background-image: url('{{ inv.cover.url }}');"
+               {% endif %}
+               {% if inv.file %}
+                   target="_blank"
+               {% endif %}
+            >
+                <h4 class="investment__title">
+                    {{ inv.name }}
+                </h4>
+            </a>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
 
 <section class="speakers">
 	<div class="container">
@@ -178,6 +196,36 @@
 
 	</div>
 </section>
+
+
+
+<section class="sponsors">
+    <div class="container">
+		<div class="title">
+			{% trans "Sponsors" %}
+		</div>
+		<div class="sponsors__wrapper">
+			<div class="sponsors_list">
+				{% for type in sponsor_types %}
+						
+							{% for sponsor in type.sponsors.all %}
+								<a href="{{ sponsor.link }}" class="sponsors__item" target="_blank">
+									<img src="{{ sponsor.logo.url }}"
+										alt="{{ sponsor.name }}"
+										class="sponsors__logo">
+									<div class="sponsors__name">
+										{{ sponsor.name }}
+									</div>
+									<div class="sponsors__type">{{type.name}}</div>
+								</a>
+								
+							{% endfor %}
+				{% endfor %}
+			</div>
+		</div>
+    </div>
+</section>
+
 
 
 <section class="delegates" id="delegates">

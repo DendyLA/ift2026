@@ -8,7 +8,11 @@ from django.views.decorators.http import require_GET
 from django.template.loader import render_to_string
 from django.contrib import sitemaps
 from django.contrib.sitemaps.views import sitemap
-from .sitemaps import StaticViewSitemap, AboutSitemap, PartnerSitemap
+from .sitemaps import (
+    StaticViewSitemap,
+    AboutSitemap,
+    NewsSitemap,
+)
 
 
 @require_GET
@@ -20,14 +24,14 @@ def robots_txt(request):
 sitemaps = {
     'static': StaticViewSitemap,
     'about': AboutSitemap,
-    'partners': PartnerSitemap,
+    'news': NewsSitemap,
 }
 
 
 urlpatterns = [
     path("robots.txt", robots_txt),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
-     path('ckeditor/', include('ckeditor_uploader.urls')),
+	path('ckeditor/', include('ckeditor_uploader.urls')),
     path('i18n/', include('django.conf.urls.i18n')),  # для смены языка через POST
 ]
 

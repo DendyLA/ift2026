@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import Intro, About, Tabs, PartnershipType, FileResource
+from .models import Intro, About, Tabs, PartnershipType, FileResource, Sector, SponsorType, Investment
 from apps.news.models import News
 from apps.speakers.models import Person as Speaker
 from apps.accounts.models import CatalogEntry
@@ -10,16 +10,19 @@ def index(request):
 	about = About.objects.first()
 	tabs = Tabs.objects.all()[:3]
 	partnership_types = PartnershipType.objects.prefetch_related('partners__level').all()
-     
+	investment = Investment.objects.filter(is_active=True).order_by('order')
+
 	speakers = Speaker.objects.filter(is_active=True).order_by('order')
 
+	sponsor_types = SponsorType.objects.prefetch_related(
+		'sponsors'
+	).order_by('order')
 
 	off_support = FileResource.objects.filter(resource_type='off_support', is_active=True)
 	brochures = FileResource.objects.filter(resource_type='brochure', is_active=True)
 	travel_guides = FileResource.objects.filter(resource_type='travel_guide', is_active=True)
 	meet_req = FileResource.objects.filter(resource_type='meet_req', is_active=True)
-	investment = FileResource.objects.filter(resource_type='investment', is_active=True)
-	
+
 	latest_news = News.objects.all()[:4]
 	more_news = News.objects.all().exclude(id__in=[n.id for n in latest_news])[:5]
 
@@ -30,19 +33,19 @@ def index(request):
 		'about': about,
 		'tabs': tabs,
 		'partnership_types': partnership_types,
-		'latest_news' : latest_news,
-		'more_news' : more_news,
+		'latest_news': latest_news,
+		'more_news': more_news,
 		'speakers': speakers,
 		'off_support': off_support,
-		'brochures': brochures,          
-        'travel_guides': travel_guides,
-        'meet_req': meet_req,
-        "catalog_entries": catalog_entries,
+		'brochures': brochures,
+		'travel_guides': travel_guides,
+		'meet_req': meet_req,
+		'catalog_entries': catalog_entries,
 		'investment': investment,
+		'sponsor_types': sponsor_types,  # 👈 ДОБАВИЛИ
 	}
 
 	return render(request, 'core/index.html', context)
-
 
 def privacy_policy(request):
     return render(request, 'core/docs/privacy_policy.html')
