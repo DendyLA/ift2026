@@ -146,6 +146,7 @@ class FileResource(TranslatableModel):
 
 
 
+
 def investment_cover_path(instance, filename):
     """Загружаем обложку в папку investments"""
     ext = filename.split('.')[-1]
@@ -158,14 +159,28 @@ def investment_file_path(instance, filename):
     unique = uuid.uuid4().hex[:8]
     return f"investments/files/{unique}.{ext}"
 
+
 class Investment(TranslatableModel):
 	translations = TranslatedFields(
 		name=models.CharField(max_length=255, verbose_name="Название инвестмента"),
+		file = models.FileField(
+			upload_to=investment_file_path,
+			verbose_name="PDF файл",
+			blank=True,
+			null=True
+		)
 	)
 
 	cover = models.ImageField(
 		upload_to=investment_cover_path,
 		verbose_name="Обложка",
+		blank=True,
+		null=True
+	)
+
+	second_cover = models.ImageField(
+		upload_to=investment_cover_path,
+		verbose_name="Обложка под другой",
 		blank=True,
 		null=True
 	)
@@ -176,12 +191,7 @@ class Investment(TranslatableModel):
 		null=True
 	)
 
-	file = models.FileField(
-		upload_to=investment_file_path,
-		verbose_name="PDF файл",
-		blank=True,
-		null=True
-	)
+	
 
 	order = models.PositiveIntegerField(
 		default=0,
@@ -214,9 +224,9 @@ class Investment(TranslatableModel):
 
 
 
+
 def sector_image_path(instance, filename):
     # загружаем изображения в папку sectors
-    import os, uuid
     base, ext = os.path.splitext(filename)
     unique = uuid.uuid4().hex[:8]
     return f"sectors/{base}_{unique}{ext}"
@@ -224,7 +234,7 @@ def sector_image_path(instance, filename):
 class Sector(TranslatableModel):
     translations = TranslatedFields(
         name=models.CharField(max_length=150, verbose_name="Название сектора"),
-        description=models.TextField(verbose_name="Описание сектора", blank=True, null=True)
+        description=RichTextField(verbose_name="Описание сектора", blank=True, null=True)
     )
     image = models.ImageField(upload_to=sector_image_path, verbose_name="Фото сектора", blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")

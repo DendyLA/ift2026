@@ -11,6 +11,7 @@ def index(request):
 	tabs = Tabs.objects.all()[:3]
 	partnership_types = PartnershipType.objects.prefetch_related('partners__level').all()
 	investment = Investment.objects.filter(is_active=True).order_by('order')
+	sectors = Sector.objects.all()
 
 	speakers = Speaker.objects.filter(is_active=True).order_by('order')
 
@@ -42,7 +43,8 @@ def index(request):
 		'meet_req': meet_req,
 		'catalog_entries': catalog_entries,
 		'investment': investment,
-		'sponsor_types': sponsor_types,  # 👈 ДОБАВИЛИ
+		'sponsor_types': sponsor_types, 
+		'sectors': sectors,
 	}
 
 	return render(request, 'core/index.html', context)

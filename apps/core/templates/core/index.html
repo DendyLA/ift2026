@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="{% static 'core/css/counter.css' %}">
 <link rel="stylesheet" href="{% static 'core/css/sponsors.css' %}">
 <link rel="stylesheet" href="{% static 'core/css/investment.css' %}">
+<link rel="stylesheet" href="{% static 'core/css/sectors.css' %}">
 <link rel="stylesheet" href="{% static 'core/css/index.css' %}">
 
 {% endblock extra_css %}
@@ -85,7 +86,7 @@
 	</div>
 </section>
 
-<section class="stat">
+{% comment %} <section class="stat">
 	<div class="container">
 		<div class="stat__wrapper">
 			<div class="stat__left">
@@ -121,7 +122,7 @@
 			</div>
 		</div>
 	</div>
-</section>
+</section> {% endcomment %}
 
 <section class="about">
 	<div class="container">
@@ -157,6 +158,9 @@
                         
                      {% endif %}"
                class="investment__item"
+			   {% if inv.second_cover %}
+				data-hover="{{ inv.second_cover.url }}"
+			   {% endif %}
                {% if inv.cover %}
                    style="background-image: url('{{ inv.cover.url }}');"
                {% endif %}
@@ -173,6 +177,24 @@
         </div>
     </div>
 </section>
+
+
+<section class="sectors">
+	<div class="container">
+		<h3 class="sectors__title title">{% trans "Themes of the forum" %}</h3>
+		<div class="sectors__wrapper">
+			{% for s in sectors %}
+			<div class="sectors__item" style="background-image: url('');">
+				<div class="sectors__name">{{ s.name}} </div>
+				<div class="sectors__descr">{{ s.description|safe }}</div>
+			</div>
+			{% endfor %}
+			
+		</div>
+	</div>
+</section>
+
+
 
 <section class="speakers">
 	<div class="container">
@@ -390,6 +412,7 @@
 <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
 <script src="{% static 'core/js/popup.js' %}"></script>
 <script src="{% static 'core/js/counter.js' %}"></script>
+<script src="{% static 'core/js/investment.js' %}"></script>
 <script src="{% static 'core/js/index.js' %}"></script>
 
 
