@@ -1,1 +1,131 @@
-privacy
+{% extends "core/base.html" %}
+{% load static i18n %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'core/css/privacy.css' %}">
+{% endblock extra_css %}
+
+{% block meta_description %}
+Policy on Personal Data Processing — Turkmen maslahatchylar topary
+{% endblock %}
+
+{% block meta_keywords %}
+privacy policy, personal data, Turkmen maslahatchylar topary, Turkmenistan, data protection
+{% endblock %}
+
+{% block og_title %}
+Privacy Policy — Turkmen maslahatchylar topary
+{% endblock %}
+
+{% block content %}
+
+<section class="privacy">
+    <div class="container">
+
+        <h1 class="privacy__title">
+            {% trans "Policy on Personal Data Processing" %}
+        </h1>
+
+        <div class="privacy__content">
+
+            <p>
+                {% trans "This Policy on the processing and protection of personal data (hereinafter referred to as the 'Policy') has been adopted and is in effect at the individual enterprise ES 'Turkmen maslahatchylar topary' (hereinafter referred to as the 'Organization'). The Organization processes personal data (collects, uses, and protects) provided by the data subject (an individual) when using the Organization's websites (hereinafter referred to as the 'Site') from any device and when communicating with the Organization in any form, in accordance with this Policy." %}
+            </p>
+
+            <p>
+                {% trans "This Policy determines what personal data we may collect and how we may use it." %}
+            </p>
+
+            <p>
+                {% trans "This Policy applies to personal data that the data subject (hereinafter referred to as the 'User' or 'Data Subject') provides to us when using our websites, other services, platforms, products, and services that collect data and display this Policy for users (each referred to as a 'Site,' and collectively as 'Sites') from any device, as well as during the execution of any agreements and contracts with the data subject and in communication with us in any form, in accordance with this Policy. When processing personal data received in this manner, we act as a data controller." %}
+            </p>
+
+            <p>
+                {% trans "By using our Site and providing us with your personal data, you consent to the processing of your personal data in accordance with this Policy." %}
+            </p>
+
+            <h2>1. {% trans "Key Terms" %}</h2>
+            <p>
+                {% trans '"Personal data" – any information related to a directly or indirectly identified or identifiable individual.' %}
+            </p>
+            <p>
+                {% trans '"Processing of personal data" – any action or set of actions with personal data, including collection, recording, systematization, accumulation, storage, updating and modification, retrieval, usage, transfer (distribution, provision, access), anonymization, blocking, deletion, and destruction, both using automated systems and without them.' %}
+            </p>
+            <p>
+                {% trans '"Operator" – a person who independently or jointly with others organizes and/or processes personal data, determines the purposes of data processing, the composition of personal data to be processed, and the actions (operations) performed with personal data.' %}
+            </p>
+
+            <h2>2. {% trans "Data Processed" %}</h2>
+            <p>
+                {% trans "The Organization processes:" %}
+            </p>
+            <ul>
+                <li>{% trans "Personal data provided by the data subjects when filling out information fields on the Organization’s websites, including when filling out a contact form, subscribing to a newsletter, or registering for events. Mandatory information is marked accordingly. Other information is provided at the discretion of the data subject." %}</li>
+                <li>{% trans "Personal data and other information contained in messages sent to the Organization by data subjects." %}</li>
+                <li>{% trans "Technical data automatically transmitted by the device used by data subjects to access the Organization's websites, including device specifications, IP address, information stored in 'cookies' sent to the subject’s device, browser information, date and time of access to the site, requested page addresses, and other similar information." %}</li>
+                <li>{% trans "Other data about the data subject that they choose to leave on the Organization's websites." %}</li>
+            </ul>
+            <p>
+                {% trans "If a data subject refuses to provide certain personal data to the Organization, they may still access the Organization’s Site. However, they may be unable to participate in certain promotions, contests, surveys, or research activities, create accounts to access specific sections of the Site, use specific functionalities, activate or use certain services, or receive certain product information." %}
+            </p>
+            <p>
+                {% trans "Certain Site pages may allow the data subject to create an account using a username or email and password, or via available authentication methods such as social media. If the User chooses to register using a social media authentication tool, they thereby allow the Organization to access public or otherwise authorized data from their social media account (e.g., name, user ID, profile picture) and any additional data they have granted access to. By using social media authentication, the User consents to the Organization processing available data as described above." %}
+            </p>
+
+            <h2>3. {% trans "Purposes of Data Processing" %}</h2>
+            <ul>
+                <li>{% trans "Registering the data subject on the Organization's sites to provide access to specific sections." %}</li>
+                <li>{% trans "Providing the data subject with information about the Organization, its services, and events." %}</li>
+                <li>{% trans "Communicating with the data subject upon request." %}</li>
+                <li>{% trans "Organizing participation in events and surveys conducted by the Organization." %}</li>
+                <li>{% trans "Sending newsletters and informational materials from the Organization." %}</li>
+                <li>{% trans "Fulfilling obligations imposed on the Organization by the legislation of Turkmenistan." %}</li>
+                <li>{% trans "Other purposes with the consent of the data subject." %}</li>
+            </ul>
+            <p>
+                {% trans "The Organization processes technical data to ensure functionality, security, and quality improvement of the Organization’s sites." %}
+            </p>
+
+            <h2>4. {% trans "Rights of Data Subjects" %}</h2>
+            <ul>
+                <li>{% trans "Take legally prescribed measures to protect their rights." %}</li>
+                <li>{% trans "Appeal actions or inactions of the Organization that violate data protection laws of Turkmenistan to the relevant authorities or in court." %}</li>
+                <li>{% trans "Withdraw consent for personal data processing." %}</li>
+                <li>{% trans "Access full information about their processed personal data, including obtaining copies of any record containing their personal data, except as provided by Turkmenistan’s legislation." %}</li>
+                <li>{% trans "Request correction, blocking, or deletion of their personal data if it is incomplete, outdated, inaccurate, unlawfully obtained, or unnecessary for the stated processing purpose." %}</li>
+                <li>{% trans "Exercise other rights provided by the legislation of Turkmenistan." %}</li>
+            </ul>
+
+            <h2>5. {% trans "Data Security" %}</h2>
+            <p>
+                {% trans "To ensure the security of personal data during processing, the Organization takes necessary and sufficient legal, organizational, and technical measures to protect personal data from unauthorized or accidental access, destruction, alteration, blocking, copying, disclosure, dissemination, and other unlawful actions. The Organization has implemented internal policies on personal data security. Employees with access to personal data are familiarized with this Policy and related security regulations." %}
+            </p>
+            <p>
+                {% trans "The Organization’s websites may contain links to third-party sites and services, which are not controlled by the Organization. The Organization is not responsible for the security or confidentiality of information collected by third-party sites or services." %}
+            </p>
+
+            <h2>6. {% trans "Disclosure of Personal Data" %}</h2>
+            <p>
+                {% trans "The Organization does not sell, transfer, or exchange the User’s personal data with third parties for their own purposes without prior User consent. Personal data may only be disclosed without prior consent in cases required by applicable law." %}
+            </p>
+            <ul>
+                <li>{% trans "With the User’s consent or when necessary to provide requested or authorized actions, services, or contracts involving the User." %}</li>
+                <li>{% trans "To service providers and agents acting on behalf of the Organization, bound by contractual confidentiality and security obligations." %}</li>
+                <li>{% trans "To comply with Turkmenistan’s legal requirements, regulatory functions, or court requests." %}</li>
+                <li>{% trans "To protect the rights, safety, or property of clients, employees, or the general public." %}</li>
+                <li>{% trans "To maintain and secure the Organization's Sites and services, including preventing cyber-attacks." %}</li>
+            </ul>
+
+            <h2>7. {% trans "Final Provisions" %}</h2>
+            <p>
+                {% trans "The Organization reserves the right to update this Policy as necessary. Data subjects are encouraged to review it periodically. Continued use of the Organization’s Sites after changes confirms acceptance of the modifications." %}
+            </p>
+            <p>
+                {% trans "All questions related to this Policy and interactions with the Organization regarding its application, Site usage, and personal data processing are governed by the laws of Turkmenistan. Disputes regarding these matters fall under the jurisdiction of Turkmenistan’s courts." %}
+            </p>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

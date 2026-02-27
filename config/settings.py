@@ -171,14 +171,14 @@ LANGUAGE_CODE = 'en'
 LANGUAGES = [
     ('en', _('English')),
     ('ru', _('Russian')),
-    ('tk', _('Turkmen')),
+    ('tm', _('Turkmen')),
 ]
 
 PARLER_LANGUAGES = {
     1: (
         {'code': 'en'},
         {'code': 'ru'},
-        {'code': 'tk'},
+        {'code': 'tm'},
     ),
     'default': {
         'fallbacks': ['en'],

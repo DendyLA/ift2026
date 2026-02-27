@@ -26,6 +26,7 @@ class PartnershipTypeAdmin(TranslatableAdmin):
 @admin.register(Partner)
 class PartnerAdmin(TranslatableAdmin):
 	list_display = ('name', 'partnership_type', 'logo', 'order')
+	list_editable = ('order', )
 	list_filter = ('partnership_type',)
 
 @admin.register(PartnerLevel)

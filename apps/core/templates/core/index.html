@@ -178,21 +178,27 @@
     </div>
 </section>
 
-
+{% if sectors %}
 <section class="sectors">
 	<div class="container">
 		<h3 class="sectors__title title">{% trans "Themes of the forum" %}</h3>
 		<div class="sectors__wrapper">
 			{% for s in sectors %}
-			<div class="sectors__item" style="background-image: url('');">
+			<div class="sectors__item" style="background-image: url('{{ s.image.url }}');">
 				<div class="sectors__name">{{ s.name}} </div>
-				<div class="sectors__descr">{{ s.description|safe }}</div>
+				<div class="sectors__popup">
+					<button class="sectors__close"><i class="lni lni-xmark"></i></button>
+					<div class="sectors__descr">{{ s.description|safe }}</div>
+				</div> 
 			</div>
+			
 			{% endfor %}
 			
 		</div>
 	</div>
 </section>
+{% endif %}
+
 
 
 
@@ -413,6 +419,7 @@
 <script src="{% static 'core/js/popup.js' %}"></script>
 <script src="{% static 'core/js/counter.js' %}"></script>
 <script src="{% static 'core/js/investment.js' %}"></script>
+<script src="{% static 'core/js/sectors.js' %}"></script>
 <script src="{% static 'core/js/index.js' %}"></script>
 
 

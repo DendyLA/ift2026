@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-23 17:44+0500\n"
-"PO-Revision-Date: 2026-02-23 17:45+0500\n"
+"POT-Creation-Date: 2026-02-27 18:03+0500\n"
+"PO-Revision-Date: 2026-02-27 11:19+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -282,7 +282,7 @@ msgid "Company information"
 msgstr "Информация о компании"
 
 #: .\apps\accounts\templates\accounts\profile.html:160
-#: .\apps\core\templates\core\components\header.html:78
+#: .\apps\core\templates\core\components\header.html:84
 msgid "Log out"
 msgstr "Выйти"
 
@@ -298,19 +298,19 @@ msgstr "азмер файла не должен превышать 15 МБ."
 msgid "IFT. All rights reserved.  Ashgabat, Turkmenistan."
 msgstr "IFT. Все права защищены.  Ашхабад, Туркменистан."
 
-#: .\apps\core\templates\core\components\header.html:73
+#: .\apps\core\templates\core\components\header.html:79
 msgid "Profile"
 msgstr "Профиль"
 
-#: .\apps\core\templates\core\components\header.html:74
+#: .\apps\core\templates\core\components\header.html:80
 msgid "Reset password"
 msgstr "Сбросить пароль"
 
-#: .\apps\core\templates\core\components\header.html:85
+#: .\apps\core\templates\core\components\header.html:91
 msgid "Log in"
 msgstr "Войти"
 
-#: .\apps\core\templates\core\components\header.html:86
+#: .\apps\core\templates\core\components\header.html:92
 #: .\templates\account\login.html:41
 msgid "Sign up"
 msgstr "Зарегистрироваться"
@@ -320,7 +320,7 @@ msgid "About the forum"
 msgstr "О форуме"
 
 #: .\apps\core\templates\core\components\menu.html:4
-#: .\apps\core\templates\core\index.html:216
+#: .\apps\core\templates\core\index.html:209
 msgid "Speakers"
 msgstr "Спикеры"
 
@@ -329,7 +329,563 @@ msgstr "Спикеры"
 msgid "News"
 msgstr "Новости"
 
-#: .\apps\core\templates\core\index.html:15
+#: .\apps\core\templates\core\docs\privacy_policy.html:26
+#, fuzzy
+#| msgid "Purpose of personal data processing"
+msgid "Policy on Personal Data Processing"
+msgstr "Цели обработки персональных данных"
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:32
+msgid ""
+"This Policy on the processing and protection of personal data (hereinafter "
+"referred to as the 'Policy') has been adopted and is in effect at the "
+"individual enterprise ES 'Turkmen maslahatchylar topary' (hereinafter "
+"referred to as the 'Organization'). The Organization processes personal data "
+"(collects, uses, and protects) provided by the data subject (an individual) "
+"when using the Organization's websites (hereinafter referred to as the "
+"'Site') from any device and when communicating with the Organization in any "
+"form, in accordance with this Policy."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:36
+msgid ""
+"This Policy determines what personal data we may collect and how we may use "
+"it."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:40
+msgid ""
+"This Policy applies to personal data that the data subject (hereinafter "
+"referred to as the 'User' or 'Data Subject') provides to us when using our "
+"websites, other services, platforms, products, and services that collect "
+"data and display this Policy for users (each referred to as a 'Site,' and "
+"collectively as 'Sites') from any device, as well as during the execution of "
+"any agreements and contracts with the data subject and in communication with "
+"us in any form, in accordance with this Policy. When processing personal "
+"data received in this manner, we act as a data controller."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:44
+msgid ""
+"By using our Site and providing us with your personal data, you consent to "
+"the processing of your personal data in accordance with this Policy."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:47
+msgid "Key Terms"
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:49
+msgid ""
+"\"Personal data\" – any information related to a directly or indirectly "
+"identified or identifiable individual."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:52
+#, fuzzy
+#| msgid ""
+#| "Actions for processing personal data may include collection, recording, "
+#| "systematisation, accumulation, storage, clarification (updating, "
+#| "modification), extraction, use, transfer, depersonalisation, blocking, "
+#| "deletion, destruction of personal data, provided that such actions do not "
+#| "contradict the legislation of the Republic of Turkmenistan and moral and "
+#| "ethical standards."
+msgid ""
+"\"Processing of personal data\" – any action or set of actions with personal "
+"data, including collection, recording, systematization, accumulation, "
+"storage, updating and modification, retrieval, usage, transfer "
+"(distribution, provision, access), anonymization, blocking, deletion, and "
+"destruction, both using automated systems and without them."
+msgstr ""
+"Действия по обработке персональных данных могут включать сбор, запись, "
+"систематизацию, накопление, хранение, уточнение (обновление, изменение), "
+"извлечение, использование, передачу, обезличивание, блокирование, удаление, "
+"уничтожение персональных данных, при условии, что такие действия не "
+"противоречат законодательству Республики Туркменистан и морально-этическим "
+"нормам."
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:55
+msgid ""
+"\"Operator\" – a person who independently or jointly with others organizes "
+"and/or processes personal data, determines the purposes of data processing, "
+"the composition of personal data to be processed, and the actions "
+"(operations) performed with personal data."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:58
+#, fuzzy
+#| msgid "Data Processing"
+msgid "Data Processed"
+msgstr "Обработка данных"
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:60
+msgid "The Organization processes:"
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:63
+msgid ""
+"Personal data provided by the data subjects when filling out information "
+"fields on the Organization’s websites, including when filling out a contact "
+"form, subscribing to a newsletter, or registering for events. Mandatory "
+"information is marked accordingly. Other information is provided at the "
+"discretion of the data subject."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:64
+msgid ""
+"Personal data and other information contained in messages sent to the "
+"Organization by data subjects."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:65
+msgid ""
+"Technical data automatically transmitted by the device used by data subjects "
+"to access the Organization's websites, including device specifications, IP "
+"address, information stored in 'cookies' sent to the subject’s device, "
+"browser information, date and time of access to the site, requested page "
+"addresses, and other similar information."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:66
+msgid ""
+"Other data about the data subject that they choose to leave on the "
+"Organization's websites."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:69
+msgid ""
+"If a data subject refuses to provide certain personal data to the "
+"Organization, they may still access the Organization’s Site. However, they "
+"may be unable to participate in certain promotions, contests, surveys, or "
+"research activities, create accounts to access specific sections of the "
+"Site, use specific functionalities, activate or use certain services, or "
+"receive certain product information."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:72
+msgid ""
+"Certain Site pages may allow the data subject to create an account using a "
+"username or email and password, or via available authentication methods such "
+"as social media. If the User chooses to register using a social media "
+"authentication tool, they thereby allow the Organization to access public or "
+"otherwise authorized data from their social media account (e.g., name, user "
+"ID, profile picture) and any additional data they have granted access to. By "
+"using social media authentication, the User consents to the Organization "
+"processing available data as described above."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:75
+#, fuzzy
+#| msgid "Purpose of personal data processing"
+msgid "Purposes of Data Processing"
+msgstr "Цели обработки персональных данных"
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:77
+msgid ""
+"Registering the data subject on the Organization's sites to provide access "
+"to specific sections."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:78
+msgid ""
+"Providing the data subject with information about the Organization, its "
+"services, and events."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:79
+msgid "Communicating with the data subject upon request."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:80
+msgid ""
+"Organizing participation in events and surveys conducted by the Organization."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:81
+msgid "Sending newsletters and informational materials from the Organization."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:82
+msgid ""
+"Fulfilling obligations imposed on the Organization by the legislation of "
+"Turkmenistan."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:83
+msgid "Other purposes with the consent of the data subject."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:86
+msgid ""
+"The Organization processes technical data to ensure functionality, security, "
+"and quality improvement of the Organization’s sites."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:89
+msgid "Rights of Data Subjects"
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:91
+msgid "Take legally prescribed measures to protect their rights."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:92
+msgid ""
+"Appeal actions or inactions of the Organization that violate data protection "
+"laws of Turkmenistan to the relevant authorities or in court."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:93
+#, fuzzy
+#| msgid "Purpose of personal data processing"
+msgid "Withdraw consent for personal data processing."
+msgstr "Цели обработки персональных данных"
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:94
+msgid ""
+"Access full information about their processed personal data, including "
+"obtaining copies of any record containing their personal data, except as "
+"provided by Turkmenistan’s legislation."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:95
+msgid ""
+"Request correction, blocking, or deletion of their personal data if it is "
+"incomplete, outdated, inaccurate, unlawfully obtained, or unnecessary for "
+"the stated processing purpose."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:96
+msgid "Exercise other rights provided by the legislation of Turkmenistan."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:99
+msgid "Data Security"
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:101
+msgid ""
+"To ensure the security of personal data during processing, the Organization "
+"takes necessary and sufficient legal, organizational, and technical measures "
+"to protect personal data from unauthorized or accidental access, "
+"destruction, alteration, blocking, copying, disclosure, dissemination, and "
+"other unlawful actions. The Organization has implemented internal policies "
+"on personal data security. Employees with access to personal data are "
+"familiarized with this Policy and related security regulations."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:104
+msgid ""
+"The Organization’s websites may contain links to third-party sites and "
+"services, which are not controlled by the Organization. The Organization is "
+"not responsible for the security or confidentiality of information collected "
+"by third-party sites or services."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:107
+msgid "Disclosure of Personal Data"
+msgstr "Раскрытие персональных данных"
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:109
+msgid ""
+"The Organization does not sell, transfer, or exchange the User’s personal "
+"data with third parties for their own purposes without prior User consent. "
+"Personal data may only be disclosed without prior consent in cases required "
+"by applicable law."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:112
+msgid ""
+"With the User’s consent or when necessary to provide requested or authorized "
+"actions, services, or contracts involving the User."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:113
+msgid ""
+"To service providers and agents acting on behalf of the Organization, bound "
+"by contractual confidentiality and security obligations."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:114
+msgid ""
+"To comply with Turkmenistan’s legal requirements, regulatory functions, or "
+"court requests."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:115
+msgid ""
+"To protect the rights, safety, or property of clients, employees, or the "
+"general public."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:116
+msgid ""
+"To maintain and secure the Organization's Sites and services, including "
+"preventing cyber-attacks."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:119
+#, fuzzy
+#| msgid "General Provisions"
+msgid "Final Provisions"
+msgstr "Общие положения"
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:121
+msgid ""
+"The Organization reserves the right to update this Policy as necessary. Data "
+"subjects are encouraged to review it periodically. Continued use of the "
+"Organization’s Sites after changes confirms acceptance of the modifications."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\privacy_policy.html:124
+msgid ""
+"All questions related to this Policy and interactions with the Organization "
+"regarding its application, Site usage, and personal data processing are "
+"governed by the laws of Turkmenistan. Disputes regarding these matters fall "
+"under the jurisdiction of Turkmenistan’s courts."
+msgstr ""
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:26
+msgid "User Agreement"
+msgstr "Пользовательское соглашение"
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:31
+msgid "General Provisions"
+msgstr "Общие положения"
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:33
+msgid ""
+"This User Agreement (hereinafter referred to as the Agreement) refers to "
+"this website and first-level domain .com websites (hereinafter referred to "
+"as the Website), and establishes rules for using the Website and its "
+"functionality by Users."
+msgstr ""
+"Настоящее Пользовательское соглашение (далее — «Соглашение») относится к "
+"данному веб-сайту и веб-сайтам в доменной зоне первого уровня .com (далее — "
+"«Сайт») и устанавливает правила использования Сайта и его функциональных "
+"возможностей Пользователями."
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:36
+msgid ""
+"The Website, its content and materials including information about scheduled "
+"events constitute the property of TMT Consulting Group"
+msgstr ""
+"Сайт, его содержимое и материалы, включая информацию о запланированных "
+"мероприятиях, являются собственностью TMT Consulting Group."
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:39
+msgid ""
+"This Agreement regulates relations between the Organiser and any User of the "
+"Website."
+msgstr ""
+"Настоящее Соглашение регулирует отношения между Организатором и любым "
+"Пользователем Сайта."
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:42
+msgid "Status of Agreement"
+msgstr "Статус Соглашения"
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:45
+msgid ""
+"Registration confirms that the User has read, understood and fully accepted "
+"this Agreement."
+msgstr ""
+"Регистрация подтверждает, что Пользователь ознакомлен, понимает и полностью "
+"принимает условия настоящего Соглашения."
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:48
+msgid ""
+"The Organiser reserves the right to amend this Agreement at any time without "
+"notifying the User. Amendments come into force upon publication on the "
+"Website."
+msgstr ""
+"Организатор оставляет за собой право вносить изменения в настоящее "
+"Соглашение в любое время без предварительного уведомления Пользователя. "
+"Изменения вступают в силу с момента их публикации на Сайте."
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:51
+msgid "Subject of Agreement"
+msgstr "Предмет Соглашения"
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:53
+msgid ""
+"The subject of this Agreement is access to information and materials posted "
+"on the Website and their use by the User."
+msgstr ""
+"Предметом настоящего Соглашения является доступ к информации и материалам, "
+"размещенным на Сайте, а также их использование Пользователем."
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:56
+msgid "Access to the Website is free of charge unless otherwise specified."
+msgstr ""
+"Доступ к Сайту предоставляется на безвозмездной основе, если иное не "
+"оговорено особо."
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:59
+msgid "Website Materials"
+msgstr "Материалы Сайта"
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:61
+msgid ""
+"Website materials include protected intellectual property such as texts, "
+"graphics, photographs, logos, databases, design elements and other materials "
+"posted on the Website."
+msgstr ""
+"Материалы Сайта включают объекты охраняемой интеллектуальной собственности, "
+"такие как тексты, графические изображения, фотографии, логотипы, базы "
+"данных, элементы дизайна и иные материалы, размещенные на Сайте."
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:64
+msgid "Data Processing"
+msgstr "Обработка данных"
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:66
+msgid ""
+"The User agrees to the processing of personal data in accordance with the "
+"legislation of the Republic of Turkmenistan and the Confidentiality Policy."
+msgstr ""
+"Пользователь дает согласие на обработку персональных данных в соответствии с "
+"законодательством Республики Туркменистан и Политикой конфиденциальности."
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:69
+msgid "Rights and Obligations of Parties"
+msgstr "Права и обязанности сторон"
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:71
+msgid "The Organiser has the right to:"
+msgstr "Организатор имеет право:"
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:73
+msgid "Change Website terms and content;"
+msgstr "Изменять условия использования и содержание Сайта;"
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:74
+msgid "Refuse registration without justification;"
+msgstr "Отказать в регистрации без объяснения причин;"
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:75
+msgid "Send informational and personalised messages;"
+msgstr ""
+"Ответ Gemini\n"
+"\n"
+"    Направлять информационные и персонализированные сообщения;"
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:76
+msgid "Disclose User information if required by law;"
+msgstr "Раскрывать информацию о Пользователе, если это требуется по закону;"
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:79
+msgid "The User has the right to:"
+msgstr "Пользователь имеет право:"
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:81
+msgid "Access Website services after registration;"
+msgstr ""
+"Получать доступ к сервисам Сайта после прохождения процедуры регистрации;"
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:82
+msgid "Use all available services;"
+msgstr "Пользоваться всеми доступными сервисами;"
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:85
+msgid "The User agrees to:"
+msgstr "Пользователь обязуется:"
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:87
+msgid "Provide accurate and lawful information during registration;"
+msgstr "Предоставлять достоверную и законную информацию при регистрации;"
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:88
+msgid "Respect intellectual property rights;"
+msgstr "Соблюдать права интеллектуальной собственности;"
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:89
+msgid "Not disrupt the normal operation of the Website;"
+msgstr "Не нарушать нормальную работу Сайта;"
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:90
+msgid "Update personal data when necessary;"
+msgstr "Обновлять персональные данные по мере необходимости;"
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:93
+msgid "The User is prohibited from:"
+msgstr "Пользователю запрещается:"
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:95
+msgid "Copying or distributing Website materials without written permission;"
+msgstr ""
+"Копировать или распространять материалы Сайта без письменного разрешения;"
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:96
+msgid "Attempting unauthorised access to Website systems;"
+msgstr "Предпринимать попытки несанкционированного доступа к системам Сайта;"
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:97
+msgid "Embedding parts of the Website into other websites;"
+msgstr ""
+"Ответ Gemini\n"
+"\n"
+"    Встраивать части Сайта в другие веб-сайты;"
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:100
+msgid "Use of Website"
+msgstr "Использование Сайта"
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:102
+msgid ""
+"The User is personally responsible for maintaining confidentiality of "
+"account information and password."
+msgstr ""
+"Пользователь несет персональную ответственность за сохранение "
+"конфиденциальности информации об учетной записи и пароля;"
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:105
+msgid "Disclaimer"
+msgstr "Отказ от ответственности"
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:107
+msgid ""
+"The Website materials may contain technical inaccuracies or typographical "
+"errors. The Organiser does not guarantee absolute accuracy and shall not be "
+"liable for consequences of their use."
+msgstr ""
+"Материалы Сайта могут содержать технические неточности или типографские "
+"ошибки. Организатор не гарантирует абсолютную точность и не несет "
+"ответственности за последствия их использования;"
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:110
+msgid "Breach of Agreement Conditions"
+msgstr ""
+"Ответ Gemini\n"
+"Нарушение условий Соглашения"
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:112
+msgid ""
+"The Organiser may terminate or block User access in case of violation of "
+"this Agreement."
+msgstr ""
+"Организатор может прекратить или заблокировать доступ Пользователя в случае "
+"нарушения настоящего Соглашения;"
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:115
+msgid "Supplementary Conditions"
+msgstr "ополнительные условия"
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:117
+msgid ""
+"This Agreement remains in force indefinitely from the moment of User "
+"accession."
+msgstr ""
+"Настоящее Соглашение остается в силе в течение неопределенного срока с "
+"момента присоединения Пользователя;"
+
+#: .\apps\core\templates\core\docs\terms_of_service.html:120
+msgid "The User confirms having read and fully accepted this Agreement."
+msgstr ""
+"Пользователь подтверждает, что ознакомлен с настоящим Соглашением и "
+"полностью принимает его условия;"
+
+#: .\apps\core\templates\core\index.html:18
 msgid ""
 "IFT2026 — Investment to the Future of Turkmenistan. International investment "
 "forum uniting investors, business and government."
@@ -337,112 +893,72 @@ msgstr ""
 "IFT2026 — Инвестиции в будущее Туркменистана. Международный инвестиционный "
 "форум, объединяющий инвесторов, бизнес и государство."
 
-#: .\apps\core\templates\core\index.html:19
+#: .\apps\core\templates\core\index.html:22
 msgid ""
 "investment forum, Turkmenistan investment, IFT2026, business forum, economy"
 msgstr ""
 "инвестиционный форум, инвестиции в Туркменистан, IFT2026, бизнес-форум, "
 "экономика, развитие бизнеса."
 
-#: .\apps\core\templates\core\index.html:23
+#: .\apps\core\templates\core\index.html:26
 msgid "IFT2026 — Investment Forum"
 msgstr "IFT2026 — Инвестиционный форум"
 
-#: .\apps\core\templates\core\index.html:37
+#: .\apps\core\templates\core\index.html:40
 msgid "IFT2026 Investment in the future of Turkmenistan"
 msgstr "IFT2026 Инвестиции в будущее Туркменистана"
 
-#: .\apps\core\templates\core\index.html:38
+#: .\apps\core\templates\core\index.html:41
 msgid "18 March, Asghabat"
 msgstr "18 Марта Ашхабад"
 
-#: .\apps\core\templates\core\index.html:41
+#: .\apps\core\templates\core\index.html:44
 msgid "Official support"
 msgstr "Официальная поддержка"
 
-#: .\apps\core\templates\core\index.html:44
+#: .\apps\core\templates\core\index.html:47
 msgid "Agenda"
 msgstr "Программа"
 
-#: .\apps\core\templates\core\index.html:47
+#: .\apps\core\templates\core\index.html:50
 msgid "Brochure"
 msgstr "Брошюра"
 
-#: .\apps\core\templates\core\index.html:52
+#: .\apps\core\templates\core\index.html:55
 msgid "Travel Guide"
 msgstr "Путеводитель"
 
-#: .\apps\core\templates\core\index.html:57
+#: .\apps\core\templates\core\index.html:60
 msgid "Meeting Request"
 msgstr "Запрос на встречу"
 
-#: .\apps\core\templates\core\index.html:62
-msgid "Investment Guide"
-msgstr "Инвестиционный гид"
-
-#: .\apps\core\templates\core\index.html:95
-msgid "Investing in the Future of Turkmenistan"
-msgstr "Инвестиции в будущее Туркменистана"
-
-#: .\apps\core\templates\core\index.html:96
-msgid ""
-"IFT is a platform where vision becomes action. By connecting capital, "
-"expertise, and ambition, we foster strategic investments, empower emerging "
-"sectors, and create new pathways for economic growth and long-term "
-"prosperity in Turkmenistan."
-msgstr ""
-"IFT — это платформа, где видение превращается в действие. Объединяя капитал, "
-"экспертные знания и амбиции, мы содействуем стратегическим инвестициям, "
-"расширяем возможности развивающихся секторов и создаем новые пути для "
-"экономического роста и долгосрочного процветания Туркменистана."
-
-#: .\apps\core\templates\core\index.html:97
-msgid "Become a Delegate"
-msgstr "Стать делегатом"
-
-#: .\apps\core\templates\core\index.html:105
-msgid "Delegates"
-msgstr "Делегаты"
-
-#: .\apps\core\templates\core\index.html:109
-msgid "Memorandums Signed"
-msgstr "Подписанные меморандумы"
-
-#: .\apps\core\templates\core\index.html:113
-msgid "Strategic Sectors"
-msgstr "Стратегические отрасли"
-
-#: .\apps\core\templates\core\index.html:117
-msgid "Companies"
-msgstr "Компании"
-
-#: .\apps\core\templates\core\index.html:121
-msgid "Business Meetings"
-msgstr "Бизнес-встречи"
-
-#: .\apps\core\templates\core\index.html:123
-msgid "Results of IFT 2025"
-msgstr "Итоги IFT2025"
-
-#: .\apps\core\templates\core\index.html:136
+#: .\apps\core\templates\core\index.html:135
 msgid "Details"
 msgstr "Детальнее"
 
-#: .\apps\core\templates\core\index.html:158
+#: .\apps\core\templates\core\index.html:185
+msgid "Themes of the forum"
+msgstr "Темы форума"
+
+#: .\apps\core\templates\core\index.html:236
+msgid "Sponsors"
+msgstr "Спонсоры"
+
+#: .\apps\core\templates\core\index.html:264
+msgid "Participants"
+msgstr "Делегаты"
+
+#: .\apps\core\templates\core\index.html:289
 msgid "Latest News"
 msgstr "Последние новости"
 
-#: .\apps\core\templates\core\index.html:160
+#: .\apps\core\templates\core\index.html:291
 msgid "More News"
 msgstr "Все новости"
 
-#: .\apps\core\templates\core\index.html:187
+#: .\apps\core\templates\core\index.html:318
 msgid "No news available at the moment."
 msgstr "В данный момент новостей нет."
-
-#: .\apps\core\templates\core\index.html:241
-msgid "Participants"
-msgstr "Делегаты"
 
 #: .\apps\news\templates\news\news.html:7
 #: .\apps\news\templates\news\news_detail.html:7
@@ -2046,6 +2562,243 @@ msgstr ""
 msgctxt "stick"
 msgid "club"
 msgstr ""
+
+#~ msgid ""
+#~ "Please read this Policy carefully! By reviewing this Privacy Policy and "
+#~ "submitting your personal data on the website, you hereby agree to it."
+#~ msgstr ""
+#~ "Внимательно прочитайте настоящую политику! Ознакомившись с настоящей "
+#~ "политикой конфиденциальности и предоставляя свои персональные данные на "
+#~ "сайте, Вы тем самым соглашаетесь с ней."
+
+#~ msgid "Introduction"
+#~ msgstr "Введение"
+
+#~ msgid ""
+#~ "This Privacy Policy is an official document of the Foreign Enterprise TMT "
+#~ "Consulting Group LLC (hereinafter referred to as 'TMT Consulting Group') "
+#~ "and applies to all information resources owned by TMT Consulting Group: "
+#~ "website tmt.tm, second-level sites in the domain tmt.tm"
+#~ msgstr ""
+#~ "Ваш запрос\n"
+#~ "\n"
+#~ "This Privacy Policy is an official document of the Foreign Enterprise TMT "
+#~ "Consulting Group LLC (hereinafter referred to as 'TMT Consulting Group') "
+#~ "and applies to all information resources owned by TMT Consulting Group: "
+#~ "website tmt.tm, second-level sites in the domain tmt.tm\n"
+#~ "Ответ Gemini\n"
+#~ "\n"
+#~ "Настоящая Политика конфиденциальности является официальным документом "
+#~ "Иностранного предприятия ООО «TMT Consulting Group» (далее — «TMT "
+#~ "Consulting Group») и распространяется на все информационные ресурсы, "
+#~ "принадлежащие TMT Consulting Group: веб-сайт tmt.tm и сайты второго "
+#~ "уровня в домене tmt.tm."
+
+#~ msgid ""
+#~ "The condition of this Policy applies to all the information that TMT "
+#~ "Consulting Group can receive about the user during his stay on the TMT "
+#~ "Consulting Group information resources and which can be correlated with "
+#~ "this particular user."
+#~ msgstr ""
+#~ "Положения настоящей Политики распространяются на всю информацию, которую "
+#~ "TMT Consulting Group может получить о пользователе во время его "
+#~ "пребывания на информационных ресурсах TMT Consulting Group и которая "
+#~ "может быть соотнесена с данным конкретным пользователем."
+
+#~ msgid ""
+#~ "TMT Consulting Group processes your personal data in order to provide you "
+#~ "with services aimed at informing you about exhibitions and other events "
+#~ "organized by TMT Consulting Group, as well as their attendance."
+#~ msgstr ""
+#~ "TMT Consulting Group обрабатывает ваши персональные данные в целях "
+#~ "предоставления вам услуг, направленных на информирование о выставках и "
+#~ "других мероприятиях, организуемых TMT Consulting Group, а также на "
+#~ "обеспечение участия в них."
+
+#~ msgid "Collection and use of Personal Data"
+#~ msgstr "Сбор и использование персональных данных"
+
+#~ msgid ""
+#~ "TMT Consulting Group gathers only those personal data that are necessary "
+#~ "for registration at exhibitions and other exhibition events as a visitor "
+#~ "or participant, and which you specify in the registration form or the "
+#~ "Application Agreement for a specific event, including:"
+#~ msgstr ""
+#~ "TMT Consulting Group осуществляет сбор только тех персональных данных, "
+#~ "которые необходимы для регистрации на выставках и других выставочных "
+#~ "мероприятиях в качестве посетителя или участника и которые вы указываете "
+#~ "в регистрационной форме или в Заявке-контракте на участие в конкретном "
+#~ "мероприятии, включая:"
+
+#~ msgid "Full name"
+#~ msgstr "Имя"
+
+#~ msgid "E-mail address"
+#~ msgstr "Email"
+
+#~ msgid "Contact phone number"
+#~ msgstr "Номер телефона"
+
+#~ msgid "The name of the company you work for"
+#~ msgstr "Название компании, в которой вы работаете"
+
+#~ msgid "Position, profession, occupation"
+#~ msgstr "Должность, профессия, род занятий"
+
+#~ msgid ""
+#~ "If you are a representative of the company, by entering your personal "
+#~ "data into the Application Agreement, you also confirm your consent to the "
+#~ "inclusion of your personal data in the register of subjects who have "
+#~ "expressed a desire to receive information about TMT Consulting Group "
+#~ "advertising, marketing, and exhibition events."
+#~ msgstr ""
+#~ "Если вы являетесь представителем компании, внося свои персональные данные "
+#~ "в Заявку-контракт, вы также подтверждаете свое согласие на включение "
+#~ "ваших персональных данных в реестр субъектов, выразивших желание получать "
+#~ "информацию о рекламных, маркетинговых и выставочных мероприятиях TMT "
+#~ "Consulting Group."
+
+#~ msgid ""
+#~ "TMT Consulting Group does not sell or disclose personal data about users "
+#~ "to anyone."
+#~ msgstr ""
+#~ "Обычно следующим пунктом идут исключения, когда передача все же возможна"
+
+#~ msgid ""
+#~ "TMT Consulting Group has the right to transfer personal data about the "
+#~ "user to third parties only if:"
+#~ msgstr ""
+#~ "TMT Consulting Group имеет право передавать персональные данные "
+#~ "пользователя третьим лицам только в случаях, если:"
+
+#~ msgid ""
+#~ "you have agreed to disclose this information (including to exhibitors "
+#~ "participating in TMT Consulting Group events);"
+#~ msgstr ""
+#~ "вы выразили свое согласие на раскрытие этой информации (в том числе "
+#~ "экспонентам, участвующим в мероприятиях TMT Consulting Group);"
+
+#~ msgid "without this, you cannot use the desired product or service;"
+#~ msgstr ""
+#~ "без этого вы не можете воспользоваться желаемым продуктом или услугой;"
+
+#~ msgid ""
+#~ "it is required by the current local or international legislation and/or "
+#~ "authorities in compliance with the legal procedure;"
+#~ msgstr ""
+#~ "этого требует действующее местное или международное законодательство и/"
+#~ "или органы власти в соответствии с установленной законом процедурой;"
+
+#~ msgid ""
+#~ "you are violating our User Agreement or the User Agreement of TMT "
+#~ "Consulting Group Partner Projects."
+#~ msgstr ""
+#~ "вы нарушаете наше Пользовательское соглашение или Пользовательское "
+#~ "соглашение партнерских проектов TMT Consulting Group."
+
+#~ msgid "The ability to edit and delete Personal Data"
+#~ msgstr "Возможность редактирования и удаления персональных данных"
+
+#~ msgid ""
+#~ "TMT Consulting Group provides users with the opportunity to clarify or "
+#~ "revoke consent to the processing of their personal data at any time by "
+#~ "sending an email to the company's email address, or by sending a request "
+#~ "by mail to the address of the TMT Consulting Group office."
+#~ msgstr ""
+#~ "TMT Consulting Group предоставляет пользователям возможность в любое "
+#~ "время уточнить свои персональные данные или отозвать согласие на их "
+#~ "обработку, направив электронное письмо на адрес электронной почты "
+#~ "компании или отправив письменный запрос по почте на адрес офиса TMT "
+#~ "Consulting Group."
+
+#~ msgid "Links to third-party websites"
+#~ msgstr "Ссылки на сторонние веб-сайты"
+
+#~ msgid ""
+#~ "The TMT Consulting Group websites contain links to third-party websites. "
+#~ "These links are for reference purposes only, and TMT Consulting Group "
+#~ "assumes no responsibility for the personal data policies adopted on these "
+#~ "sites."
+#~ msgstr ""
+#~ "Веб-сайты TMT Consulting Group содержат ссылки на сторонние веб-сайты. "
+#~ "Эти ссылки предоставляются исключительно в ознакомительных целях, и TMT "
+#~ "Consulting Group не несет ответственности за политику в отношении "
+#~ "персональных данных, принятую на этих сайтах."
+
+#~ msgid "Automatic data collection and processing on the website (Cookies)"
+#~ msgstr "Автоматический сбор и обработка данных на веб-сайте (Файлы Cookies)"
+
+#~ msgid ""
+#~ "Cookies are a small text file stored on the user's computer to save data "
+#~ "on the user's end. TMT Consulting Group uses only session cookies, which "
+#~ "are destroyed when you close your Internet browser."
+#~ msgstr ""
+#~ "Файлы cookies представляют собой небольшие текстовые файлы, сохраняемые "
+#~ "на компьютере пользователя для хранения данных на стороне пользователя. "
+#~ "TMT Consulting Group использует только сессионные файлы cookies, которые "
+#~ "удаляются при закрытии вашего интернет-браузера."
+
+#~ msgid "HTML requests"
+#~ msgstr "HTML-запросы"
+
+#~ msgid ""
+#~ "TMT Consulting Group processes information received as part of an HTML "
+#~ "request (your computer accessing the site) solely for statistical "
+#~ "purposes and for the purpose of improving the site's performance."
+#~ msgstr ""
+#~ "TMT Consulting Group обрабатывает информацию, полученную в рамках HTML-"
+#~ "запроса (при доступе вашего компьютера к сайту), исключительно в "
+#~ "статистических целях и в целях улучшения работы сайта."
+
+#~ msgid "Changes to the information in the Privacy Policy"
+#~ msgstr "Изменения в Политике конфиденциальности"
+
+#~ msgid ""
+#~ "TMT Consulting Group may make changes to the Privacy Policy. If "
+#~ "significant changes occur, TMT Consulting Group undertakes to inform its "
+#~ "users about them."
+#~ msgstr ""
+#~ "TMT Consulting Group может вносить изменения в Политику "
+#~ "конфиденциальности. В случае возникновения существенных изменений TMT "
+#~ "Consulting Group обязуется информировать об этом своих пользователей."
+
+#~ msgid "Investment Guide"
+#~ msgstr "Инвестиционный гид"
+
+#~ msgid "Investing in the Future of Turkmenistan"
+#~ msgstr "Инвестиции в будущее Туркменистана"
+
+#~ msgid ""
+#~ "IFT is a platform where vision becomes action. By connecting capital, "
+#~ "expertise, and ambition, we foster strategic investments, empower "
+#~ "emerging sectors, and create new pathways for economic growth and long-"
+#~ "term prosperity in Turkmenistan."
+#~ msgstr ""
+#~ "IFT — это платформа, где видение превращается в действие. Объединяя "
+#~ "капитал, экспертные знания и амбиции, мы содействуем стратегическим "
+#~ "инвестициям, расширяем возможности развивающихся секторов и создаем новые "
+#~ "пути для экономического роста и долгосрочного процветания Туркменистана."
+
+#~ msgid "Become a Delegate"
+#~ msgstr "Стать делегатом"
+
+#~ msgid "Delegates"
+#~ msgstr "Делегаты"
+
+#~ msgid "Memorandums Signed"
+#~ msgstr "Подписанные меморандумы"
+
+#~ msgid "Strategic Sectors"
+#~ msgstr "Стратегические отрасли"
+
+#~ msgid "Companies"
+#~ msgstr "Компании"
+
+#~ msgid "Business Meetings"
+#~ msgstr "Бизнес-встречи"
+
+#~ msgid "Results of IFT 2025"
+#~ msgstr "Итоги IFT2025"
 
 #~ msgid "File is too large. Maximum size is 15 MB."
 #~ msgstr "Файл слишком большой. Максимальный размер — 15 МБ."

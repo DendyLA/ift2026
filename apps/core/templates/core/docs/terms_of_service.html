@@ -1,1 +1,127 @@
-terms_of_service
+{% extends "core/base.html" %}
+{% load static i18n %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'core/css/service.css' %}">
+{% endblock extra_css %}
+
+{% block meta_description %}
+User Agreement of Iteca Exhibitions FE LLC.
+{% endblock %}
+
+{% block meta_keywords %}
+user agreement, terms of use, Iteca Exhibitions, Uzbekistan
+{% endblock %}
+
+{% block og_title %}
+User Agreement — Iteca Exhibitions
+{% endblock %}
+
+{% block content %}
+
+<section class="service">
+    <div class="container">
+
+        <h1 class="service__title">
+            {% trans "User Agreement" %}
+        </h1>
+
+        <div class="service__content">
+
+            <h2>1. {% trans "General Provisions" %}</h2>
+            <p>
+                {% trans "This User Agreement (hereinafter referred to as the Agreement) refers to this website and first-level domain .com websites (hereinafter referred to as the Website), and establishes rules for using the Website and its functionality by Users." %}
+            </p>
+            <p>
+                {% trans "The Website, its content and materials including information about scheduled events constitute the property of TMT Consulting Group" %}
+            </p>
+            <p>
+                {% trans "This Agreement regulates relations between the Organiser and any User of the Website." %}
+            </p>
+
+            <h2>2. {% trans "Status of Agreement" %}</h2>
+
+            <p>
+                {% trans "Registration confirms that the User has read, understood and fully accepted this Agreement." %}
+            </p>
+            <p>
+                {% trans "The Organiser reserves the right to amend this Agreement at any time without notifying the User. Amendments come into force upon publication on the Website." %}
+            </p>
+
+            <h2>3. {% trans "Subject of Agreement" %}</h2>
+            <p>
+                {% trans "The subject of this Agreement is access to information and materials posted on the Website and their use by the User." %}
+            </p>
+            <p>
+                {% trans "Access to the Website is free of charge unless otherwise specified." %}
+            </p>
+
+            <h2>4. {% trans "Website Materials" %}</h2>
+            <p>
+                {% trans "Website materials include protected intellectual property such as texts, graphics, photographs, logos, databases, design elements and other materials posted on the Website." %}
+            </p>
+
+            <h2>5. {% trans "Data Processing" %}</h2>
+            <p>
+                {% trans "The User agrees to the processing of personal data in accordance with the legislation of the Republic of Turkmenistan and the Confidentiality Policy." %}
+            </p>
+
+            <h2>6. {% trans "Rights and Obligations of Parties" %}</h2>
+
+            <h3>{% trans "The Organiser has the right to:" %}</h3>
+            <ul>
+                <li>{% trans "Change Website terms and content;" %}</li>
+                <li>{% trans "Refuse registration without justification;" %}</li>
+                <li>{% trans "Send informational and personalised messages;" %}</li>
+                <li>{% trans "Disclose User information if required by law;" %}</li>
+            </ul>
+
+            <h3>{% trans "The User has the right to:" %}</h3>
+            <ul>
+                <li>{% trans "Access Website services after registration;" %}</li>
+                <li>{% trans "Use all available services;" %}</li>
+            </ul>
+
+            <h3>{% trans "The User agrees to:" %}</h3>
+            <ul>
+                <li>{% trans "Provide accurate and lawful information during registration;" %}</li>
+                <li>{% trans "Respect intellectual property rights;" %}</li>
+                <li>{% trans "Not disrupt the normal operation of the Website;" %}</li>
+                <li>{% trans "Update personal data when necessary;" %}</li>
+            </ul>
+
+            <h3>{% trans "The User is prohibited from:" %}</h3>
+            <ul>
+                <li>{% trans "Copying or distributing Website materials without written permission;" %}</li>
+                <li>{% trans "Attempting unauthorised access to Website systems;" %}</li>
+                <li>{% trans "Embedding parts of the Website into other websites;" %}</li>
+            </ul>
+
+            <h2>7. {% trans "Use of Website" %}</h2>
+            <p>
+                {% trans "The User is personally responsible for maintaining confidentiality of account information and password." %}
+            </p>
+
+            <h2>8. {% trans "Disclaimer" %}</h2>
+            <p>
+                {% trans "The Website materials may contain technical inaccuracies or typographical errors. The Organiser does not guarantee absolute accuracy and shall not be liable for consequences of their use." %}
+            </p>
+
+            <h2>9. {% trans "Breach of Agreement Conditions" %}</h2>
+            <p>
+                {% trans "The Organiser may terminate or block User access in case of violation of this Agreement." %}
+            </p>
+
+            <h2>10. {% trans "Supplementary Conditions" %}</h2>
+            <p>
+                {% trans "This Agreement remains in force indefinitely from the moment of User accession." %}
+            </p>
+            <p>
+                {% trans "The User confirms having read and fully accepted this Agreement." %}
+            </p>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}
